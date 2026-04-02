@@ -1,188 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog &amp; Media — Dr. Nguyen Hoang Phu</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <style>
-    .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .blog-card { background: var(--white); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; }
-    .blog-card-img { height: 160px; background: var(--cream); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--rule); }
-    .blog-card-img-text { font-family: 'Cormorant Garamond', serif; font-size: 48px; color: var(--rule); }
-    .blog-card-body { padding: 22px; }
-    .blog-cat { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; font-weight: 500; }
-    .blog-card-title { font-size: 15px; font-weight: 500; color: var(--ink); margin-bottom: 8px; line-height: 1.4; }
-    .blog-card-desc { font-size: 12px; color: var(--ink3); line-height: 1.65; margin-bottom: 14px; font-weight: 300; }
-    .blog-meta { font-size: 11px; color: var(--ink3); display: flex; justify-content: space-between; }
-
-    .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-    .video-card { background: var(--white); border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; display: flex; gap: 16px; padding: 16px; align-items: center; }
-    .video-thumb { width: 80px; height: 60px; background: var(--ink); border-radius: 4px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .play-icon { width: 0; height: 0; border-style: solid; border-width: 10px 0 10px 18px; border-color: transparent transparent transparent rgba(255,255,255,0.7); margin-left: 4px; }
-    .video-info-title { font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 4px; line-height: 1.4; }
-    .video-info-meta { font-size: 11px; color: var(--ink3); }
-
-    .media-mention { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--rule); align-items: flex-start; }
-    .media-mention:last-child { border-bottom: none; }
-    .media-source { font-size: 11px; font-weight: 600; color: var(--accent); letter-spacing: 0.06em; text-transform: uppercase; flex-shrink: 0; min-width: 100px; padding-top: 2px; }
-    .media-title { font-size: 13px; color: var(--ink); margin-bottom: 3px; }
-    .media-date { font-size: 11px; color: var(--ink3); }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Insights | Dr. Hoang-Phu Nguyen</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Merriweather', 'serif'], }, colors: { primary: '#1e3a8a', dark: '#111827', } } }
+        }
+    </script>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800 antialiased selection:bg-primary selection:text-white flex flex-col min-h-screen">
 
-<nav class="nav">
-  <a href="index.html" class="nav-logo">Dr. Phu <span>Nguyen</span></a>
-  <ul class="nav-links">
-    <li><a href="research.html">Research</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="resume.html">Resume</a></li>
-    <li><a href="blog.html" class="active">Blog &amp; Media</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-  <div class="nav-right">
-    <a href="resume.html" class="btn-outline">Download CV</a>
-    <a href="contact.html" class="btn-accent">Book a Consultation</a>
-  </div>
-</nav>
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="font-serif font-bold text-xl text-primary tracking-tight">Dr. Hoang-Phu Nguyen</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html#about" class="text-gray-600 hover:text-primary text-sm font-medium transition">About</a>
+                    <a href="index.html#experience" class="text-gray-600 hover:text-primary text-sm font-medium transition">Experience</a>
+                    <a href="index.html#publications" class="text-gray-600 hover:text-primary text-sm font-medium transition">Publications</a>
+                    <a href="blog.html" class="text-primary text-sm font-medium transition border-b-2 border-primary pb-1">Blog</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-<div class="page-hero">
-  <div class="page-hero-eyebrow">Blog &amp; Media</div>
-  <h1>Insights &amp; <em>Ideas</em></h1>
-  <p>Writing on behavioral economics, sustainable business, AI in organizations, and decision-making for practitioners and academic readers alike.</p>
-</div>
+    <!-- Main Blog Content -->
+    <main class="flex-grow pt-32 pb-20 px-4 max-w-4xl mx-auto w-full">
+        <h1 class="text-4xl font-serif font-bold text-dark mb-4">Blog & Academic Insights</h1>
+        <p class="text-gray-600 mb-12 text-lg">Thoughts on Behavioral Science, Data Analysis, and Personal Development.</p>
 
-<!-- BLOG POSTS -->
-<section class="section section-cream">
-  <div class="section-header">
-    <div>
-      <div class="section-label">Writing</div>
-      <div class="section-title">Latest <em>Articles</em></div>
-    </div>
-  </div>
-  <div class="blog-grid">
-    <div class="blog-card">
-      <div class="blog-card-img"><div class="blog-card-img-text">BE</div></div>
-      <div class="blog-card-body">
-        <div class="blog-cat">Behavioral Economics</div>
-        <div class="blog-card-title">Why We Make Irrational Decisions — and How to Design Better Choices</div>
-        <div class="blog-card-desc">An introduction to nudge theory and choice architecture for business managers looking to improve decision quality in their teams.</div>
-        <div class="blog-meta"><span>Coming soon</span></div>
-      </div>
-    </div>
-    <div class="blog-card">
-      <div class="blog-card-img"><div class="blog-card-img-text">ESG</div></div>
-      <div class="blog-card-body">
-        <div class="blog-cat">Sustainability</div>
-        <div class="blog-card-title">ESG in Vietnam: Where We Are and Where We Need to Go</div>
-        <div class="blog-card-desc">A practitioner's perspective on the state of ESG adoption among Vietnamese enterprises and the role of data in driving accountability.</div>
-        <div class="blog-meta"><span>Coming soon</span></div>
-      </div>
-    </div>
-    <div class="blog-card">
-      <div class="blog-card-img"><div class="blog-card-img-text">AI</div></div>
-      <div class="blog-card-body">
-        <div class="blog-cat">AI &amp; HR</div>
-        <div class="blog-card-title">Should You Let AI Make HR Decisions? A Researcher's Perspective</div>
-        <div class="blog-card-desc">Drawing from my research on AI in HR management, I examine the fairness, efficiency, and behavioral risks of algorithmic decision systems.</div>
-        <div class="blog-meta"><span>Coming soon</span></div>
-      </div>
-    </div>
-  </div>
-</section>
+        <!-- Blog Posts List -->
+        <div class="space-y-10">
+            
+            <!-- Article 1 -->
+            <article class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col md:flex-row gap-6 hover:shadow-md transition">
+                <div class="md:w-1/3">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Think Fast and Slow" class="w-full h-48 md:h-full object-cover rounded-lg">
+                </div>
+                <div class="md:w-2/3 flex flex-col justify-center">
+                    <span class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Psychology</span>
+                    <h2 class="text-2xl font-bold text-dark mb-3"><a href="think-fast-and-slow.html" class="hover:text-primary transition">Think Fast and Slow: The Attention Effect</a></h2>
+                    <p class="text-gray-600 mb-4 line-clamp-3">How the fast and slow thinking systems govern our daily strategic decisions. In the book "Thinking, Fast and Slow" by Daniel Kahneman, we explore the duality of the human mind...</p>
+                    <a href="think-fast-and-slow.html" class="text-primary font-medium hover:underline text-sm flex items-center gap-1 mt-auto">Read full article <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
 
-<!-- VIDEO SECTION -->
-<section class="section section-white">
-  <div class="section-header">
-    <div>
-      <div class="section-label">Video</div>
-      <div class="section-title">Think, Learn, <em>Decide</em></div>
-    </div>
-    <a href="https://drnhphu.wixsite.com/nguyenhoangphu/video" target="_blank" class="see-all">All videos →</a>
-  </div>
-  <div class="video-grid">
-    <div class="video-card">
-      <div class="video-thumb"><div class="play-icon"></div></div>
-      <div>
-        <div class="video-info-title">Think Fast and Slow</div>
-        <div class="video-info-meta">Behavioral Economics Series · Video lecture</div>
-      </div>
-    </div>
-    <div class="video-card">
-      <div class="video-thumb"><div class="play-icon"></div></div>
-      <div>
-        <div class="video-info-title">The Attention Effect</div>
-        <div class="video-info-meta">Decision-Making Series · Video lecture</div>
-      </div>
-    </div>
-    <div class="video-card">
-      <div class="video-thumb"><div class="play-icon"></div></div>
-      <div>
-        <div class="video-info-title">How to Make a Good Day</div>
-        <div class="video-info-meta">Well-being &amp; Behavioral Science · Video</div>
-      </div>
-    </div>
-    <div class="video-card">
-      <div class="video-thumb"><div class="play-icon"></div></div>
-      <div>
-        <div class="video-info-title">Behavioral Experiments in Action</div>
-        <div class="video-info-meta">Research Methods Series · Video</div>
-      </div>
-    </div>
-  </div>
-</section>
+            <!-- Article 2 -->
+            <article class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col md:flex-row gap-6 hover:shadow-md transition">
+                <div class="md:w-1/3">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Make a good day" class="w-full h-48 md:h-full object-cover rounded-lg">
+                </div>
+                <div class="md:w-2/3 flex flex-col justify-center">
+                    <span class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Self-Development</span>
+                    <h2 class="text-2xl font-bold text-dark mb-3"><a href="make-a-good-day.html" class="hover:text-primary transition">How to make a good day: Experiments</a></h2>
+                    <p class="text-gray-600 mb-4 line-clamp-3">A scientific perspective on the small habits that build a highly productive and emotionally balanced workday. Exploring behavioral experiments that can alter your routine...</p>
+                    <a href="make-a-good-day.html" class="text-primary font-medium hover:underline text-sm flex items-center gap-1 mt-auto">Read full article <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
 
-<!-- MEDIA -->
-<section class="section section-cream">
-  <div class="section-header">
-    <div>
-      <div class="section-label">Press &amp; Media</div>
-      <div class="section-title">Expert <em>Commentary</em></div>
-    </div>
-  </div>
-  <div class="media-mention">
-    <div class="media-source">VietESG</div>
-    <div>
-      <div class="media-title">ESG Expert Commentary — Sustainability Strategy for Vietnamese Enterprises</div>
-      <div class="media-date">2026 — Ongoing contributor</div>
-    </div>
-  </div>
-  <div class="media-mention">
-    <div class="media-source">MiTRADE</div>
-    <div>
-      <div class="media-title">Finance &amp; Investment Behavior Research Content</div>
-      <div class="media-date">2022–2025 — Regular content contributor</div>
-    </div>
-  </div>
-  <div class="media-mention">
-    <div class="media-source">IU Conference</div>
-    <div>
-      <div class="media-title">AGBA Vietnam Chapter International Conference — Sustainable Fashion &amp; EV Research</div>
-      <div class="media-date">August 2024 · Ho Chi Minh City</div>
-    </div>
-  </div>
-</section>
+        </div>
+    </main>
 
-<section class="cta-banner">
-  <div>
-    <h2>Have a media <em>request</em>?</h2>
-    <p>Available for interviews, expert commentary, panel discussions, and keynote presentations on behavioral economics, ESG, and AI in organizations.</p>
-  </div>
-  <div class="cta-btns">
-    <a href="contact.html" class="btn-white">Get in Touch →</a>
-    <a href="mailto:nhphu@hcmiu.edu.vn" class="btn-ghost-white">nhphu@hcmiu.edu.vn</a>
-  </div>
-</section>
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-8 text-center mt-auto border-t border-gray-800">
+        <p class="text-gray-400 text-sm">&copy; 2026 Dr. Hoang-Phu Nguyen. All rights reserved.</p>
+    </footer>
 
-<footer class="site-footer">
-  <div class="footer-copy">© 2026 Dr. Nguyen Hoang Phu · Ho Chi Minh City, Vietnam</div>
-  <div class="footer-links">
-    <a href="https://www.linkedin.com/in/nhoangphu/" target="_blank">LinkedIn</a>
-    <a href="https://scholar.google.com/citations?user=ki3vczkAAAAJ" target="_blank">Google Scholar</a>
-    <a href="blog.html">Blog</a>
-    <a href="contact.html">Contact</a>
-  </div>
-</footer>
 </body>
 </html>
