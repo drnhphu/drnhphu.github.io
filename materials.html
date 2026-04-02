@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teaching & Materials | Dr. Hoang-Phu Nguyen</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Merriweather', 'serif'], }, colors: { primary: '#1e3a8a', dark: '#111827', } } }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased selection:bg-primary selection:text-white flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="font-serif font-bold text-xl text-primary tracking-tight">Dr. Hoang-Phu Nguyen</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html#about" class="text-gray-600 hover:text-primary text-sm font-medium transition">About</a>
+                    <a href="index.html#experience" class="text-gray-600 hover:text-primary text-sm font-medium transition">Experience</a>
+                    <a href="index.html#publications" class="text-gray-600 hover:text-primary text-sm font-medium transition">Publications</a>
+                    <a href="materials.html" class="text-primary text-sm font-medium transition border-b-2 border-primary pb-1">Materials</a>
+                    <a href="blog.html" class="text-gray-600 hover:text-primary text-sm font-medium transition">Blog</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="pt-32 pb-12 bg-white border-b border-gray-200 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl font-serif font-bold text-dark mb-4">Teaching & Course Materials</h1>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                Welcome students. Here you can find syllabi, lecture slides, and additional reading materials for my current and past courses across various universities.
+            </p>
+        </div>
+    </header>
+
+    <!-- Materials Content -->
+    <main class="flex-grow py-12 px-4 max-w-6xl mx-auto w-full">
+        
+        <!-- Google Scholar Banner -->
+        <div class="flex flex-col sm:flex-row justify-between items-center mb-12 gap-4 bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <div>
+                <h2 class="text-xl font-bold text-dark">Research & Publications</h2>
+                <p class="text-sm text-gray-500">Access my full list of publications, citations, and academic papers.</p>
+            </div>
+            <a href="https://scholar.google.com/citations?user=ki3vczkAAAAJ&hl=en" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-[#4285F4] hover:bg-[#3367D6] text-white rounded-lg text-sm font-bold transition shadow-md">
+                <i class="fa-brands fa-google-scholar text-lg"></i> View Google Scholar
+            </a>
+        </div>
+
+        <div class="space-y-10">
+            
+            <!-- 1. VNU-HCM International University -->
+            <section class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="bg-blue-50 border-b border-gray-200 px-6 py-5 flex items-center gap-4">
+                    <div class="w-12 h-12 bg-primary text-white rounded-lg flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-dark">VNU-HCM International University</h2>
+                        <p class="text-sm text-gray-500">Undergraduate, MBA & PhD Programs</p>
+                    </div>
+                </div>
+                
+                <div class="p-6 md:p-8 grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <!-- Undergraduate Courses -->
+                    <div>
+                        <h3 class="font-bold text-lg text-primary mb-5 border-b border-gray-100 pb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-user-graduate"></i> Undergraduate Courses
+                        </h3>
+                        <div class="space-y-6">
+                            
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-base mb-2">1. Behavioral Finance</h4>
+                                <div class="flex flex-wrap gap-2 pl-4">
+                                    <a href="#" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-200 rounded-md text-sm text-gray-600 hover:text-blue-700 transition"><i class="fa-regular fa-file-lines text-blue-500"></i> Syllabus</a>
+                                    <a href="#" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-200 rounded-md text-sm text-gray-600 hover:text-blue-700 transition"><i class="fa-solid fa-book text-green-600"></i> Textbook</a>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-base mb-2">2. Entrepreneurship and Small Business Management</h4>
+                                <div class="flex flex-wrap gap-2 pl-4">
+                                    <a href="#" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-200 rounded-md text-sm text-gray-600 hover:text-blue-700 transition"><i class="fa-regular fa-file-lines text-blue-500"></i> Syllabus</a>
+                                    <a href="#" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-200 rounded-md text-sm text-gray-600 hover:text-blue-700 transition"><i class="fa-regular fa-file-powerpoint text-orange-500"></i> Slides and references</a>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-base mb-2">3. Statistics for Business (Old version)</h4>
+                                <div class="flex flex-wrap gap-2 pl-4">
+                                    <a href="#" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-200 rounded-md text-sm text-gray-600 hover:text-blue-700 transition"><i class="fa-regular fa-file-lines text-blue-500"></i> Syllabus</a>
+                                    <a href="#" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-200 rounded-md text-sm text-gray-600 hover:text-blue-700 transition"><i class="fa-regular fa-file-powerpoint text-orange-500"></i> Slides</a>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-base mb-2">4. Statistics for Business (New_Doane)</h4>
+                                <div class="flex flex-wrap gap-2 pl-4">
+                                    <a href="#" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-200 rounded-md text-sm text-gray-600 hover:text-blue-700 transition"><i class="fa-regular fa-file-lines text-blue-500"></i> Syllabus</a>
+                                    <a href="#" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-200 rounded-md text-sm text-gray-600 hover:text-blue-700 transition"><i class="fa-regular fa-file-powerpoint text-orange-500"></i> Slides</a>
+                                    <a href="#" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-200 rounded-md text-sm text-gray-600 hover:text-blue-700 transition"><i class="fa-solid fa-book text-green-600"></i> Book</a>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-base mb-2">5. Math for Business</h4>
+                                <div class="flex flex-wrap gap-2 pl-4">
+                                    <a href="#" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-200 rounded-md text-sm text-gray-600 hover:text-blue-700 transition"><i class="fa-solid fa-folder-open text-yellow-500"></i> Slides + Syllabus + Books</a>
+                                </div>
+                            </div>
+
+                            <div>
+                                <a href="#" class="font-bold text-gray-800 text-base hover:text-primary transition inline-flex items-center gap-2">
+                                    6. Economics <i class="fa-solid fa-arrow-up-right-from-square text-xs text-gray-400"></i>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                    <!-- Postgraduate Programs -->
+                    <div>
+                        <h3 class="font-bold text-lg text-primary mb-5 border-b border-gray-100 pb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-user-tie"></i> Postgraduate Programs
+                        </h3>
+                        
+                        <div class="space-y-8">
+                            <!-- MBA -->
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-lg mb-3">MBA Program</h4>
+                                <div class="space-y-3 pl-2">
+                                    <a href="#" class="flex items-center gap-3 p-3 bg-gray-50 hover:bg-blue-50 rounded-lg transition group border border-gray-200 hover:border-blue-200">
+                                        <span class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-xs font-bold shrink-0">1</span>
+                                        <span class="font-medium text-gray-700 group-hover:text-blue-700 transition">Pre-MBA</span>
+                                        <i class="fa-solid fa-download ml-auto text-gray-400 group-hover:text-blue-700"></i>
+                                    </a>
+                                    <a href="#" class="flex items-center gap-3 p-3 bg-gray-50 hover:bg-blue-50 rounded-lg transition group border border-gray-200 hover:border-blue-200">
+                                        <span class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-xs font-bold shrink-0">2</span>
+                                        <span class="font-medium text-gray-700 group-hover:text-blue-700 transition">MBA-Integrated BM Simulation</span>
+                                        <i class="fa-solid fa-download ml-auto text-gray-400 group-hover:text-blue-700"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- PhD -->
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-lg mb-3">PhD Program</h4>
+                                <div class="space-y-3 pl-2">
+                                    <a href="#" class="flex items-center gap-3 p-3 bg-gray-50 hover:bg-blue-50 rounded-lg transition group border border-gray-200 hover:border-blue-200">
+                                        <span class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-xs font-bold shrink-0">1</span>
+                                        <span class="font-medium text-gray-700 group-hover:text-blue-700 transition">Sharing</span>
+                                        <i class="fa-solid fa-download ml-auto text-gray-400 group-hover:text-blue-700"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Other Universities Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- UWE Bristol -->
+                <section class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden flex flex-col">
+                    <div class="bg-red-50 border-b border-gray-200 px-6 py-4 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-red-600 text-white rounded-lg flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <h2 class="text-xl font-bold text-dark">UWE Bristol</h2>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <ul class="space-y-3">
+                            <li>
+                                <a href="#" class="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg transition group border border-transparent hover:border-gray-200">
+                                    <span class="w-6 h-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xs font-bold shrink-0">1</span>
+                                    <span class="font-medium text-gray-700 group-hover:text-red-600 transition leading-tight">Sustainable Business</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg transition group border border-transparent hover:border-gray-200">
+                                    <span class="w-6 h-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xs font-bold shrink-0">2</span>
+                                    <span class="font-medium text-gray-700 group-hover:text-red-600 transition leading-tight">Academic and Professional Development</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Swinburne -->
+                <section class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden flex flex-col">
+                    <div class="bg-red-50 border-b border-gray-200 px-6 py-4 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-red-700 text-white rounded-lg flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+                        <h2 class="text-xl font-bold text-dark">Swinburne</h2>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <ul class="space-y-3">
+                            <li>
+                                <a href="#" class="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg transition group border border-transparent hover:border-gray-200">
+                                    <span class="w-6 h-6 rounded-full bg-red-100 text-red-700 flex items-center justify-center text-xs font-bold shrink-0">1</span>
+                                    <span class="font-medium text-gray-700 group-hover:text-red-700 transition leading-tight">Innovative Business Practice</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg transition group border border-transparent hover:border-gray-200">
+                                    <span class="w-6 h-6 rounded-full bg-red-100 text-red-700 flex items-center justify-center text-xs font-bold shrink-0">2</span>
+                                    <span class="font-medium text-gray-700 group-hover:text-red-700 transition leading-tight">Business for Sustainability, Social Change & Impact</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Soochow -->
+                <section class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden flex flex-col">
+                    <div class="bg-red-50 border-b border-gray-200 px-6 py-4 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-red-800 text-white rounded-lg flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-landmark"></i>
+                        </div>
+                        <h2 class="text-xl font-bold text-dark">Soochow University</h2>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <ul class="space-y-3">
+                            <li>
+                                <a href="#" class="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg transition group border border-transparent hover:border-gray-200">
+                                    <span class="w-6 h-6 rounded-full bg-red-100 text-red-800 flex items-center justify-center text-xs font-bold shrink-0">1</span>
+                                    <span class="font-medium text-gray-700 group-hover:text-red-800 transition leading-tight">Industrial Organization</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-8 text-center mt-auto border-t border-gray-800">
+        <p class="text-gray-400 text-sm">&copy; 2026 Dr. Hoang-Phu Nguyen. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
