@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to make a good day: Experiments | Dr. Hoang-Phu Nguyen</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Merriweather', 'serif'], }, colors: { primary: '#1e3a8a', dark: '#111827', } } } }
+    </script>
+</head>
+<body class="bg-white text-gray-800 antialiased flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="font-serif font-bold text-xl text-primary tracking-tight">Dr. Hoang-Phu Nguyen</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html#about" class="text-gray-600 hover:text-primary text-sm font-medium transition">About</a>
+                    <a href="blog.html" class="text-gray-600 hover:text-primary text-sm font-medium transition">Blog</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="pt-32 pb-10 bg-gray-50 px-4">
+        <div class="max-w-3xl mx-auto text-center">
+            <a href="blog.html" class="text-primary text-sm font-medium hover:underline mb-4 inline-block"><i class="fa-solid fa-arrow-left mr-1"></i> Back to Blog</a>
+            <h1 class="text-4xl md:text-5xl font-serif font-bold text-dark mb-6 leading-tight">How to make a good day: Experiments</h1>
+            <p class="text-gray-500 text-sm">Published by Dr. Hoang-Phu Nguyen | Category: Self-Development</p>
+        </div>
+    </header>
+
+    <!-- Cover Image -->
+    <div class="max-w-4xl mx-auto px-4 -mt-6 mb-12 relative z-10">
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Cover Image" class="w-full h-80 md:h-96 object-cover rounded-xl shadow-lg">
+    </div>
+
+    <!-- MAIN ARTICLE CONTENT -->
+    <main class="flex-grow max-w-3xl mx-auto px-4 pb-20 w-full">
+        
+        <p class="text-lg leading-relaxed mb-6 text-gray-700">
+            What defines a "good day"? Is it accomplishing all your tasks, feeling emotionally stable, or simply having enough energy left at the end of the day? Through various behavioral experiments, researchers have identified key factors that contribute to our daily well-being and productivity.
+        </p>
+
+        <h2 class="text-2xl font-bold text-dark mt-10 mb-4 font-serif">The Morning Routine Experiment</h2>
+        <p class="text-lg leading-relaxed mb-6 text-gray-700">
+            Studies suggest that how we spend the first 60 minutes of our day heavily influences our cognitive performance. Small interventions, such as delaying smartphone usage and dedicating time to mindful activities, can significantly reduce anxiety levels.
+        </p>
+
+        <h2 class="text-2xl font-bold text-dark mt-10 mb-4 font-serif">Energy Peaks and Valleys</h2>
+        <p class="text-lg leading-relaxed mb-6 text-gray-700">
+            Instead of managing time, we should focus on managing energy. Aligning demanding analytical tasks with our biological peak hours (typically mid-morning for most adults) yields better results than forcing concentration during the post-lunch dip.
+        </p>
+
+        <p class="text-lg leading-relaxed mb-6 text-gray-700">
+            By continuously experimenting with our routines and systematically recording the outcomes, we can engineer a day that is both highly productive and personally fulfilling.
+        </p>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-8 text-center mt-auto border-t border-gray-800">
+        <p class="text-gray-400 text-sm">&copy; 2026 Dr. Hoang-Phu Nguyen. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
