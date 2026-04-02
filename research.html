@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research &amp; Publications — Dr. Nguyen Hoang Phu</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .research-areas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-bottom: 0; }
+    .ra-card { background: var(--white); padding: 28px 24px; position: relative; }
+    .ra-num { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 400; color: var(--rule); line-height: 1; margin-bottom: 10px; }
+    .ra-title { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 6px; }
+    .ra-desc { font-size: 12px; line-height: 1.65; color: var(--ink3); font-weight: 300; }
+    .ra-tag { display: inline-block; margin-top: 12px; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; background: var(--accent-light); color: var(--accent); border-radius: 2px; }
+
+    .pub-section { padding: 56px 56px 0; background: var(--white); }
+    .pub-section:last-of-type { padding-bottom: 72px; }
+    .pub-category { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); padding: 0 0 12px; margin-bottom: 0; border-bottom: 1px solid var(--rule); }
+
+    .pub-entry {
+      display: grid; grid-template-columns: 64px 1fr auto;
+      gap: 20px; align-items: start;
+      padding: 20px 0; border-bottom: 1px solid var(--rule);
+    }
+    .pub-entry:last-child { border-bottom: none; }
+    .pub-year { font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 400; color: var(--rule); line-height: 1; padding-top: 2px; }
+    .pub-body {}
+    .pub-title { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 4px; line-height: 1.45; }
+    .pub-authors { font-size: 12px; color: var(--ink3); margin-bottom: 4px; }
+    .pub-journal { font-size: 12px; color: var(--ink2); font-style: italic; margin-bottom: 6px; }
+    .pub-doi { font-size: 11px; color: var(--accent); }
+    .pub-tag-col { align-self: center; }
+
+    .methods-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .method-card { background: var(--white); border: 1px solid var(--rule); border-radius: 8px; padding: 20px; text-align: center; }
+    .method-name { font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
+    .method-desc { font-size: 11px; color: var(--ink3); line-height: 1.5; }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">Dr. Phu <span>Nguyen</span></a>
+  <ul class="nav-links">
+    <li><a href="research.html" class="active">Research</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="blog.html">Blog &amp; Media</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="resume.html" class="btn-outline">Download CV</a>
+    <a href="contact.html" class="btn-accent">Book a Consultation</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-eyebrow">Academic Research</div>
+  <h1>Research &amp; <em>Publications</em></h1>
+  <p>30+ peer-reviewed publications spanning behavioral economics, sustainable development, and operations research. Published in IEEE, SCIE-indexed, and Scopus journals.</p>
+</div>
+
+<!-- RESEARCH AREAS -->
+<section class="section section-cream">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Focus Areas</div>
+      <div class="section-title">Research <em>Interests</em></div>
+    </div>
+    <a href="https://scholar.google.com/citations?user=ki3vczkAAAAJ" target="_blank" class="see-all">Google Scholar →</a>
+  </div>
+  <div class="research-areas">
+    <div class="ra-card"><div class="ra-num">01</div><div class="ra-title">Behavioral Economics &amp; Finance</div><div class="ra-desc">Decision heuristics, cognitive biases, experimental behavioral studies applied to markets and organizations. Game theory and nudging strategies.</div><span class="ra-tag">Core</span></div>
+    <div class="ra-card"><div class="ra-num">02</div><div class="ra-title">Sustainable Business &amp; ESG</div><div class="ra-desc">Green purchasing intention, triple-bottom-line frameworks, sustainability performance evaluation and ESG strategy for enterprises.</div><span class="ra-tag">Active</span></div>
+    <div class="ra-card"><div class="ra-num">03</div><div class="ra-title">AI in HR &amp; Decision-Making</div><div class="ra-desc">AI adoption in HR management, technostress, algorithmic fairness evaluation frameworks, and resistance to AI-powered systems.</div><span class="ra-tag">Emerging</span></div>
+    <div class="ra-card"><div class="ra-num">04</div><div class="ra-title">Multiple-Criteria Decision Making</div><div class="ra-desc">DEA, AHP, TOPSIS, Fuzzy MCDM, Grey System Theory for operational efficiency and strategic partner selection.</div><span class="ra-tag">Methods</span></div>
+    <div class="ra-card"><div class="ra-num">05</div><div class="ra-title">Consumer Behavior</div><div class="ra-desc">E-commerce recommendation effects, status consumption, EV purchase intention, and sustainable fashion adoption in Vietnamese markets.</div><span class="ra-tag">Applied</span></div>
+    <div class="ra-card"><div class="ra-num">06</div><div class="ra-title">Entrepreneurship &amp; Innovation</div><div class="ra-desc">Small business dynamics, startup ecosystems, and entrepreneurial behavior in emerging Southeast Asian markets and innovation management.</div><span class="ra-tag">Applied</span></div>
+  </div>
+</section>
+
+<!-- QUANTITATIVE METHODS -->
+<section class="section section-white">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Methodology</div>
+      <div class="section-title">Quantitative <em>Methods</em></div>
+    </div>
+  </div>
+  <div class="methods-grid">
+    <div class="method-card"><div class="method-name">PLS-SEM</div><div class="method-desc">Partial Least Squares Structural Equation Modeling</div></div>
+    <div class="method-card"><div class="method-name">DEA</div><div class="method-desc">Data Envelopment Analysis (Malmquist, Epsilon-Based)</div></div>
+    <div class="method-card"><div class="method-name">fsQCA</div><div class="method-desc">Fuzzy Set Qualitative Comparative Analysis</div></div>
+    <div class="method-card"><div class="method-name">Fuzzy MCDM</div><div class="method-desc">AHP, TOPSIS, Spherical Fuzzy, Grey Relational Analysis</div></div>
+    <div class="method-card"><div class="method-name">A/B Testing</div><div class="method-desc">Experimental Design &amp; z-Tree Programming</div></div>
+    <div class="method-card"><div class="method-name">SEM</div><div class="method-desc">Structural Equation Modeling (SPSS, AMOS, SmartPLS)</div></div>
+    <div class="method-card"><div class="method-name">Grey System</div><div class="method-desc">Grey System Theory for strategic decision-making</div></div>
+    <div class="method-card"><div class="method-name">Simulation</div><div class="method-desc">Monte Carlo Simulation + Optimization Integration</div></div>
+  </div>
+</section>
+
+<!-- SCI / SCIE PUBLICATIONS -->
+<div class="pub-section section-white">
+  <div class="pub-category">SCI / SCIE Indexed</div>
+
+  <div class="pub-entry">
+    <div class="pub-year">2025</div>
+    <div class="pub-body">
+      <div class="pub-title">Integrating Multiple-Criteria Decision Making Models to Evaluate Eco-efficiency of Industrial Parks</div>
+      <div class="pub-authors">Nguyen Hoang Phu, Ha Minh Tri, Duong Minh Hoang</div>
+      <div class="pub-journal">Sage Open — Accepted June 2025</div>
+      <div class="pub-doi"><a href="https://doi.org/10.1177/21582440251343695" target="_blank">doi.org/10.1177/21582440251343695</a></div>
+    </div>
+    <div class="pub-tag-col"><span class="badge-scie">SCIE</span></div>
+  </div>
+
+  <div class="pub-entry">
+    <div class="pub-year">2023</div>
+    <div class="pub-body">
+      <div class="pub-title">Integrating Fuzzy AHP and TOPSIS Methods to Evaluate Operation Efficiency of Daycare Centers</div>
+      <div class="pub-authors">Wang C.N., Pan C.F., Nguyen H.P., Fang P.C.</div>
+      <div class="pub-journal">Mathematics, MDPI · 11(8): 1793</div>
+      <div class="pub-doi"><a href="https://doi.org/10.3390/math11081793" target="_blank">doi.org/10.3390/math11081793</a></div>
+    </div>
+    <div class="pub-tag-col"><span class="badge-scie">SCIE</span></div>
+  </div>
+
+  <div class="pub-entry">
+    <div class="pub-year">2022</div>
+    <div class="pub-body">
+      <div class="pub-title">Strategic Alliances for Sustainable Development: DEA and Grey Theory Models in the Coal Mining Sector</div>
+      <div class="pub-authors">Wang C.N., Nguyen H.P., Wang Y.H., Nhieu N.L.</div>
+      <div class="pub-journal">Axioms, MDPI · 11(11): 599</div>
+      <div class="pub-doi"><a href="https://doi.org/10.3390/axioms11110599" target="_blank">doi.org/10.3390/axioms11110599</a></div>
+    </div>
+    <div class="pub-tag-col"><span class="badge-scie">SCIE</span></div>
+  </div>
+
+  <div class="pub-entry">
+    <div class="pub-year">2022</div>
+    <div class="pub-body">
+      <div class="pub-title">Evaluating Interventions in Response to COVID-19 Outbreak by Multiple-Criteria Decision-Making Models</div>
+      <div class="pub-authors">Wang C.N., Nguyen H.P., Huang C.C., Wang Y.H.</div>
+      <div class="pub-journal">Systems, MDPI · 10(3): 68</div>
+      <div class="pub-doi"><a href="https://doi.org/10.3390/systems10030068" target="_blank">doi.org/10.3390/systems10030068</a></div>
+    </div>
+    <div class="pub-tag-col"><span class="badge-scie">SCIE</span></div>
+  </div>
+
+  <div class="pub-entry">
+    <div class="pub-year">2022</div>
+    <div class="pub-body">
+      <div class="pub-title">Integrating Triple Bottom Line in Sustainable Chemical Supplier Selection: A Compromise Decision-Making-Based Spherical Fuzzy Approach</div>
+      <div class="pub-authors">Wang C.N., Chou C.C., Dang T.T., Nguyen H.P., Nguyen N.A.T.</div>
+      <div class="pub-journal">Processes, MDPI · 10(5): 889</div>
+      <div class="pub-doi"><a href="https://doi.org/10.3390/pr10050889" target="_blank">doi.org/10.3390/pr10050889</a></div>
+    </div>
+    <div class="pub-tag-col"><span class="badge-scie">SCIE</span></div>
+  </div>
+
+  <div class="pub-entry">
+    <div class="pub-year">2022</div>
+    <div class="pub-body">
+      <div class="pub-title">Evaluating the Sustainability of Hotels Using Multi-Criteria Decision Making Methods</div>
+      <div class="pub-authors">Wang C.N., Nguyen H.P.</div>
+      <div class="pub-journal">ICE — Engineering Sustainability</div>
+      <div class="pub-doi"><a href="https://doi.org/10.1680/jensu.21.00084" target="_blank">doi.org/10.1680/jensu.21.00084</a></div>
+    </div>
+    <div class="pub-tag-col"><span class="badge-scie">SCIE</span></div>
+  </div>
+
+  <div class="pub-entry">
+    <div class="pub-year">2021</div>
+    <div class="pub-body">
+      <div class="pub-title">Simulation-based Optimization Integrated MCDM Framework for Wave Energy Site Selection: A Case Study of Australia</div>
+      <div class="pub-authors">Wang C.N., Nhieu N.L., Nguyen H.P., Wang J.W.</div>
+      <div class="pub-journal">IEEE Access</div>
+      <div class="pub-doi"><a href="https://doi.org/10.1109/ACCESS.2021.3134656" target="_blank">doi.org/10.1109/ACCESS.2021.3134656</a></div>
+    </div>
+    <div class="pub-tag-col"><span class="badge-ieee">IEEE</span></div>
+  </div>
+
+  <div class="pub-entry">
+    <div class="pub-year">2021</div>
+    <div class="pub-body">
+      <div class="pub-title">A Two-Stage Approach of DEA and AHP in Selecting Optimal Wind Power Plants</div>
+      <div class="pub-authors">Wang C.N., Nguyen H.P., Wang J.W.</div>
+      <div class="pub-journal">IEEE Transactions on Engineering Management</div>
+      <div class="pub-doi"><a href="https://doi.org/10.1109/TEM.2021.3110519" target="_blank">doi.org/10.1109/TEM.2021.3110519</a></div>
+    </div>
+    <div class="pub-tag-col"><span class="badge-ieee">IEEE</span></div>
+  </div>
+
+  <div class="pub-entry">
+    <div class="pub-year">2021</div>
+    <div class="pub-body">
+      <div class="pub-title">Environmental Efficiency Evaluation in the Top Asian Economies: An Application of DEA</div>
+      <div class="pub-authors">Wang C.N., Nguyen H.P., Chang C.W.</div>
+      <div class="pub-journal">Mathematics, MDPI · 9(8): 889</div>
+      <div class="pub-doi"><a href="https://doi.org/10.3390/math9080889" target="_blank">doi.org/10.3390/math9080889</a></div>
+    </div>
+    <div class="pub-tag-col"><span class="badge-scie">SCIE</span></div>
+  </div>
+</div>
+
+<!-- SCOPUS PUBLICATIONS -->
+<div class="pub-section section-white" style="padding-top: 48px;">
+  <div class="pub-category">Scopus Indexed</div>
+
+  <div class="pub-entry">
+    <div class="pub-year">2025</div>
+    <div class="pub-body">
+      <div class="pub-title">The Impact of Cultural Values on Electric Vehicle Purchase Intention: Testing the Moderating Role of Subjective Norms</div>
+      <div class="pub-authors">Nguyen H.P., Dương T.H., Hoang D.S.</div>
+      <div class="pub-journal">Innovative Marketing — Accepted August 2025</div>
+    </div>
+    <div class="pub-tag-col"><span class="badge-scopus">Scopus</span></div>
+  </div>
+
+  <div class="pub-entry">
+    <div class="pub-year">2025</div>
+    <div class="pub-body">
+      <div class="pub-title">Analyzing the Adoption of Green Taxi Services: A Multi-Stakeholder Perspective</div>
+      <div class="pub-authors">Nguyen H.P., Mã V.K., Tran T.K.L., Nguyen H.C.T.</div>
+      <div class="pub-journal">Economics Innovative and Economics Research Journal — June 2025</div>
+    </div>
+    <div class="pub-tag-col"><span class="badge-scopus">Scopus</span></div>
+  </div>
+
+  <div class="pub-entry">
+    <div class="pub-year">2025</div>
+    <div class="pub-body">
+      <div class="pub-title">Bridging the Gap Between Purchase Intention and Buying Behavior of Young Vietnamese Consumers in Sustainable Fashion</div>
+      <div class="pub-authors">Nguyen H.P., Pham N.P.T.</div>
+      <div class="pub-journal">Journal for International Business and Entrepreneurship Development — November 2025</div>
+    </div>
+    <div class="pub-tag-col"><span class="badge-scopus">Scopus</span></div>
+  </div>
+
+  <div class="pub-entry">
+    <div class="pub-year">2025</div>
+    <div class="pub-body">
+      <div class="pub-title">Assessing Vietnam's Sustainable Agritourism by Integrated Multi-Criteria Decision-Making Approach</div>
+      <div class="pub-authors">Le T.K.T., Nguyen H.P., Nguyen N.Q.</div>
+      <div class="pub-journal">Journal of Open Innovation: Technology, Market, and Complexity — December 2025</div>
+    </div>
+    <div class="pub-tag-col"><span class="badge-scopus">Scopus</span></div>
+  </div>
+
+  <div class="pub-entry">
+    <div class="pub-year">2024</div>
+    <div class="pub-body">
+      <div class="pub-title">Using Malmquist and Epsilon-Based DEA to Assess Performance Efficiency of Pharmaceutical Manufacturers</div>
+      <div class="pub-authors">Nguyen H.P., Thai T.H., Wang C.N.</div>
+      <div class="pub-journal">Int. J. of Management and Decision Making — March 2024</div>
+    </div>
+    <div class="pub-tag-col"><span class="badge-scopus">Scopus</span></div>
+  </div>
+
+  <div class="pub-entry">
+    <div class="pub-year">2021</div>
+    <div class="pub-body">
+      <div class="pub-title">The Influence of Status Orientation on Green Purchase Intention: A Case of a Developing Market</div>
+      <div class="pub-authors">Nguyen H.P., Tran L.</div>
+      <div class="pub-journal">International Journal of Sustainable Society · 13(2): 129–143</div>
+    </div>
+    <div class="pub-tag-col"><span class="badge-scopus">Scopus</span></div>
+  </div>
+
+  <div class="pub-entry">
+    <div class="pub-year">2020</div>
+    <div class="pub-body">
+      <div class="pub-title">Determinants of Job-Hopping Behavior: The Case of Information Technology Sector</div>
+      <div class="pub-authors">Nguyen H.P., Le N.</div>
+      <div class="pub-journal">International Journal of Law and Management · 62(6): 178</div>
+      <div class="pub-doi"><a href="https://doi.org/10.1108/IJLMA-06-2020-0178" target="_blank">doi.org/10.1108/IJLMA-06-2020-0178</a></div>
+    </div>
+    <div class="pub-tag-col"><span class="badge-scopus">Scopus</span></div>
+  </div>
+
+  <div class="pub-entry">
+    <div class="pub-year">2019</div>
+    <div class="pub-body">
+      <div class="pub-title">A Two-Stage Study of Grey System Theory and DEA in Strategic Alliance: Vietnamese Textile and Garment Industry</div>
+      <div class="pub-authors">Nguyen H.P., Nguyen D.</div>
+      <div class="pub-journal">Asian Journal of Management Science and Applications · 4(2): 77–98</div>
+      <div class="pub-doi"><a href="https://doi.org/10.1504/AJMSA.2019.110380" target="_blank">doi.org/10.1504/AJMSA.2019.110380</a></div>
+    </div>
+    <div class="pub-tag-col"><span class="badge-scopus">Scopus</span></div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div>
+    <h2>Interested in <em>collaborating</em>?</h2>
+    <p>I welcome joint research projects, co-authorship opportunities, peer review collaboration, and research consultation for both academic and business contexts.</p>
+  </div>
+  <div class="cta-btns">
+    <a href="contact.html" class="btn-white">Get in Touch →</a>
+    <a href="https://scholar.google.com/citations?user=ki3vczkAAAAJ" target="_blank" class="btn-ghost-white">Google Scholar</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-copy">© 2026 Dr. Nguyen Hoang Phu · Ho Chi Minh City, Vietnam</div>
+  <div class="footer-links">
+    <a href="https://www.linkedin.com/in/nhoangphu/" target="_blank">LinkedIn</a>
+    <a href="https://scholar.google.com/citations?user=ki3vczkAAAAJ" target="_blank">Google Scholar</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+</body>
+</html>

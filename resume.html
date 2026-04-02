@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume &amp; CV — Dr. Nguyen Hoang Phu</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .cv-layout { display: grid; grid-template-columns: 300px 1fr; border-top: 1px solid var(--rule); }
+    .cv-sidebar { background: var(--ink); padding: 48px 32px; position: sticky; top: 68px; height: calc(100vh - 68px); overflow-y: auto; }
+    .cv-sidebar-name { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 600; color: var(--white); line-height: 1.1; margin-bottom: 4px; }
+    .cv-sidebar-role { font-size: 11px; color: rgba(255,255,255,0.5); letter-spacing: 0.06em; margin-bottom: 32px; }
+    .cv-contact-item { display: flex; align-items: flex-start; gap: 10px; font-size: 12px; color: rgba(255,255,255,0.6); margin-bottom: 10px; line-height: 1.4; }
+    .cv-contact-label { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 12px; margin-top: 20px; }
+    .cv-skill-tag { display: inline-block; font-size: 10px; padding: 4px 8px; border: 1px solid rgba(255,255,255,0.1); border-radius: 2px; color: rgba(255,255,255,0.5); margin: 3px 3px 0 0; }
+    .cv-lang { display: flex; justify-content: space-between; font-size: 12px; color: rgba(255,255,255,0.6); padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .cv-download { display: block; margin-top: 28px; padding: 12px 20px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 3px; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white); text-align: center; }
+
+    .cv-main { padding: 56px 56px; background: var(--cream); }
+    .cv-section { margin-bottom: 56px; }
+    .cv-section-title { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 500; color: var(--ink); padding-bottom: 12px; border-bottom: 1px solid var(--rule); margin-bottom: 24px; }
+
+    .edu-item, .exp-item { margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--rule); }
+    .edu-item:last-child, .exp-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .edu-school { font-size: 15px; font-weight: 500; color: var(--ink); margin-bottom: 2px; }
+    .edu-degree { font-size: 13px; color: var(--ink2); margin-bottom: 2px; }
+    .edu-period { font-size: 11px; color: var(--accent); letter-spacing: 0.06em; text-transform: uppercase; }
+    .edu-note { font-size: 12px; color: var(--gold); margin-top: 4px; font-style: italic; }
+
+    .exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; }
+    .exp-org { font-size: 15px; font-weight: 500; color: var(--ink); }
+    .exp-period { font-size: 11px; color: var(--accent); letter-spacing: 0.05em; flex-shrink: 0; }
+    .exp-role { font-size: 13px; color: var(--ink2); margin-bottom: 8px; font-style: italic; }
+    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+    .exp-bullets li { font-size: 13px; color: var(--ink3); display: flex; gap: 8px; line-height: 1.5; font-weight: 300; }
+    .exp-bullets li::before { content: '—'; color: var(--rule); flex-shrink: 0; }
+
+    .award-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .award-card { background: var(--white); border: 1px solid var(--rule); border-radius: 6px; padding: 16px 18px; display: flex; gap: 14px; align-items: flex-start; }
+    .award-card-yr { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: var(--gold); line-height: 1; flex-shrink: 0; }
+    .award-card-text { font-size: 12px; color: var(--ink2); line-height: 1.5; font-weight: 300; }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">Dr. Phu <span>Nguyen</span></a>
+  <ul class="nav-links">
+    <li><a href="research.html">Research</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="resume.html" class="active">Resume</a></li>
+    <li><a href="blog.html">Blog &amp; Media</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="https://drive.google.com/drive/folders/1o7m7WJwryE-UB657z9izWkbNBEZ5Ef--" target="_blank" class="btn-outline">Download CV</a>
+    <a href="contact.html" class="btn-accent">Book a Consultation</a>
+  </div>
+</nav>
+
+<div class="cv-layout">
+  <!-- SIDEBAR -->
+  <div class="cv-sidebar">
+    <div class="cv-sidebar-name">Nguyen<br>Hoang Phu</div>
+    <div class="cv-sidebar-role">Ph.D. · MBA Program Chair<br>Behavioral Data Consultant · ESG Professional</div>
+
+    <div class="cv-contact-label">Contact</div>
+    <div class="cv-contact-item">✉ nhphu@hcmiu.edu.vn</div>
+    <div class="cv-contact-item">📞 (+84) 834 20 01 91</div>
+    <div class="cv-contact-item">📍 159 Vo Nguyen Giap, Thao Dien, Thu Duc City, HCMC</div>
+    <div class="cv-contact-item">🔗 linkedin.com/in/nhoangphu</div>
+
+    <div class="cv-contact-label">Research Tools</div>
+    <span class="cv-skill-tag">STATA</span>
+    <span class="cv-skill-tag">SPSS</span>
+    <span class="cv-skill-tag">SmartPLS</span>
+    <span class="cv-skill-tag">E-views</span>
+    <span class="cv-skill-tag">Bloomberg</span>
+    <span class="cv-skill-tag">z-Tree</span>
+    <span class="cv-skill-tag">R</span>
+
+    <div class="cv-contact-label">Languages</div>
+    <div class="cv-lang"><span>Vietnamese</span><span style="color:rgba(255,255,255,0.3)">Native</span></div>
+    <div class="cv-lang"><span>English</span><span style="color:rgba(255,255,255,0.3)">Fluent</span></div>
+    <div class="cv-lang"><span>German</span><span style="color:rgba(255,255,255,0.3)">A2</span></div>
+
+    <div class="cv-contact-label">Research Interests</div>
+    <span class="cv-skill-tag">Behavioral Economics</span>
+    <span class="cv-skill-tag">Decision Making</span>
+    <span class="cv-skill-tag">ESG / Sustainability</span>
+    <span class="cv-skill-tag">AI in HR</span>
+    <span class="cv-skill-tag">MCDM</span>
+    <span class="cv-skill-tag">Consumer Behavior</span>
+    <span class="cv-skill-tag">Game Theory</span>
+    <span class="cv-skill-tag">Entrepreneurship</span>
+
+    <a href="https://drive.google.com/drive/folders/1o7m7WJwryE-UB657z9izWkbNBEZ5Ef--" target="_blank" class="cv-download">Download Full CV →</a>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="cv-main">
+
+    <!-- SUMMARY -->
+    <div class="cv-section">
+      <div class="cv-section-title">Executive Summary</div>
+      <p style="font-size:14px; line-height:1.8; color:var(--ink2); font-weight:300; max-width:620px;">Ph.D. in Industrial Engineering &amp; Management with over 15 years of experience in Statistics, Behavioral Science, and Entrepreneurship. Currently serving as MBA Program Chair and Behavioral Data Consultant, bridging academic rigor and practical business application. Principal Investigator on AI-driven decision-making frameworks. Author of 30+ international publications (SCI, SCIE, Scopus). Certified ESG Professional (2025).</p>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="cv-section">
+      <div class="cv-section-title">Education</div>
+      <div class="edu-item">
+        <div class="edu-school">National Kaohsiung University of Science and Technology</div>
+        <div class="edu-degree">Ph.D. in Industrial Engineering and Management</div>
+        <div class="edu-period">February 2021 — May 2023 · Taiwan</div>
+        <div class="edu-note">Outstanding PhD Graduation Award · Full Scholarship</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-school">University of Kassel</div>
+        <div class="edu-degree">M.Sc. in Economic Behavior and Governance</div>
+        <div class="edu-period">April 2015 — May 2017 · Germany</div>
+        <div class="edu-note">Full Scholarship</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-school">International University — VNU-HCM</div>
+        <div class="edu-degree">BA in Finance and Accounting</div>
+        <div class="edu-period">September 2009 — November 2013 · Vietnam</div>
+        <div class="edu-note">Graduated with Distinction (Top 3 in Finance &amp; Accounting)</div>
+      </div>
+    </div>
+
+    <!-- ACADEMIC EXPERIENCE -->
+    <div class="cv-section">
+      <div class="cv-section-title">Academic Experience</div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-org">International University — VNU-HCM</div>
+          <div class="exp-period">2013 — Present</div>
+        </div>
+        <div class="exp-role">Full-time Lecturer · MBA Program Chair</div>
+        <ul class="exp-bullets">
+          <li>15+ years teaching excellence across Behavioral Economics, AI in Business, Statistics, Finance, Entrepreneurship, and Research Methodology</li>
+          <li>Coordinator and Chair of the MBA Program</li>
+          <li>Multiple "Outstanding Young Lecturer" and "Outstanding Researcher" awards</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-org">Swinburne University of Technology</div>
+          <div class="exp-period">Dec 2023 — Present</div>
+        </div>
+        <div class="exp-role">Visiting Lecturer</div>
+        <ul class="exp-bullets">
+          <li>Courses: Innovative Business Practice; Business for Sustainability, Social Change &amp; Impact</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-org">University of the West of England — UWE Bristol</div>
+          <div class="exp-period">Jan 2019 — Present</div>
+        </div>
+        <div class="exp-role">Module Leader — Sustainable Business</div>
+        <ul class="exp-bullets">
+          <li>Full module leadership for the Sustainable Business course in the international curriculum</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-org">Soochow University (Taiwan)</div>
+          <div class="exp-period">May 2022 — Present</div>
+        </div>
+        <div class="exp-role">Visiting Lecturer — Industrial Organization</div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-org">University of Kassel</div>
+          <div class="exp-period">Jun 2016 — Jan 2017</div>
+        </div>
+        <div class="exp-role">Research &amp; Lab Assistant (Part-time)</div>
+        <ul class="exp-bullets">
+          <li>Coded z-Tree programs for economic behavioral experiments</li>
+          <li>Monitored the Securities Trading Lab, collected experimental decision-making data</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- INDUSTRY EXPERIENCE -->
+    <div class="cv-section">
+      <div class="cv-section-title">Industry &amp; Consulting Experience</div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-org">VietESG</div>
+          <div class="exp-period">Jan 2026 — Present</div>
+        </div>
+        <div class="exp-role">ESG Analyst · Consultant · Assessor</div>
+        <ul class="exp-bullets">
+          <li>Design and deliver ESG and sustainability training programs for businesses and professionals</li>
+          <li>Provide consulting on ESG strategy, assessment, reporting, and sustainable development</li>
+          <li>Active member of VietESG Expert Community; support media and personal branding activities</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-org">Starttrain</div>
+          <div class="exp-period">Sep 2025 — Present</div>
+        </div>
+        <div class="exp-role">Instructor &amp; Academic Consultant</div>
+        <ul class="exp-bullets">
+          <li>Academic advisory and business consulting for training programs</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-org">Acecook Vietnam &amp; Starttrain</div>
+          <div class="exp-period">Until 2025</div>
+        </div>
+        <div class="exp-role">Behavioral Data Consultant</div>
+        <ul class="exp-bullets">
+          <li>Consulted management teams on applying Behavioral Science to Data Analysis</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-org">MiTRADE</div>
+          <div class="exp-period">Sep 2022 — Sep 2025</div>
+        </div>
+        <div class="exp-role">Finance Content Expert (Remote)</div>
+        <ul class="exp-bullets">
+          <li>Managed research projects in trading and investment behaviors</li>
+          <li>Developed content strategies based on trending topics and behavioral research</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- AWARDS -->
+    <div class="cv-section">
+      <div class="cv-section-title">Awards &amp; Recognition</div>
+      <div class="award-grid">
+        <div class="award-card"><div class="award-card-yr">2025</div><div class="award-card-text">Young Researcher with Outstanding Publications — VNU-HCM · ESG Professional Certificate</div></div>
+        <div class="award-card"><div class="award-card-yr">2023</div><div class="award-card-text">Outstanding PhD Graduation — NKUST Taiwan (Intake 2023)</div></div>
+        <div class="award-card"><div class="award-card-yr">2022</div><div class="award-card-text">Outstanding Researcher at VNU-HCM Award</div></div>
+        <div class="award-card"><div class="award-card-yr">2021</div><div class="award-card-text">Full Scholarship for Ph.D. — NKUST Taiwan</div></div>
+        <div class="award-card"><div class="award-card-yr">2020</div><div class="award-card-text">Outstanding Young Lecturer at VNU-HCM Award</div></div>
+        <div class="award-card"><div class="award-card-yr">2019</div><div class="award-card-text">Outstanding Young Lecturer at VNU-HCM · Master Teacher Training — Arizona State University</div></div>
+        <div class="award-card"><div class="award-card-yr">2015</div><div class="award-card-text">Full Scholarship for M.Sc. — University of Kassel, Germany</div></div>
+        <div class="award-card"><div class="award-card-yr">2013</div><div class="award-card-text">Graduated with Distinction, Top 3 — BA Finance &amp; Accounting, IU-VNU</div></div>
+        <div class="award-card"><div class="award-card-yr">2013</div><div class="award-card-text">Medal — National Round of CFA Research Challenge</div></div>
+        <div class="award-card"><div class="award-card-yr">2006</div><div class="award-card-text">Silver Medal — National Solving Math by Calculator Contest</div></div>
+      </div>
+    </div>
+
+  </div><!-- end cv-main -->
+</div><!-- end cv-layout -->
+
+<footer class="site-footer">
+  <div class="footer-copy">© 2026 Dr. Nguyen Hoang Phu · Ho Chi Minh City, Vietnam</div>
+  <div class="footer-links">
+    <a href="https://www.linkedin.com/in/nhoangphu/" target="_blank">LinkedIn</a>
+    <a href="https://scholar.google.com/citations?user=ki3vczkAAAAJ" target="_blank">Google Scholar</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+</body>
+</html>

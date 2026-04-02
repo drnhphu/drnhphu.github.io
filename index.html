@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Hoang-Phu Nguyen | Researcher & Consultant</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    },
+                    colors: {
+                        primary: '#1e3a8a', 
+                        secondary: '#3b82f6',
+                        dark: '#111827',
+                        lightbg: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .hero-bg {
+            background-color: #f8fafc;
+            background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #1e3a8a;
+            border: 2px solid #fff;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 antialiased selection:bg-primary selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100 transition-all duration-300 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="font-serif font-bold text-xl text-primary tracking-tight">Dr. Hoang-Phu Nguyen</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#about" class="text-gray-600 hover:text-primary text-sm font-medium transition">About</a>
+                    <a href="#experience" class="text-gray-600 hover:text-primary text-sm font-medium transition">Experience</a>
+                    <a href="#publications" class="text-gray-600 hover:text-primary text-sm font-medium transition">Publications</a>
+                    <a href="blog.html" class="text-gray-600 hover:text-primary text-sm font-medium transition">Blog</a>
+                    <a href="#contact" class="px-5 py-2 rounded-md bg-primary text-white text-sm font-medium hover:bg-blue-800 transition shadow-sm">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="about" class="hero-bg pt-32 pb-20 md:pt-40 md:pb-28 px-4">
+        <div class="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12">
+            <div class="md:w-3/5 text-center md:text-left">
+                <div class="inline-block px-3 py-1 bg-blue-100 text-primary rounded-full text-xs font-bold uppercase tracking-widest mb-4">
+                    Ph.D. in Industrial Engineering
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-dark mb-4 leading-tight">
+                    Academic Insights.<br> Practical Solutions.
+                </h1>
+                <p class="text-lg text-gray-600 mb-8 max-w-2xl font-light leading-relaxed">
+                    Lecturer & MBA Program Chair at VNU-HCM. Specializing in Behavioral Economics, Decision Making, and ESG Consulting. Bridging the gap between academic research and corporate sustainability.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#publications" class="px-8 py-3 bg-primary text-white rounded-md font-medium hover:bg-blue-800 transition shadow-md flex items-center justify-center gap-2">
+                        View Research <i class="fa-solid fa-book-open text-sm"></i>
+                    </a>
+                    <a href="#experience" class="px-8 py-3 bg-white text-gray-700 border border-gray-300 rounded-md font-medium hover:bg-gray-50 transition shadow-sm flex items-center justify-center gap-2">
+                        Professional Profile <i class="fa-solid fa-briefcase text-sm"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-2/5 flex justify-center">
+                <div class="relative w-72 h-72 md:w-80 md:h-80">
+                    <div class="absolute inset-0 bg-blue-100 rounded-2xl transform rotate-3"></div>
+                    <img src="profile.jpg" 
+                         onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'"
+                         alt="Dr. Hoang-Phu Nguyen" 
+                         class="absolute inset-0 w-full h-full object-cover rounded-2xl border-4 border-white shadow-xl transform -rotate-3 transition hover:rotate-0 duration-300">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Areas -->
+    <section class="py-16 bg-white px-4 border-b border-gray-100">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-gray-100">
+            <div class="p-6">
+                <div class="w-12 h-12 bg-blue-50 text-primary rounded-full flex items-center justify-center text-xl mx-auto mb-4">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-2">Behavioral Economics</h3>
+                <p class="text-sm text-gray-500">Exploring decision-making, game theory, and psychological factors in finance and business.</p>
+            </div>
+            <div class="p-6">
+                <div class="w-12 h-12 bg-blue-50 text-primary rounded-full flex items-center justify-center text-xl mx-auto mb-4">
+                    <i class="fa-solid fa-leaf"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-2">ESG & Sustainability</h3>
+                <p class="text-sm text-gray-500">Consulting & researching on sustainable business practices, ESG strategies, and green consumption.</p>
+            </div>
+            <div class="p-6">
+                <div class="w-12 h-12 bg-blue-50 text-primary rounded-full flex items-center justify-center text-xl mx-auto mb-4">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-2">MCDM Optimization</h3>
+                <p class="text-sm text-gray-500">Applying Multiple-Criteria Decision Making models (DEA, AHP, TOPSIS) to complex industrial problems.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Education -->
+    <section id="experience" class="py-20 bg-gray-50 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-serif font-bold text-dark mb-4">Professional Background</h2>
+                <div class="w-16 h-1 bg-primary mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Academic Experience -->
+                <div>
+                    <h3 class="text-2xl font-bold text-dark mb-8 flex items-center gap-3">
+                        <i class="fa-solid fa-university text-primary"></i> Academic Experience
+                    </h3>
+                    <div class="relative border-l-2 border-gray-200 ml-3 space-y-10">
+                        
+                        <div class="relative pl-6">
+                            <div class="timeline-dot"></div>
+                            <h4 class="font-bold text-lg text-dark">Lecturer & MBA Program Chair</h4>
+                            <div class="text-primary font-medium text-sm mb-2">Ho Chi Minh International University, VNU • 2013 - Present</div>
+                            <p class="text-sm text-gray-600">Teaching AI in Business, Sustainable Business, Behavioral Economics, Behavioral Finance, and Research Methodology.</p>
+                        </div>
+
+                        <div class="relative pl-6">
+                            <div class="timeline-dot"></div>
+                            <h4 class="font-bold text-lg text-dark">Visiting Lecturer</h4>
+                            <div class="text-gray-500 font-medium text-sm mb-2">Swinburne University of Technology • Dec 2023 - Present</div>
+                            <p class="text-sm text-gray-600">Courses: Innovative Business Practice; Business for Sustainability, Social Change & Impact.</p>
+                        </div>
+
+                        <div class="relative pl-6">
+                            <div class="timeline-dot"></div>
+                            <h4 class="font-bold text-lg text-dark">Visiting Lecturer</h4>
+                            <div class="text-gray-500 font-medium text-sm mb-2">Soochow University (Taiwan) • May 2022 - Present</div>
+                            <p class="text-sm text-gray-600">Course: Industrial Organization.</p>
+                        </div>
+
+                        <div class="relative pl-6">
+                            <div class="timeline-dot"></div>
+                            <h4 class="font-bold text-lg text-dark">Module Leader & Lecturer</h4>
+                            <div class="text-gray-500 font-medium text-sm mb-2">University of the West of England (UWE Bristol) • Jan 2019 - Present</div>
+                            <p class="text-sm text-gray-600">Course: Sustainable Business.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industry & Education -->
+                <div>
+                    <!-- Industry Practice -->
+                    <h3 class="text-2xl font-bold text-dark mb-8 flex items-center gap-3">
+                        <i class="fa-solid fa-building-user text-primary"></i> Industry Practice
+                    </h3>
+                    <div class="relative border-l-2 border-gray-200 ml-3 space-y-10 mb-12">
+                        
+                        <div class="relative pl-6">
+                            <div class="timeline-dot"></div>
+                            <h4 class="font-bold text-lg text-dark">ESG Analyst & Consultant</h4>
+                            <div class="text-primary font-medium text-sm mb-2">VietESG • Jan 2026 - Present</div>
+                            <p class="text-sm text-gray-600">Designing ESG training programs, active member of VietESG Expert Community, providing consulting on sustainable development initiatives.</p>
+                        </div>
+
+                        <div class="relative pl-6">
+                            <div class="timeline-dot"></div>
+                            <h4 class="font-bold text-lg text-dark">Instructor & Academic Consultant</h4>
+                            <div class="text-gray-500 font-medium text-sm mb-2">Starttrain • Sep 2025 - Present</div>
+                            <p class="text-sm text-gray-600">Academic advisor and Business Consultant.</p>
+                        </div>
+
+                        <div class="relative pl-6">
+                            <div class="timeline-dot"></div>
+                            <h4 class="font-bold text-lg text-dark">Finance Content Expert</h4>
+                            <div class="text-gray-500 font-medium text-sm mb-2">MiTRADE • Sep 2022 - Sep 2025</div>
+                            <p class="text-sm text-gray-600">Consulting and managing research projects in trading and investment.</p>
+                        </div>
+                    </div>
+
+                    <!-- Education -->
+                    <h3 class="text-2xl font-bold text-dark mb-8 flex items-center gap-3">
+                        <i class="fa-solid fa-graduation-cap text-primary"></i> Education
+                    </h3>
+                    <div class="space-y-6">
+                        <div class="bg-white p-5 rounded-lg border border-gray-100 shadow-sm">
+                            <h4 class="font-bold text-dark">Ph.D. in Industrial Engineering and Management</h4>
+                            <p class="text-sm text-gray-500">National Kaohsiung University of Science and Technology (2021 - 2023)</p>
+                        </div>
+                        <div class="bg-white p-5 rounded-lg border border-gray-100 shadow-sm">
+                            <h4 class="font-bold text-dark">M.Sc. in Economic Behavior and Governance</h4>
+                            <p class="text-sm text-gray-500">University of Kassel, Germany (2015 - 2017)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Selected Publications -->
+    <section id="publications" class="py-20 bg-white px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+                <div>
+                    <h2 class="text-3xl font-serif font-bold text-dark mb-4">Selected Publications</h2>
+                    <div class="w-16 h-1 bg-primary"></div>
+                </div>
+                <a href="https://scholar.google.com/" target="_blank" class="text-primary font-medium hover:underline flex items-center gap-2">
+                    View Google Scholar <i class="fa-brands fa-google-scholar"></i>
+                </a>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Paper 1 -->
+                <div class="p-6 bg-gray-50 rounded-xl hover:shadow-md transition border border-gray-100 group">
+                    <span class="inline-block px-2 py-1 bg-blue-100 text-primary text-xs font-bold rounded mb-3">SCI / SCIE</span>
+                    <h3 class="text-lg font-bold text-dark mb-2 group-hover:text-primary transition">Evaluating interventions in response to COVID-19 outbreak by multiple-criteria decision-making models</h3>
+                    <p class="text-sm text-gray-600 mb-3">Wang, C.-N., <strong>Nguyen, H.-P.</strong>, Huang, C.-C., & Wang, Y.-H. (2022). <span class="italic">Systems</span>, 10(3), 68.</p>
+                    <a href="https://doi.org/10.3390/systems10030068" target="_blank" class="text-sm text-blue-600 hover:underline">doi.org/10.3390/systems10030068</a>
+                </div>
+
+                <!-- Paper 2 -->
+                <div class="p-6 bg-gray-50 rounded-xl hover:shadow-md transition border border-gray-100 group">
+                    <span class="inline-block px-2 py-1 bg-blue-100 text-primary text-xs font-bold rounded mb-3">SCI / SCIE</span>
+                    <h3 class="text-lg font-bold text-dark mb-2 group-hover:text-primary transition">Integrating Multiple-Criteria Decision Making Models to Evaluate Eco-efficiency of Industrial Parks</h3>
+                    <p class="text-sm text-gray-600 mb-3"><strong>Nguyen Hoang Phu</strong>, Ha Minh Tri, Duong Minh Hoang. (2025). <span class="italic">Sage Open</span>.</p>
+                    <a href="https://doi.org/10.1177/21582440251343695" target="_blank" class="text-sm text-blue-600 hover:underline">doi.org/10.1177/21582440251343695</a>
+                </div>
+
+                <!-- Paper 3 -->
+                <div class="p-6 bg-gray-50 rounded-xl hover:shadow-md transition border border-gray-100 group">
+                    <span class="inline-block px-2 py-1 bg-blue-100 text-primary text-xs font-bold rounded mb-3">SCI / SCIE</span>
+                    <h3 class="text-lg font-bold text-dark mb-2 group-hover:text-primary transition">A Two-Stage Approach of DEA and AHP in Selecting Optimal Wind Power Plants</h3>
+                    <p class="text-sm text-gray-600 mb-3">Wang, C.-N., <strong>Nguyen, H.-P.</strong>, and Wang, J.-W. <span class="italic">IEEE Transactions on Engineering Management</span>.</p>
+                    <a href="https://doi.org/10.1109/TEM.2021.3110519" target="_blank" class="text-sm text-blue-600 hover:underline">doi.org/10.1109/TEM.2021.3110519</a>
+                </div>
+
+                 <!-- Paper 4 -->
+                 <div class="p-6 bg-gray-50 rounded-xl hover:shadow-md transition border border-gray-100 group">
+                    <span class="inline-block px-2 py-1 bg-purple-100 text-purple-700 text-xs font-bold rounded mb-3">Scopus</span>
+                    <h3 class="text-lg font-bold text-dark mb-2 group-hover:text-primary transition">The impact of cultural values on the electric vehicle purchase intention: Testing the moderating role of subjective norms</h3>
+                    <p class="text-sm text-gray-600 mb-3"><strong>Nguyen Hoang Phu</strong>, Duong Thu Huong, Hoang Duc Sinh. (2025). <span class="italic">Innovative Marketing</span>.</p>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center">
+                <p class="text-gray-500 text-sm">Authored over 20+ peer-reviewed articles in high-impact journals focusing on Behavioral Economics, Optimization, and Sustainability.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Preview Section -->
+    <section id="blog-preview" class="py-20 bg-gray-50 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+                <div>
+                    <h2 class="text-3xl font-serif font-bold text-dark mb-4">Latest Insights & Blog</h2>
+                    <div class="w-16 h-1 bg-primary"></div>
+                </div>
+                <a href="blog.html" class="text-primary font-medium hover:underline flex items-center gap-2">
+                    View all posts <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Blog Post 1 -->
+                <a href="think-fast-and-slow.html" class="group block bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Think Fast and Slow" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-primary text-xs font-bold uppercase tracking-wider mb-2 block">Psychology</span>
+                        <h3 class="text-xl font-bold text-dark mb-2 group-hover:text-primary transition">Think Fast and Slow: The Attention Effect</h3>
+                        <p class="text-sm text-gray-600 line-clamp-2">How the fast and slow thinking systems govern our daily strategic decisions and consumer behavior.</p>
+                    </div>
+                </a>
+
+                <!-- Blog Post 2 -->
+                <a href="make-a-good-day.html" class="group block bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Make a good day" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-primary text-xs font-bold uppercase tracking-wider mb-2 block">Self-Development</span>
+                        <h3 class="text-xl font-bold text-dark mb-2 group-hover:text-primary transition">How to make a good day: Experiments</h3>
+                        <p class="text-sm text-gray-600 line-clamp-2">A scientific perspective on the small habits that build a highly productive and emotionally balanced workday.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section class="py-16 bg-primary text-white px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-2xl font-serif font-bold mb-10">Notable Awards & Recognitions</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div>
+                    <i class="fa-solid fa-trophy text-3xl text-yellow-400 mb-4"></i>
+                    <h4 class="font-bold mb-2">Young Researcher</h4>
+                    <p class="text-sm text-blue-200">with outstanding publications (2025) by HCMVNU</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-medal text-3xl text-yellow-400 mb-4"></i>
+                    <h4 class="font-bold mb-2">Outstanding PhD Graduation</h4>
+                    <p class="text-sm text-blue-200">at NKUST intake (2023)</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-award text-3xl text-yellow-400 mb-4"></i>
+                    <h4 class="font-bold mb-2">Outstanding Young Lecturer</h4>
+                    <p class="text-sm text-blue-200">at VNUHCM (2019, 2020, 2022)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <footer id="contact" class="bg-dark text-white pt-20 pb-10">
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 border-b border-gray-700 pb-12 mb-8">
+            <div>
+                <h2 class="text-3xl font-serif font-bold mb-6">Let's Connect.</h2>
+                <p class="text-gray-400 mb-8 max-w-md">I am always open to academic collaborations, consulting projects, or engaging in discussions related to behavioral economics and sustainability.</p>
+                
+                <div class="flex space-x-4">
+                    <a href="https://scholar.google.com/" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition" title="Google Scholar"><i class="fa-brands fa-google-scholar"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="bg-gray-800 p-8 rounded-lg">
+                <h3 class="text-xl font-bold mb-6 border-b border-gray-700 pb-3">Contact Information</h3>
+                <ul class="space-y-4 text-gray-300">
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-envelope mt-1 text-primary"></i>
+                        <span>Email: <br><a href="mailto:nhphu@hcmiu.edu.vn" class="text-white hover:text-primary transition font-medium">nhphu@hcmiu.edu.vn</a></span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-phone mt-1 text-primary"></i>
+                        <span>Phone: <br><span class="text-white font-medium">(+84) 834 20 01 91</span></span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-location-dot mt-1 text-primary"></i>
+                        <span>Address: <br><span class="text-white">159 Vo Nguyen Giap, Thao Dien Ward,<br>Thu Duc City, HCMC, Vietnam</span></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+            <p>&copy; 2026 Dr. Hoang-Phu Nguyen. All rights reserved.</p>
+            <p class="mt-2 md:mt-0">Designed for Academic & Professional Excellence.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
