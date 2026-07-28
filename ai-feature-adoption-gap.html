@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Your Company Bought Everyone an AI Assistant. Almost No One Opened It. | Dr. Hoang-Phu Nguyen</title>
+    <style>
+        :root {
+            --text-color: #333333;
+            --bg-color: #ffffff;
+            --link-color: #0056b3;
+            --meta-color: #666666;
+            --border-color: #e5e5e5;
+        }
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: #111;
+            margin-top: 2em;
+            margin-bottom: 0.5em;
+        }
+        a { color: var(--link-color); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        nav {
+            margin-bottom: 30px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+        nav a { margin-right: 20px; color: var(--meta-color); font-weight: bold; }
+        .lang-toggle { text-align: center; margin-bottom: 30px; }
+        .lang-btn {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.8em;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            background: none;
+            border: 1px solid var(--border-color);
+            color: var(--meta-color);
+            padding: 6px 18px;
+            cursor: pointer;
+            border-radius: 20px;
+            margin: 0 4px;
+        }
+        .lang-btn.lang-active { background-color: var(--link-color); border-color: var(--link-color); color: #ffffff; }
+        .article-header { margin-bottom: 40px; text-align: center; }
+        .article-category {
+            text-transform: uppercase;
+            font-size: 0.85em;
+            color: var(--meta-color);
+            letter-spacing: 1px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        .article-title { font-size: 2.5em; line-height: 1.2; margin: 10px 0 20px; }
+        .article-meta {
+            font-size: 0.9em;
+            color: var(--meta-color);
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin-bottom: 30px;
+        }
+        .article-hero-image { width: 100%; height: auto; border-radius: 8px; margin-bottom: 40px; }
+        .article-content p { margin-bottom: 1.5em; font-size: 1.15em; }
+        blockquote {
+            margin: 2em 0;
+            padding: 1em 2em;
+            border-left: 4px solid var(--text-color);
+            background-color: #f9f9f9;
+            font-style: italic;
+            font-size: 1.2em;
+        }
+        blockquote p { margin: 0; }
+        ul { margin-bottom: 1.5em; font-size: 1.15em; }
+        li { margin-bottom: 0.8em; }
+        hr { border: 0; border-top: 1px solid var(--border-color); margin: 40px 0; }
+        .references { font-size: 0.9em; color: var(--meta-color); }
+        .references h4 { margin-top: 0; }
+        .references ul { list-style-type: none; padding: 0; font-size: 1em; }
+        .references li { margin-bottom: 10px; padding-left: 20px; text-indent: -20px; }
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.9em;
+            color: var(--meta-color);
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <nav>
+        <a href="index.html">← Back to Home</a>
+        <a href="blog.html">Blog</a>
+    </nav>
+
+    <div class="lang-toggle">
+        <button id="btn-en" class="lang-btn lang-active" onclick="setLang('en')">English</button>
+        <button id="btn-vi" class="lang-btn" onclick="setLang('vi')">Tiếng Việt</button>
+    </div>
+
+    <img class="article-hero-image" src="https://images.unsplash.com/photo-1741061964577-3d4f0a021666?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Hand holding a smartphone, screen reflecting light">
+
+    <main>
+        <!-- ============ ENGLISH ============ -->
+        <div id="content-en">
+            <header class="article-header">
+                <span class="article-category">AI in Organizations</span>
+                <h1 class="article-title">Your Company Bought Everyone an AI Assistant. Almost No One Opened It.</h1>
+                <div class="article-meta">
+                    <span>By Dr. Hoang-Phu Nguyen</span> | <span>July 2026</span> | <span>4 min read</span>
+                </div>
+            </header>
+
+            <article class="article-content">
+                <p>A company rolls out a new AI assistant to every employee. There is a launch email, a training deck, and a bright new icon pinned to every desktop. Six months later the icon is still there. Almost nobody has clicked it a second time.</p>
+
+                <p><strong>This is not a hypothetical.</strong> This year's CEO study from the IBM Institute for Business Value found that 86% of CEOs believe their people are ready to use AI, yet only 25% of workers actually use it regularly (Davison &amp; McConnon, 2026). Leaders are not wrong that AI matters. They are wrong about why people are not touching it.</p>
+
+                <p>The gap is not really a technology problem. It is a behavior problem, one behavioral scientists have mapped for decades under different names. Kristen Berman, a behavioral economist who runs the consultancy Irrational Labs, spent the past year taking real AI products apart to see why some features get used and others get switched on and quietly forgotten. Her conclusion, in five words: usage is the new moat (Berman, 2026). Three patterns kept showing up, and each one already has a name in the older literature.</p>
+
+                <h3>1. The Trigger Gap: Why Flipping a Switch Doesn't Change a Habit</h3>
+                <p>Slack turned on its AI features and announced them with a single in-product banner. Nothing about the surrounding workflow changed. Employees had to remember the feature existed, decide on their own to try it, and guess where it might help. Most did not bother.</p>
+                <p>This is one of the oldest mistakes in behavior change: assuming that information plus availability adds up to action. A person can know a feature exists and still never build the habit of reaching for it, because nothing in an ordinary workday reminds them to. The fix, per Berman's teardown, is to show the benefit immediately, walk the person through one concrete first step while their attention is still there, and make sure a clumsy first try does not quietly teach them the tool is useless.</p>
+
+                <h3>2. Friction Is a Tax, and Someone Always Pays It</h3>
+                <p>When the budgeting app Mint first launched, it required new users to link their bank accounts before doing anything else. That is a lot to ask on day one, and by ordinary logic it should have scared people off. Mint did it anyway, because without linked accounts the app could not deliver its core value. Engineers call this poka-yoke, a term from the Toyota production system for a design that makes the wrong outcome nearly impossible rather than merely discouraged. Mint moved the friction into the system itself instead of leaving it for the user's willpower.</p>
+                <p>Zoom's AI Companion took the opposite route: reaching it means clicking through a maze of opt-in screens, each one asking for commitment before the user has seen any benefit, and a lot of people quit partway through. Richard Thaler and Cass Sunstein call this choice architecture, the idea that the design of the path itself, apart from the destination, determines how many people arrive (Thaler &amp; Sunstein, 2008). Ask for commitment before value and most people turn back; show value first and commitment tends to follow.</p>
+
+                <h3>3. Vague Goals Produce Vague Effort</h3>
+                <p>Telling a team to use AI more sounds like leadership. It functions more like a shrug dressed up as a directive, since it gives no one a place to start. Compare that with a narrower ask: every product manager drafts one AI-assisted requirements document within thirty days, or the research team ships a working prototype using synthetic users by quarter end. A constraint like this gives people something concrete to attempt, and a clear way to know if they succeeded.</p>
+                <p>None of this is new. Edwin Locke and Gary Latham spent decades studying goal setting inside organizations and kept finding the same result: specific, difficult goals outperform vague ones, because a vague goal gives the brain no clear target and no signal of progress (Locke &amp; Latham, 2002). The same logic applies to one tired employee deciding whether to open a new tool before lunch. A fuzzy ambition to get more comfortable with AI loses to the dozen other things competing for that hour; a specific, timed task at least has a fighting chance.</p>
+
+                <h3>So What Should You Actually Do About It?</h3>
+                <p>None of this needs a bigger model or a longer roadmap, and it matters as much for a Vietnamese bank piloting its first AI copilot as for a product team in San Francisco. Before shipping the next AI feature, or auditing one already sitting unused, three questions matter more than any specification document. What happens automatically right after someone's first use, so trying it again is not something they must remember on their own? Is the intended action genuinely the easiest one available, or does the interface quietly make someone fight for it?</p>
+                <p>And is the ask specific enough that someone could honestly say, by Friday, whether they did it? A feature that manages one genuinely delightful surprise, the way Descript did by turning a voice recording into a cartoon character, earns a second look. Everything after that first look depends on the other two questions.</p>
+
+                <p>Somewhere right now, in an office in Ho Chi Minh City or Chicago or anywhere in between, a very capable piece of software is sitting untouched on a desktop, waiting for someone to need it badly enough to click. The model was never the hard part. Getting a busy, skeptical, entirely reasonable human being to try it twice always was.</p>
+
+                <p><em>#drnhphu</em></p>
+
+                <p style="font-size: 0.85em; color: var(--meta-color); font-style: italic; margin-top: 2em;">These are solely the author's personal opinions and observations.</p>
+            </article>
+        </div>
+
+        <!-- ============ TIẾNG VIỆT ============ -->
+        <div id="content-vi" style="display:none;">
+            <header class="article-header">
+                <span class="article-category">AI Trong Tổ Chức</span>
+                <h1 class="article-title">Công Ty Bạn Mua Trợ Lý AI Cho Mọi Người. Gần Như Không Ai Mở Nó.</h1>
+                <div class="article-meta">
+                    <span>Tác giả: TS. Nguyễn Hoàng Phú</span> | <span>Tháng 7, 2026</span> | <span>4 phút đọc</span>
+                </div>
+            </header>
+
+            <article class="article-content">
+                <p>Một công ty triển khai trợ lý AI mới cho toàn bộ nhân viên. Có email thông báo ra mắt, có buổi đào tạo, có cả biểu tượng sáng loáng được ghim sẵn trên mọi màn hình desktop. Sáu tháng sau, biểu tượng đó vẫn còn nguyên ở đó. Gần như không ai bấm vào nó lần thứ hai.</p>
+
+                <p><strong>Đây không phải chuyện giả định.</strong> Nghiên cứu CEO năm nay của IBM Institute for Business Value cho thấy 86% CEO tin rằng nhân viên của họ đã sẵn sàng dùng AI, nhưng chỉ 25% người lao động thực sự dùng nó thường xuyên (Davison &amp; McConnon, 2026). Các lãnh đạo không sai khi cho rằng AI quan trọng. Họ chỉ sai ở chỗ hiểu vì sao nhân viên không chạm vào nó.</p>
+
+                <p>Khoảng cách này thực ra không phải vấn đề công nghệ. Đó là vấn đề hành vi, một vấn đề mà các nhà khoa học hành vi đã nghiên cứu suốt nhiều thập kỷ dưới những cái tên khác nhau. Kristen Berman, một nhà kinh tế học hành vi điều hành công ty tư vấn Irrational Labs, đã dành cả năm qua để mổ xẻ các sản phẩm AI thật nhằm tìm hiểu vì sao có tính năng được dùng, còn tính năng khác thì bị bật lên rồi lặng lẽ bị lãng quên. Kết luận của bà gói gọn trong năm chữ: mức độ sử dụng chính là con hào bảo vệ mới (usage is the new moat) (Berman, 2026). Ba khuôn mẫu cứ lặp đi lặp lại trong các bài phân tích của bà, và mỗi khuôn mẫu đều đã có tên gọi riêng trong tài liệu hành vi học trước đây.</p>
+
+                <h3>1. Khoảng Trống Tác Nhân Kích Hoạt: Vì Sao Bật Công Tắc Không Làm Thay Đổi Thói Quen</h3>
+                <p>Slack bật tính năng AI và chỉ thông báo bằng một banner duy nhất ngay trong sản phẩm. Không có gì trong quy trình làm việc xung quanh thay đổi cả. Nhân viên phải tự nhớ rằng tính năng đó tồn tại, tự quyết định có thử hay không, rồi tự đoán xem nó có thể giúp được gì. Phần lớn không buồn thử.</p>
+                <p>Đây là một trong những sai lầm kinh điển nhất trong thay đổi hành vi: mặc định rằng thông tin cộng với sự sẵn có sẽ tự động dẫn đến hành động. Một người có thể biết rõ tính năng đó tồn tại nhưng vẫn không bao giờ hình thành thói quen dùng đến nó, đơn giản vì không có gì trong một ngày làm việc bình thường nhắc họ nhớ tới. Theo phân tích của Berman, cách khắc phục là cho người dùng thấy lợi ích ngay lập tức, dẫn họ qua đúng một bước hành động cụ thể đầu tiên trong lúc họ còn đang chú ý, và đảm bảo rằng một lần thử vụng về đầu tiên không âm thầm khiến họ nghĩ công cụ này vô dụng.</p>
+
+                <h3>2. Ma Sát Là Một Loại Thuế, Và Luôn Có Người Phải Trả</h3>
+                <p>Khi ứng dụng quản lý chi tiêu Mint ra mắt lần đầu, nó buộc người dùng mới phải liên kết tài khoản ngân hàng trước khi làm bất cứ điều gì khác. Đó là một yêu cầu khá nặng ngay từ ngày đầu tiên, và theo logic sản phẩm thông thường thì lẽ ra nó phải khiến người dùng bỏ chạy. Nhưng Mint vẫn làm vậy, vì nếu không liên kết tài khoản thì ứng dụng đơn giản là không thể mang lại giá trị cốt lõi của nó. Các kỹ sư gọi đây là poka-yoke, thuật ngữ bắt nguồn từ hệ thống sản xuất Toyota, chỉ một kiểu thiết kế khiến kết quả sai gần như không thể xảy ra, thay vì chỉ đơn thuần bị khuyến cáo tránh. Mint đã chuyển gánh nặng ma sát vào chính hệ thống, thay vì để nó nằm lại ở ý chí của người dùng.</p>
+                <p>Zoom AI Companion lại đi theo hướng ngược lại: để chạm được tới nó, người dùng phải bấm qua cả một mê cung màn hình yêu cầu đồng ý, mỗi màn hình lại đòi hỏi một cam kết trước khi người dùng thấy được bất kỳ lợi ích nào, và rất nhiều người bỏ cuộc giữa chừng. Richard Thaler và Cass Sunstein gọi đây là kiến trúc lựa chọn (choice architecture): chính thiết kế của con đường, chứ không chỉ điểm đến, mới là thứ quyết định có bao nhiêu người thực sự đi tới nơi (Thaler &amp; Sunstein, 2008). Đòi cam kết trước khi cho thấy giá trị, phần lớn người dùng sẽ quay đầu; cho thấy giá trị trước, cam kết thường sẽ tự đến sau.</p>
+
+                <h3>3. Mục Tiêu Mơ Hồ Sinh Ra Nỗ Lực Mơ Hồ</h3>
+                <p>Yêu cầu một đội nhóm "dùng AI nhiều hơn" nghe có vẻ như một chỉ đạo mang tính lãnh đạo. Nhưng thực chất nó chỉ giống một cái nhún vai được khoác áo mệnh lệnh, vì nó không cho ai một điểm khởi đầu cụ thể. So sánh với một yêu cầu hẹp hơn: mỗi product manager soạn một bản tài liệu yêu cầu có sự hỗ trợ của AI trong vòng ba mươi ngày, hoặc đội nghiên cứu cho ra một bản mẫu hoạt động được bằng người dùng tổng hợp (synthetic users) trước khi hết quý. Một ràng buộc như vậy cho người ta một việc cụ thể để thử, và một cách rõ ràng để biết mình có làm được hay không.</p>
+                <p>Không có gì trong chuyện này là mới cả. Edwin Locke và Gary Latham đã dành nhiều thập kỷ nghiên cứu việc thiết lập mục tiêu trong tổ chức, và liên tục tìm ra cùng một kết quả: mục tiêu cụ thể, đầy thách thức luôn vượt trội hơn mục tiêu mơ hồ, vì mục tiêu mơ hồ không cho bộ não một đích ngắm rõ ràng, cũng không cho một tín hiệu nào về tiến độ (Locke &amp; Latham, 2002). Logic tương tự áp dụng ở quy mô nhỏ hơn nhiều: một nhân viên đang mệt mỏi phân vân có nên mở một công cụ mới trước giờ ăn trưa hay không. Một tham vọng mơ hồ kiểu "làm quen với AI nhiều hơn" sẽ thua trước hàng chục việc khác đang tranh giành khoảng thời gian đó; một nhiệm vụ cụ thể, có giới hạn thời gian, ít nhất còn có cơ hội.</p>
+
+                <h3>Vậy Rốt Cuộc Nên Làm Gì?</h3>
+                <p>Tất cả những điều trên không cần một mô hình lớn hơn hay một lộ trình dài hơn, và nó quan trọng ngang nhau với một ngân hàng Việt Nam đang thí điểm trợ lý AI đầu tiên cũng như với một đội sản phẩm ở San Francisco. Trước khi ra mắt tính năng AI tiếp theo, hoặc trước khi rà soát lại một tính năng đang bị bỏ xó, ba câu hỏi sau đáng giá hơn bất kỳ tài liệu đặc tả kỹ thuật nào. Điều gì xảy ra một cách tự động ngay sau lần dùng đầu tiên của người dùng, để việc thử lại lần nữa không phải là thứ họ phải tự nhớ? Hành động mong muốn có thực sự là hành động dễ nhất có sẵn không, hay giao diện đang âm thầm bắt người dùng phải vật lộn để đạt được nó?</p>
+                <p>Và yêu cầu đặt ra có đủ cụ thể để đến thứ Sáu, người ta có thể thành thật trả lời rằng mình đã làm hay chưa? Một tính năng tạo ra được một khoảnh khắc bất ngờ thực sự thú vị, như cách Descript biến một đoạn ghi âm giọng nói thành nhân vật hoạt hình, sẽ có được một lần nhìn lại thứ hai. Còn mọi thứ xảy ra sau lần nhìn lại đó phụ thuộc vào hai câu hỏi còn lại.</p>
+
+                <p>Ngay lúc này, ở đâu đó trong một văn phòng tại Thành phố Hồ Chí Minh, ở Chicago, hay bất cứ nơi nào ở giữa, một phần mềm rất mạnh mẽ đang nằm im, chưa từng được chạm tới trên một màn hình desktop, chờ ai đó cần nó đến mức đủ để bấm vào. Mô hình chưa bao giờ là phần khó. Khiến một con người bận rộn, hoài nghi, và hoàn toàn hợp lý chịu thử lại nó lần thứ hai, đó mới luôn là phần khó.</p>
+
+                <p><em>#drnhphu</em></p>
+
+                <p style="font-size: 0.85em; color: var(--meta-color); font-style: italic; margin-top: 2em;">Đây chỉ là ý kiến và quan sát cá nhân tác giả.</p>
+            </article>
+        </div>
+
+        <hr>
+
+        <div class="references">
+            <h4>References</h4>
+            <ul>
+                <li>Berman, K. (2026, July 9). Want people to use your AI features? These 5 teardowns show you how. <em>Product Teardowns</em>. https://kristenberman.substack.com/p/want-people-to-use-your-ai-features</li>
+                <li>Davison, A., &amp; McConnon, A. (2026, May 8). Only 25% of workers are using AI. Here's how tech leaders are changing that. <em>IBM Think</em>. https://www.ibm.com/think/news/workers-using-ai-2026-ceo-study</li>
+                <li>Locke, E. A., &amp; Latham, G. P. (2002). Building a practically useful theory of goal setting and task motivation: A 35-year odyssey. <em>American Psychologist, 57</em>(9), 705–717.</li>
+                <li>Thaler, R. H., &amp; Sunstein, C. R. (2008). <em>Nudge: Improving decisions about health, wealth, and happiness</em>. Yale University Press.</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Dr. Hoang-Phu Nguyen. All rights reserved.</p>
+    </footer>
+</div>
+
+<script>
+    var titles = {
+        en: "Your Company Bought Everyone an AI Assistant. Almost No One Opened It. | Dr. Hoang-Phu Nguyen",
+        vi: "Công Ty Bạn Mua Trợ Lý AI Cho Mọi Người. Gần Như Không Ai Mở Nó. | TS. Nguyễn Hoàng Phú"
+    };
+    function setLang(lang) {
+        document.getElementById('content-en').style.display = (lang === 'en') ? 'block' : 'none';
+        document.getElementById('content-vi').style.display = (lang === 'vi') ? 'block' : 'none';
+        document.getElementById('btn-en').classList.toggle('lang-active', lang === 'en');
+        document.getElementById('btn-vi').classList.toggle('lang-active', lang === 'vi');
+        document.documentElement.lang = lang;
+        document.getElementById('page-title').textContent = titles[lang];
+        document.title = titles[lang];
+    }
+</script>
+
+</body>
+</html>

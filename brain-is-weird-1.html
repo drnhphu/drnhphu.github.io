@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[ BRAIN IS WEIRD! – 1] Why Are Cigarette Package Warnings Often Ignored? | Dr. Hoang-Phu Nguyen</title>
-    <!-- Thêm font chữ cơ bản giống phong cách học thuật -->
+    <title id="page-title">[ BRAIN IS WEIRD! – 1] Why Are Cigarette Package Warnings Often Ignored? | Dr. Hoang-Phu Nguyen</title>
     <style>
         :root {
             --text-color: #333333;
@@ -14,7 +13,7 @@
             --border-color: #e5e5e5;
         }
         body {
-            font-family: 'Georgia', serif; /* Font chữ có chân dễ đọc cho bài viết dài */
+            font-family: 'Georgia', serif;
             line-height: 1.8;
             color: var(--text-color);
             background-color: var(--bg-color);
@@ -22,38 +21,37 @@
             padding: 0;
         }
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Helvetica Neue', Arial, sans-serif; /* Font không chân cho tiêu đề */
+            font-family: 'Helvetica Neue', Arial, sans-serif;
             color: #111;
             margin-top: 2em;
             margin-bottom: 0.5em;
         }
-        a {
-            color: var(--link-color);
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+        a { color: var(--link-color); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
         nav {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             font-family: 'Helvetica Neue', Arial, sans-serif;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 20px;
         }
-        nav a {
-            margin-right: 20px;
-            color: var(--meta-color);
+        nav a { margin-right: 20px; color: var(--meta-color); font-weight: bold; }
+        .lang-toggle { text-align: center; margin-bottom: 30px; }
+        .lang-btn {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.8em;
             font-weight: bold;
+            letter-spacing: 0.5px;
+            background: none;
+            border: 1px solid var(--border-color);
+            color: var(--meta-color);
+            padding: 6px 18px;
+            cursor: pointer;
+            border-radius: 20px;
+            margin: 0 4px;
         }
-        .article-header {
-            margin-bottom: 40px;
-            text-align: center;
-        }
+        .lang-btn.lang-active { background-color: var(--link-color); border-color: var(--link-color); color: #ffffff; }
+        .article-header { margin-bottom: 40px; text-align: center; }
         .article-category {
             text-transform: uppercase;
             font-size: 0.85em;
@@ -61,27 +59,15 @@
             letter-spacing: 1px;
             font-family: 'Helvetica Neue', Arial, sans-serif;
         }
-        .article-title {
-            font-size: 2.5em;
-            line-height: 1.2;
-            margin: 10px 0 20px;
-        }
+        .article-title { font-size: 2.5em; line-height: 1.2; margin: 10px 0 20px; }
         .article-meta {
             font-size: 0.9em;
             color: var(--meta-color);
             font-family: 'Helvetica Neue', Arial, sans-serif;
             margin-bottom: 30px;
         }
-        .article-hero-image {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 40px;
-        }
-        .article-content p {
-            margin-bottom: 1.5em;
-            font-size: 1.15em;
-        }
+        .article-hero-image { width: 100%; height: auto; border-radius: 8px; margin-bottom: 40px; }
+        .article-content p { margin-bottom: 1.5em; font-size: 1.15em; }
         blockquote {
             margin: 2em 0;
             padding: 1em 2em;
@@ -90,38 +76,14 @@
             font-style: italic;
             font-size: 1.2em;
         }
-        blockquote p {
-            margin: 0;
-        }
-        ul {
-            margin-bottom: 1.5em;
-            font-size: 1.15em;
-        }
-        li {
-            margin-bottom: 0.8em;
-        }
-        hr {
-            border: 0;
-            border-top: 1px solid var(--border-color);
-            margin: 40px 0;
-        }
-        .references {
-            font-size: 0.9em;
-            color: var(--meta-color);
-        }
-        .references h4 {
-            margin-top: 0;
-        }
-        .references ul {
-            list-style-type: none;
-            padding: 0;
-            font-size: 1em;
-        }
-        .references li {
-            margin-bottom: 10px;
-            padding-left: 20px;
-            text-indent: -20px; /* Hiệu ứng hanging indent cho tài liệu tham khảo */
-        }
+        blockquote p { margin: 0; }
+        ul { margin-bottom: 1.5em; font-size: 1.15em; }
+        li { margin-bottom: 0.8em; }
+        hr { border: 0; border-top: 1px solid var(--border-color); margin: 40px 0; }
+        .references { font-size: 0.9em; color: var(--meta-color); }
+        .references h4 { margin-top: 0; }
+        .references ul { list-style-type: none; padding: 0; font-size: 1em; }
+        .references li { margin-bottom: 10px; padding-left: 20px; text-indent: -20px; }
         footer {
             margin-top: 60px;
             text-align: center;
@@ -136,101 +98,198 @@
 <body>
 
 <div class="container">
-    <!-- Navigation (Sửa lại cho giống trang web của bạn) -->
     <nav>
         <a href="index.html">← Back to Home</a>
         <a href="blog.html">Blog</a>
     </nav>
 
+    <div class="lang-toggle">
+        <button id="btn-en" class="lang-btn lang-active" onclick="setLang('en')">English</button>
+        <button id="btn-vi" class="lang-btn" onclick="setLang('vi')">Tiếng Việt</button>
+    </div>
+
     <main>
-        <header class="article-header">
-            <span class="article-category">Behavioral Psychology</span>
-            <h1 class="article-title">[ BRAIN IS WEIRD! – 1] Why Are Cigarette Package Warnings Often Ignored? A Behavioral Psychology Perspective</h1>
-            <div class="article-meta">
-                <span>By Dr. Hoang-Phu Nguyen</span> | <span>May 2026</span> | <span>5 min read</span>
-            </div>
-            <img class="article-hero-image" src="hinh hut thuoc.jpg" alt="Cigarette Package Warnings">
-        </header>
+        <div id="content-en">
+            <header class="article-header">
+                <span class="article-category">Behavioral Psychology</span>
+                <h1 class="article-title">[ BRAIN IS WEIRD! – 1] Why Are Cigarette Package Warnings Often Ignored? A Behavioral Psychology Perspective</h1>
+                <div class="article-meta">
+                    <span>By Dr. Hoang-Phu Nguyen</span> | <span>May 2026</span> | <span>5 min read</span>
+                </div>
+                <img class="article-hero-image" src="hinh hut thuoc.jpg" alt="Cigarette Package Warnings">
+            </header>
 
-        <article class="article-content">
-            <p>Most of us have seen frightening cigarette package warnings: damaged lungs, diseased organs, alarming images, and direct statements about the health risks of smoking. Public-health authorities use these warnings to inform consumers about the dangers of tobacco use; the WHO Framework Convention on Tobacco Control recommends strong health warnings on tobacco packaging, including large visible warnings on the pack.</p>
-            
-            <p><strong>Yet one question remains: if the warnings are so clear, why do many smokers continue to smoke?</strong></p>
+            <article class="article-content">
+                <p>Most of us have seen frightening cigarette package warnings: damaged lungs, diseased organs, alarming images, and direct statements about the health risks of smoking. Public-health authorities use these warnings to inform consumers about the dangers of tobacco use; the WHO Framework Convention on Tobacco Control recommends strong health warnings on tobacco packaging, including large visible warnings on the pack.</p>
 
-            <p>The answer is not simply “because they do not know.” In many cases, people <em>do</em> know. The problem is that human decision-making is often shaped by emotion, habit, short-term rewards, and cognitive biases. Behavioral psychology helps explain why a warning may be seen, understood, and still ignored.</p>
+                <p><strong>Yet one question remains: if the warnings are so clear, why do many smokers continue to smoke?</strong></p>
 
-            <h3>1. Prospect Theory: “I Know It’s Risky, But Maybe I’ll Be Fine”</h3>
-            <p>According to Prospect Theory, developed by Daniel Kahneman and Amos Tversky, people do not always evaluate risk rationally. When facing possible losses, people may become more willing to take risks rather than avoid them.</p>
-            
-            <blockquote>
-                <p>A cigarette warning says, in effect: <em>“You may lose your health.”</em><br>
-                But the smoker may respond internally: <em>“Yes, but maybe not me.”</em></p>
-            </blockquote>
-            
-            <p>It is similar to knowing that spicy food may upset your stomach but still adding extra chili because you think, “This time will be fine.” The smoker is not necessarily denying the risk; rather, they are mentally gambling that they will escape the worst outcome.</p>
+                <p>The answer is not simply “because they do not know.” In many cases, people <em>do</em> know. The problem is that human decision-making is often shaped by emotion, habit, short-term rewards, and cognitive biases. Behavioral psychology helps explain why a warning may be seen, understood, and still ignored.</p>
 
-            <h3>2. Present Bias: The Cigarette Is Now, the Hospital Is Later</h3>
-            <p>Humans tend to give more weight to immediate rewards than distant consequences. Behavioral economists describe this through present bias and time discounting: the pleasure available now often feels more powerful than a future cost. O’Donoghue and Rabin model present-biased preferences as a self-control problem, while Frederick, Loewenstein, and O’Donoghue review how people discount future outcomes in intertemporal choice.</p>
-            <p>For a smoker, the cigarette offers something immediate: relaxation, stress relief, social bonding, or simply the comfort of routine. The health consequence, by contrast, feels distant and abstract.</p>
-            <p>In everyday terms: it is like eating ice cream today while telling yourself you will worry about your diet tomorrow. The brain says, <em>“Let’s solve today’s discomfort first. The future can wait.”</em></p>
+                <h3>1. Prospect Theory: “I Know It’s Risky, But Maybe I’ll Be Fine”</h3>
+                <p>According to Prospect Theory, developed by Daniel Kahneman and Amos Tversky, people do not always evaluate risk rationally. When facing possible losses, people may become more willing to take risks rather than avoid them.</p>
 
-            <h3>3. Cognitive Biases: The Brain Protects the Habit</h3>
-            <p>Cigarette warnings also collide with several cognitive biases:</p>
-            <ul>
-                <li><strong>Optimism Bias:</strong> Neil Weinstein’s classic work on unrealistic optimism shows that people often believe negative life events are less likely to happen to them than to others. A smoker may think: <em>“Yes, smoking causes disease, but my grandfather smoked and lived until 90.”</em> This does not remove the risk, but it makes the risk feel personally less threatening.</li>
-                <li><strong>Confirmation Bias:</strong> People also tend to notice information that supports what they already want to believe. A smoker may focus on stories of long-living smokers and ignore stories of smoking-related illness. It is like someone eating a very sugary dessert while saying, <em>“But sugar gives me energy!”</em> The brain selectively collects comforting evidence and quietly pushes uncomfortable evidence aside.</li>
-            </ul>
+                <blockquote>
+                    <p>A cigarette warning says, in effect: <em>“You may lose your health.”</em><br>
+                    But the smoker may respond internally: <em>“Yes, but maybe not me.”</em></p>
+                </blockquote>
 
-            <h3>4. Reinforcement Theory: Nicotine Rewards the Behavior</h3>
-            <p>B. F. Skinner’s work on operant conditioning helped show how behavior can be shaped by consequences, especially reinforcement. Nicotine works like a dangerous friend who gives a small “gift” every time they appear: a brief sense of pleasure, relief, or calm. Because the reward comes quickly, the behavior is reinforced.</p>
-            
-            <blockquote>
-                <p>The warning on the pack says, <em>“This may harm you later.”</em><br>
-                The nicotine says, <em>“Here is a reward right now.”</em></p>
-            </blockquote>
-            
-            <p>In the competition between a future warning and an immediate reward, the immediate reward often wins.</p>
+                <p>It is similar to knowing that spicy food may upset your stomach but still adding extra chili because you think, “This time will be fine.” The smoker is not necessarily denying the risk; rather, they are mentally gambling that they will escape the worst outcome.</p>
 
-            <h3>5. Delayed Discounting: Future Health Feels Too Far Away</h3>
-            <p>Delayed discounting refers to the tendency to value immediate rewards more than larger future benefits. Bickel and Marsch argue that delay discounting can help explain impulsivity and loss of control in drug dependence.</p>
-            <p>This is similar to a child choosing one candy now instead of waiting five minutes for three candies. Adults do this too, only the “candy” may be a cigarette, and the delayed reward may be better health years later. The smoker’s inner voice may sound like this:</p>
-            
-            <blockquote>
-                <p><em>“Cancer feels far away. This cigarette is right here.”</em></p>
-            </blockquote>
-            
-            <p>That is the behavioral trap.</p>
+                <h3>2. Present Bias: The Cigarette Is Now, the Hospital Is Later</h3>
+                <p>Humans tend to give more weight to immediate rewards than distant consequences. Behavioral economists describe this through present bias and time discounting: the pleasure available now often feels more powerful than a future cost. O’Donoghue and Rabin model present-biased preferences as a self-control problem, while Frederick, Loewenstein, and O’Donoghue review how people discount future outcomes in intertemporal choice.</p>
+                <p>For a smoker, the cigarette offers something immediate: relaxation, stress relief, social bonding, or simply the comfort of routine. The health consequence, by contrast, feels distant and abstract.</p>
+                <p>In everyday terms: it is like eating ice cream today while telling yourself you will worry about your diet tomorrow. The brain says, <em>“Let’s solve today’s discomfort first. The future can wait.”</em></p>
 
-            <h3>So, Do Cigarette Warnings Fail? Not Exactly.</h3>
-            <p>This article should not be read as an argument that cigarette warnings are useless. Strong, visible, and graphic warnings remain an important public-health tool. The behavioral point is more specific: <strong>information alone does not always change behavior.</strong></p>
-            <p>A warning speaks to the rational mind. A habit speaks to emotion, reward, identity, stress, and the present moment.</p>
-            <p>That is why effective health communication should not only provide facts. It should also consider how people actually decide: under stress, under temptation, inside social contexts, and with a brain that often prefers immediate comfort over distant protection.</p>
-            
-            <p>In short: cigarette package warnings are not ignored because people have no brain.<br>
-            <strong>They are often ignored because the brain is, indeed, a little weird.</strong></p>
-            
-            <p><em>#drnhphu</em></p>
-
-            <hr>
-            
-            <div class="references">
-                <h4>References</h4>
+                <h3>3. Cognitive Biases: The Brain Protects the Habit</h3>
+                <p>Cigarette warnings also collide with several cognitive biases:</p>
                 <ul>
-                    <li>Kahneman, D., & Tversky, A. (1979). Prospect Theory: An Analysis of Decision under Risk. <em>Econometrica</em>, 47(2), 263–291.</li>
-                    <li>Frederick, S., Loewenstein, G., & O’Donoghue, T. (2002). Time Discounting and Time Preference: A Critical Review. <em>Journal of Economic Literature</em>, 40(2), 351–401.</li>
-                    <li>O’Donoghue, T., & Rabin, M. (1999). Doing It Now or Later. <em>American Economic Review</em>, 89(1), 103–124.</li>
-                    <li>Weinstein, N. D. (1980). Unrealistic Optimism About Future Life Events. <em>Journal of Personality and Social Psychology</em>, 39(5), 806–820.</li>
-                    <li>Skinner, B. F. (1938). <em>The Behavior of Organisms: An Experimental Analysis</em>.</li>
-                    <li>Bickel, W. K., & Marsch, L. A. (2001). Toward a Behavioral Economic Understanding of Drug Dependence: Delay Discounting Processes. <em>Addiction</em>, 96(1), 73–86.</li>
+                    <li><strong>Optimism Bias:</strong> Neil Weinstein’s classic work on unrealistic optimism shows that people often believe negative life events are less likely to happen to them than to others. A smoker may think: <em>“Yes, smoking causes disease, but my grandfather smoked and lived until 90.”</em> This does not remove the risk, but it makes the risk feel personally less threatening.</li>
+                    <li><strong>Confirmation Bias:</strong> People also tend to notice information that supports what they already want to believe. A smoker may focus on stories of long-living smokers and ignore stories of smoking-related illness. It is like someone eating a very sugary dessert while saying, <em>“But sugar gives me energy!”</em> The brain selectively collects comforting evidence and quietly pushes uncomfortable evidence aside.</li>
                 </ul>
-            </div>
-        </article>
+
+                <h3>4. Reinforcement Theory: Nicotine Rewards the Behavior</h3>
+                <p>B. F. Skinner’s work on operant conditioning helped show how behavior can be shaped by consequences, especially reinforcement. Nicotine works like a dangerous friend who gives a small “gift” every time they appear: a brief sense of pleasure, relief, or calm. Because the reward comes quickly, the behavior is reinforced.</p>
+
+                <blockquote>
+                    <p>The warning on the pack says, <em>“This may harm you later.”</em><br>
+                    The nicotine says, <em>“Here is a reward right now.”</em></p>
+                </blockquote>
+
+                <p>In the competition between a future warning and an immediate reward, the immediate reward often wins.</p>
+
+                <h3>5. Delayed Discounting: Future Health Feels Too Far Away</h3>
+                <p>Delayed discounting refers to the tendency to value immediate rewards more than larger future benefits. Bickel and Marsch argue that delay discounting can help explain impulsivity and loss of control in drug dependence.</p>
+                <p>This is similar to a child choosing one candy now instead of waiting five minutes for three candies. Adults do this too, only the “candy” may be a cigarette, and the delayed reward may be better health years later. The smoker’s inner voice may sound like this:</p>
+
+                <blockquote>
+                    <p><em>“Cancer feels far away. This cigarette is right here.”</em></p>
+                </blockquote>
+
+                <p>That is the behavioral trap.</p>
+
+                <h3>So, Do Cigarette Warnings Fail? Not Exactly.</h3>
+                <p>This article should not be read as an argument that cigarette warnings are useless. Strong, visible, and graphic warnings remain an important public-health tool. The behavioral point is more specific: <strong>information alone does not always change behavior.</strong></p>
+                <p>A warning speaks to the rational mind. A habit speaks to emotion, reward, identity, stress, and the present moment.</p>
+                <p>That is why effective health communication should not only provide facts. It should also consider how people actually decide: under stress, under temptation, inside social contexts, and with a brain that often prefers immediate comfort over distant protection.</p>
+
+                <p>In short: cigarette package warnings are not ignored because people have no brain.<br>
+                <strong>They are often ignored because the brain is, indeed, a little weird.</strong></p>
+
+                <p><em>#drnhphu</em></p>
+
+                <p style="font-size: 0.85em; color: var(--meta-color); font-style: italic; margin-top: 2em;">These are solely the author's personal opinions and observations.</p>
+            </article>
+        </div>
+
+        <div id="content-vi" style="display:none;">
+            <header class="article-header">
+                <span class="article-category">Tâm Lý Học Hành Vi</span>
+                <h1 class="article-title">[ BRAIN IS WEIRD! – 1] Vì Sao Cảnh Báo Trên Bao Thuốc Lá Thường Bị Bỏ Qua? Góc Nhìn Từ Tâm Lý Học Hành Vi</h1>
+                <div class="article-meta">
+                    <span>Tác giả: TS. Nguyễn Hoàng Phú</span> | <span>Tháng 5, 2026</span> | <span>5 phút đọc</span>
+                </div>
+                <img class="article-hero-image" src="hinh hut thuoc.jpg" alt="Cảnh báo trên bao thuốc lá">
+            </header>
+
+            <article class="article-content">
+                <p>Hầu hết chúng ta đều từng thấy những cảnh báo đáng sợ trên bao thuốc lá: hình ảnh phổi bị tổn thương, nội tạng bệnh lý, những hình ảnh gây ám ảnh, cùng những dòng chữ nói thẳng về nguy cơ sức khỏe của việc hút thuốc. Các cơ quan y tế công cộng dùng những cảnh báo này để thông tin cho người tiêu dùng về tác hại của thuốc lá; Công ước Khung về Kiểm soát Thuốc lá của WHO khuyến nghị các cảnh báo sức khỏe mạnh trên bao bì thuốc lá, bao gồm cảnh báo lớn, dễ thấy ngay trên vỏ hộp.</p>
+
+                <p><strong>Nhưng vẫn còn một câu hỏi: nếu cảnh báo đã rõ ràng đến vậy, vì sao nhiều người vẫn tiếp tục hút thuốc?</strong></p>
+
+                <p>Câu trả lời không đơn giản là “vì họ không biết.” Trong nhiều trường hợp, người ta <em>biết</em> rất rõ. Vấn đề nằm ở chỗ việc ra quyết định của con người thường bị chi phối bởi cảm xúc, thói quen, phần thưởng ngắn hạn, và các thiên kiến nhận thức. Tâm lý học hành vi giúp lý giải vì sao một cảnh báo có thể được nhìn thấy, được hiểu, nhưng vẫn bị bỏ qua.</p>
+
+                <h3>1. Lý Thuyết Triển Vọng (Prospect Theory): “Tôi Biết Là Rủi Ro, Nhưng Có Khi Mình Sẽ Ổn”</h3>
+                <p>Theo Lý thuyết Triển vọng, do Daniel Kahneman và Amos Tversky phát triển, con người không phải lúc nào cũng đánh giá rủi ro một cách duy lý. Khi đối diện với khả năng mất mát, người ta có xu hướng sẵn sàng chấp nhận rủi ro hơn là né tránh nó.</p>
+
+                <blockquote>
+                    <p>Một cảnh báo trên bao thuốc, về bản chất, đang nói: <em>“Bạn có thể mất đi sức khỏe.”</em><br>
+                    Nhưng trong đầu người hút thuốc lại vang lên: <em>“Đúng vậy, nhưng chắc không phải mình.”</em></p>
+                </blockquote>
+
+                <p>Nó cũng giống như việc biết rõ đồ cay có thể làm đau bụng nhưng vẫn cho thêm ớt vì nghĩ rằng “lần này chắc sẽ ổn thôi.” Người hút thuốc không hẳn là đang phủ nhận rủi ro; họ đang đánh cược trong đầu rằng mình sẽ là người thoát khỏi kết cục xấu nhất.</p>
+
+                <h3>2. Thiên Kiến Hiện Tại (Present Bias): Điếu Thuốc Ở Ngay Đây, Bệnh Viện Thì Còn Xa</h3>
+                <p>Con người có xu hướng đặt trọng số cao hơn cho phần thưởng tức thì so với hậu quả ở xa. Các nhà kinh tế học hành vi mô tả điều này qua khái niệm thiên kiến hiện tại và chiết khấu thời gian (time discounting): niềm vui có ngay bây giờ thường cảm thấy mạnh mẽ hơn một cái giá phải trả trong tương lai. O’Donoghue và Rabin mô hình hóa sở thích thiên về hiện tại như một vấn đề tự kiểm soát, trong khi Frederick, Loewenstein, và O’Donoghue tổng hợp cách con người chiết khấu kết quả tương lai trong các lựa chọn liên thời gian.</p>
+                <p>Với người hút thuốc, điếu thuốc mang lại điều gì đó tức thì: thư giãn, giải tỏa căng thẳng, gắn kết xã hội, hoặc đơn giản là cảm giác quen thuộc của thói quen. Ngược lại, hậu quả sức khỏe lại cảm thấy xa xôi và trừu tượng.</p>
+                <p>Nói theo cách đời thường: nó giống như việc ăn kem hôm nay và tự nhủ rằng chuyện ăn kiêng để mai tính. Bộ não nói rằng: <em>“Giải quyết cái khó chịu của hôm nay trước đã. Tương lai thì chờ được.”</em></p>
+
+                <h3>3. Thiên Kiến Nhận Thức: Bộ Não Bảo Vệ Thói Quen</h3>
+                <p>Cảnh báo trên bao thuốc lá còn va chạm với một số thiên kiến nhận thức:</p>
+                <ul>
+                    <li><strong>Thiên kiến lạc quan (Optimism Bias):</strong> Công trình kinh điển của Neil Weinstein về sự lạc quan phi thực tế cho thấy người ta thường tin rằng những sự kiện tiêu cực trong đời ít có khả năng xảy đến với mình hơn là với người khác. Một người hút thuốc có thể nghĩ: <em>“Đúng là hút thuốc gây bệnh, nhưng ông mình hút cả đời mà vẫn sống tới 90 tuổi.”</em> Điều này không làm rủi ro biến mất, nhưng nó khiến rủi ro cảm thấy bớt đe dọa hơn ở góc độ cá nhân.</li>
+                    <li><strong>Thiên kiến xác nhận (Confirmation Bias):</strong> Người ta cũng có xu hướng chỉ chú ý đến thông tin ủng hộ những gì mình đã muốn tin. Một người hút thuốc có thể tập trung vào những câu chuyện người hút thuốc sống thọ và bỏ qua những câu chuyện bệnh tật liên quan đến thuốc lá. Nó giống như ai đó ăn một món tráng miệng rất ngọt và nói: <em>“Nhưng đường cho mình năng lượng mà!”</em> Bộ não chọn lọc thu thập bằng chứng nào khiến mình dễ chịu, rồi lặng lẽ đẩy bằng chứng khó chịu sang một bên.</li>
+                </ul>
+
+                <h3>4. Lý Thuyết Củng Cố (Reinforcement Theory): Nicotine Thưởng Cho Hành Vi</h3>
+                <p>Công trình của B. F. Skinner về điều kiện hóa từ kết quả cho thấy hành vi có thể được định hình bởi hậu quả, đặc biệt là sự củng cố. Nicotine hoạt động như một người bạn nguy hiểm, luôn tặng một món “quà” nhỏ mỗi lần xuất hiện: một cảm giác dễ chịu, nhẹ nhõm, hoặc bình tĩnh trong chốc lát. Vì phần thưởng đến rất nhanh, hành vi được củng cố.</p>
+
+                <blockquote>
+                    <p>Cảnh báo trên bao bì nói: <em>“Điều này có thể gây hại cho bạn về sau.”</em><br>
+                    Nicotine thì nói: <em>“Đây là phần thưởng ngay bây giờ.”</em></p>
+                </blockquote>
+
+                <p>Trong cuộc cạnh tranh giữa một lời cảnh báo cho tương lai và một phần thưởng tức thì, phần thưởng tức thì thường thắng thế.</p>
+
+                <h3>5. Chiết Khấu Trì Hoãn (Delayed Discounting): Sức Khỏe Tương Lai Nghe Có Vẻ Quá Xa</h3>
+                <p>Chiết khấu trì hoãn là xu hướng đánh giá phần thưởng tức thì cao hơn một lợi ích lớn hơn nhưng ở tương lai. Bickel và Marsch lập luận rằng chiết khấu trì hoãn có thể giúp lý giải tính bốc đồng và sự mất kiểm soát trong nghiện chất.</p>
+                <p>Điều này tương tự việc một đứa trẻ chọn lấy một viên kẹo ngay bây giờ thay vì đợi năm phút để có ba viên. Người lớn cũng làm y hệt vậy, chỉ khác là “viên kẹo” có thể là một điếu thuốc, còn phần thưởng bị trì hoãn là sức khỏe tốt hơn nhiều năm sau. Tiếng nói bên trong người hút thuốc có thể như thế này:</p>
+
+                <blockquote>
+                    <p><em>“Ung thư nghe có vẻ còn xa lắm. Còn điếu thuốc này thì ở ngay đây.”</em></p>
+                </blockquote>
+
+                <p>Đó chính là cái bẫy hành vi.</p>
+
+                <h3>Vậy, Cảnh Báo Trên Bao Thuốc Có Thất Bại Không? Không Hẳn.</h3>
+                <p>Bài viết này không nên được hiểu là lập luận rằng cảnh báo trên bao thuốc là vô ích. Những cảnh báo mạnh, dễ thấy, và trực quan vẫn là một công cụ y tế công cộng quan trọng. Điểm mấu chốt về mặt hành vi cụ thể hơn thế: <strong>thông tin, tự bản thân nó, không phải lúc nào cũng làm thay đổi hành vi.</strong></p>
+                <p>Một lời cảnh báo nói chuyện với phần lý trí. Một thói quen lại nói chuyện với cảm xúc, phần thưởng, bản sắc cá nhân, căng thẳng, và khoảnh khắc hiện tại.</p>
+                <p>Đó là lý do vì sao truyền thông y tế hiệu quả không nên chỉ dừng lại ở việc cung cấp sự thật. Nó còn cần tính đến cách con người thực sự ra quyết định: trong lúc căng thẳng, trước cám dỗ, trong bối cảnh xã hội, và với một bộ não thường ưu tiên sự dễ chịu tức thì hơn là sự bảo vệ ở xa.</p>
+
+                <p>Tóm lại: cảnh báo trên bao thuốc lá không bị bỏ qua vì con người không có não.<br>
+                <strong>Nó thường bị bỏ qua vì bộ não, quả thực, hơi kỳ quặc một chút.</strong></p>
+
+                <p><em>#drnhphu</em></p>
+
+                <p style="font-size: 0.85em; color: var(--meta-color); font-style: italic; margin-top: 2em;">Đây chỉ là ý kiến và quan sát cá nhân tác giả.</p>
+            </article>
+        </div>
+
+        <hr>
+
+        <div class="references">
+            <h4>References</h4>
+            <ul>
+                <li>Kahneman, D., & Tversky, A. (1979). Prospect Theory: An Analysis of Decision under Risk. <em>Econometrica</em>, 47(2), 263–291.</li>
+                <li>Frederick, S., Loewenstein, G., & O’Donoghue, T. (2002). Time Discounting and Time Preference: A Critical Review. <em>Journal of Economic Literature</em>, 40(2), 351–401.</li>
+                <li>O’Donoghue, T., & Rabin, M. (1999). Doing It Now or Later. <em>American Economic Review</em>, 89(1), 103–124.</li>
+                <li>Weinstein, N. D. (1980). Unrealistic Optimism About Future Life Events. <em>Journal of Personality and Social Psychology</em>, 39(5), 806–820.</li>
+                <li>Skinner, B. F. (1938). <em>The Behavior of Organisms: An Experimental Analysis</em>.</li>
+                <li>Bickel, W. K., & Marsch, L. A. (2001). Toward a Behavioral Economic Understanding of Drug Dependence: Delay Discounting Processes. <em>Addiction</em>, 96(1), 73–86.</li>
+            </ul>
+        </div>
     </main>
 
     <footer>
         <p>© 2026 Dr. Hoang-Phu Nguyen. All rights reserved.</p>
     </footer>
 </div>
+
+<script>
+    var titles = {
+        en: "[ BRAIN IS WEIRD! – 1] Why Are Cigarette Package Warnings Often Ignored? | Dr. Hoang-Phu Nguyen",
+        vi: "[ BRAIN IS WEIRD! – 1] Vì Sao Cảnh Báo Trên Bao Thuốc Lá Thường Bị Bỏ Qua? | TS. Nguyễn Hoàng Phú"
+    };
+    function setLang(lang) {
+        document.getElementById('content-en').style.display = (lang === 'en') ? 'block' : 'none';
+        document.getElementById('content-vi').style.display = (lang === 'vi') ? 'block' : 'none';
+        document.getElementById('btn-en').classList.toggle('lang-active', lang === 'en');
+        document.getElementById('btn-vi').classList.toggle('lang-active', lang === 'vi');
+        document.documentElement.lang = lang;
+        document.getElementById('page-title').textContent = titles[lang];
+        document.title = titles[lang];
+    }
+</script>
 
 </body>
 </html>
