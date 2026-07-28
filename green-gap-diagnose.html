@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Gap Diagnose | Dr. Hoang-Phu Nguyen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Merriweather', 'serif'] },
+                    colors: { primary: '#1e3a8a', secondary: '#3b82f6', dark: '#111827', lightbg: '#f8fafc' }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .opt-card { transition: all .15s ease; }
+        .opt-card.selected { border-color: #1e3a8a; background: #eff6ff; }
+        .bar-fill { transition: width .6s ease; }
+        .step-dot { transition: all .2s ease; }
+        #screen-form, #screen-results { display: none; }
+        .lang-btn.active { background: #1e3a8a; color: #fff; }
+        .lang-btn:not(.active) { color: #6b7280; }
+    </style>
+</head>
+<body class="bg-lightbg text-gray-800 antialiased selection:bg-primary selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="font-serif font-bold text-xl text-primary tracking-tight">Dr. Hoang-Phu Nguyen</a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="hidden md:flex items-center space-x-6">
+                        <a href="index.html#about" id="nav-about" class="text-gray-600 hover:text-primary text-sm font-medium transition">Giới thiệu</a>
+                        <a href="index.html#experience" id="nav-experience" class="text-gray-600 hover:text-primary text-sm font-medium transition">Kinh nghiệm</a>
+                        <a href="materials.html" id="nav-materials" class="text-gray-600 hover:text-primary text-sm font-medium transition">Tài liệu</a>
+                        <a href="green-gap-diagnose.html" id="nav-tool" class="text-primary text-sm font-medium transition border-b-2 border-primary pb-1">Công cụ miễn phí</a>
+                        <a href="blog.html" id="nav-blog" class="text-gray-600 hover:text-primary text-sm font-medium transition">Blog</a>
+                        <a href="index.html#contact" id="nav-contact" class="px-5 py-2 rounded-md bg-primary text-white text-sm font-medium hover:bg-blue-800 transition shadow-sm">Liên hệ</a>
+                    </div>
+                    <div class="flex items-center gap-0.5 border border-gray-200 rounded-full p-1 bg-gray-50 shrink-0">
+                        <button id="btn-lang-vi" onclick="setLanguage('vi')" class="lang-btn active px-3 py-1 rounded-full text-xs font-bold transition">VI</button>
+                        <button id="btn-lang-en" onclick="setLanguage('en')" class="lang-btn px-3 py-1 rounded-full text-xs font-bold transition">EN</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="pt-32 pb-14 bg-white border-b border-gray-200 px-4">
+        <div class="max-w-3xl mx-auto text-center">
+            <div id="hero-badge" class="inline-flex items-center gap-2 px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-bold uppercase tracking-widest mb-4">
+                <i class="fa-solid fa-seedling"></i> <span>Miễn phí — Layer 1</span>
+            </div>
+            <h1 class="text-3xl md:text-4xl font-serif font-bold text-dark mb-4 leading-tight">Green Gap Diagnose</h1>
+            <p id="hero-sub" class="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">Vì sao khách hàng "thích" sản phẩm xanh của bạn nhưng chưa mua? Trả lời 8 câu hỏi (~3 phút) để định vị rào cản nào — giá trị, niềm tin, thói quen, hay khả năng tiếp cận — đang chặn giữa ý định và hành vi mua, dựa trên các khung lý thuyết TPB, COM-B, S-O-R và UTAUT2.</p>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-4 py-12 w-full">
+
+        <!-- SCREEN 1: INTRO -->
+        <div id="screen-intro" class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 text-center">
+            <div class="w-14 h-14 bg-blue-50 text-primary rounded-full flex items-center justify-center text-2xl mx-auto mb-5">
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+            </div>
+            <h2 id="intro-title" class="text-xl font-bold text-dark mb-2">Bắt đầu chẩn đoán</h2>
+            <p id="intro-desc" class="text-sm text-gray-500 mb-8 max-w-lg mx-auto">Kết quả cho bạn biết rào cản lớn nhất hiện tại. Không cần đăng ký để xem điểm số.</p>
+            <button onclick="startQuiz()" class="px-8 py-3 bg-primary text-white rounded-md font-medium hover:bg-blue-800 transition shadow-md">
+                <span id="intro-btn-text">Chẩn đoán sản phẩm của tôi</span> <i class="fa-solid fa-arrow-right ml-1"></i>
+            </button>
+        </div>
+
+        <!-- SCREEN 2: FORM -->
+        <div id="screen-form" class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8">
+            <div class="flex justify-between items-center mb-6">
+                <span class="text-xs font-bold uppercase tracking-widest text-primary" id="progress-label">Câu 1/8</span>
+                <div class="flex gap-1.5" id="progress-dots"></div>
+            </div>
+            <div id="question-box"></div>
+        </div>
+
+        <!-- SCREEN 3: RESULTS -->
+        <div id="screen-results" class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8">
+            <div id="results-eyebrow" class="eyebrow text-xs font-bold uppercase tracking-widest text-primary mb-2">Kết quả chẩn đoán (Layer 1)</div>
+            <h2 id="results-title" class="text-2xl font-serif font-bold text-dark mb-6">Rào cản đang chặn khách hàng của bạn</h2>
+            <div id="results-bars" class="space-y-5"></div>
+
+            <p id="disclaimer-text" class="text-xs text-gray-400 mt-6 leading-relaxed">* Điểm số mang tính định hướng nhận thức dựa trên trọng số minh họa từ lý thuyết hành vi, đang trong giai đoạn hiệu chỉnh bằng dữ liệu thị trường Việt Nam.</p>
+
+            <!-- Layer 2 gate -->
+            <div class="mt-10 bg-blue-50 border border-blue-100 rounded-xl p-6">
+                <h3 class="font-bold text-dark mb-1"><i class="fa-solid fa-lock text-primary mr-1"></i> <span id="lead-title-text">Muốn biết vì sao rào cản này đang cao?</span></h3>
+                <p id="lead-desc" class="text-sm text-gray-600 mb-4">Nhận bản phân tích chi tiết (Layer 2) — nguyên nhân theo từng rào cản, do chuyên gia rà soát trước khi gửi. Miễn phí, chỉ cần email.</p>
+                <form id="lead-form" onsubmit="submitLead(event)" class="space-y-3">
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <input required type="text" id="lead-name" placeholder="Tên của bạn" class="flex-1 px-4 py-2.5 border border-gray-300 rounded-md text-sm focus:outline-none focus:border-primary">
+                        <input required type="email" id="lead-email" placeholder="Email công việc" class="flex-1 px-4 py-2.5 border border-gray-300 rounded-md text-sm focus:outline-none focus:border-primary">
+                    </div>
+                    <input required type="text" id="lead-industry" placeholder="Lĩnh vực hoạt động (VD: FMCG, dệt may, nông sản...)" class="w-full px-4 py-2.5 border border-gray-300 rounded-md text-sm focus:outline-none focus:border-primary">
+                    <textarea id="lead-challenges" rows="3" placeholder="Khó khăn khi triển khai ESG/chiến dịch xanh (không bắt buộc)" class="w-full px-4 py-2.5 border border-gray-300 rounded-md text-sm focus:outline-none focus:border-primary resize-none"></textarea>
+                    <button type="submit" id="lead-btn-text" class="w-full px-6 py-2.5 bg-primary text-white rounded-md font-medium text-sm hover:bg-blue-800 transition">Nhận phân tích</button>
+                </form>
+                <p id="lead-confirm" class="text-sm text-green-700 mt-3 hidden"></p>
+            </div>
+
+            <!-- Layer 3 CTA -->
+            <div class="mt-6 bg-dark text-white rounded-xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div>
+                    <h3 id="cta3-title" class="font-bold mb-1">Cần giải pháp cụ thể, không chỉ chẩn đoán?</h3>
+                    <p id="cta3-desc" class="text-sm text-gray-300">Gói tư vấn đào sâu: phân tích nguyên nhân gốc, đề xuất can thiệp (nudge) theo ngành, lộ trình triển khai.</p>
+                </div>
+                <a href="index.html#contact" id="cta3-btn" class="shrink-0 px-6 py-3 bg-white text-dark rounded-md font-medium text-sm hover:bg-gray-100 transition whitespace-nowrap">Đặt lịch tư vấn →</a>
+            </div>
+
+            <div class="text-center mt-8">
+                <button id="reset-btn" onclick="resetQuiz()" class="text-sm text-gray-400 hover:text-primary transition">Làm lại chẩn đoán</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-8 px-4 mt-10">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm gap-2">
+            <p>&copy; 2026 Dr. Hoang-Phu Nguyen. All rights reserved.</p>
+            <a href="index.html" id="footer-back" class="hover:text-white transition">← Quay lại trang chủ</a>
+        </div>
+    </footer>
+
+    <script>
+        const UI = {
+            vi: {
+                navAbout:'Giới thiệu', navExperience:'Kinh nghiệm', navMaterials:'Tài liệu', navTool:'Công cụ miễn phí', navBlog:'Blog', navContact:'Liên hệ',
+                heroBadge:'Miễn phí — Layer 1',
+                heroSub:'Vì sao khách hàng "thích" sản phẩm xanh của bạn nhưng chưa mua? Trả lời 8 câu hỏi (~3 phút) để định vị rào cản nào — giá trị, niềm tin, thói quen, hay khả năng tiếp cận — đang chặn giữa ý định và hành vi mua, dựa trên các khung lý thuyết TPB, COM-B, S-O-R và UTAUT2.',
+                introTitle:'Bắt đầu chẩn đoán',
+                introDesc:'Kết quả cho bạn biết rào cản lớn nhất hiện tại. Không cần đăng ký để xem điểm số.',
+                introBtn:'Chẩn đoán sản phẩm của tôi',
+                progressLabel:(n,total)=>`Câu ${n}/${total}`,
+                resultsEyebrow:'Kết quả chẩn đoán (Layer 1)',
+                resultsTitle:'Rào cản đang chặn khách hàng của bạn',
+                disclaimer:'* Điểm số mang tính định hướng nhận thức dựa trên trọng số minh họa từ lý thuyết hành vi, đang trong giai đoạn hiệu chỉnh bằng dữ liệu thị trường Việt Nam.',
+                leadTitle:'Muốn biết vì sao rào cản này đang cao?',
+                leadDesc:'Nhận bản phân tích chi tiết (Layer 2) — nguyên nhân theo từng rào cản, do chuyên gia rà soát trước khi gửi. Miễn phí, chỉ cần email.',
+                leadNamePh:'Tên của bạn', leadEmailPh:'Email công việc', leadBtn:'Nhận phân tích',
+                leadIndustryPh:'Lĩnh vực hoạt động (VD: FMCG, dệt may, nông sản...)',
+                leadChallengesPh:'Khó khăn khi triển khai ESG/chiến dịch xanh (không bắt buộc)',
+                leadConfirm:'Đã ghi nhận — email của bạn được mở để gửi yêu cầu, tôi sẽ phản hồi trong 48 giờ.',
+                cta3Title:'Cần giải pháp cụ thể, không chỉ chẩn đoán?',
+                cta3Desc:'Gói tư vấn đào sâu: phân tích nguyên nhân gốc, đề xuất can thiệp (nudge) theo ngành, lộ trình triển khai.',
+                cta3Btn:'Đặt lịch tư vấn →',
+                resetBtn:'Làm lại chẩn đoán',
+                footerBack:'← Quay lại trang chủ',
+                labelHigh:'Rào cản cao', labelMed:'Rào cản trung bình', labelLow:'Rào cản thấp',
+                mailSubject:'Yêu cầu phân tích Green Gap (Layer 2)',
+                mailBodyName:'Tên', mailBodyIndustry:'Lĩnh vực hoạt động', mailBodyResults:'Kết quả Layer 1',
+                mailBodyChallenges:'Khó khăn khi triển khai ESG', mailBodyClosing:'Mong nhận được bản phân tích chi tiết.'
+            },
+            en: {
+                navAbout:'About', navExperience:'Experience', navMaterials:'Materials', navTool:'Free Tool', navBlog:'Blog', navContact:'Contact',
+                heroBadge:'Free — Layer 1',
+                heroSub:'Why do customers "like" your green product but still not buy it? Answer 8 questions (about 3 minutes) to identify which barrier — value, trust, habit, or availability — stands between intention and purchase, based on the TPB, COM-B, S-O-R, and UTAUT2 behavioral frameworks.',
+                introTitle:'Start the diagnostic',
+                introDesc:'Your result shows the biggest barrier right now. No sign-up needed to see your score.',
+                introBtn:'Diagnose my product',
+                progressLabel:(n,total)=>`Question ${n}/${total}`,
+                resultsEyebrow:'Diagnostic Result (Layer 1)',
+                resultsTitle:'The barrier currently blocking your customers',
+                disclaimer:'* Scores are directionally indicative, based on illustrative behavioral-theory weights currently being calibrated with Vietnamese market data.',
+                leadTitle:'Want to know why this barrier is high?',
+                leadDesc:'Get a detailed analysis (Layer 2) — a cause-by-cause breakdown for each barrier, expert-reviewed before it is sent. Free, only an email required.',
+                leadNamePh:'Your name', leadEmailPh:'Work email', leadBtn:'Get my analysis',
+                leadIndustryPh:'Industry (e.g. FMCG, textiles, agriculture...)',
+                leadChallengesPh:'Challenges implementing ESG/green campaigns (optional)',
+                leadConfirm:'Recorded — your email client has opened to send the request. I will respond within 48 hours.',
+                cta3Title:'Need a concrete solution, not just a diagnosis?',
+                cta3Desc:'In-depth consulting package: root-cause analysis, industry-specific nudge interventions, and an implementation roadmap.',
+                cta3Btn:'Book a consultation →',
+                resetBtn:'Retake the diagnostic',
+                footerBack:'← Back to homepage',
+                labelHigh:'High barrier', labelMed:'Medium barrier', labelLow:'Low barrier',
+                mailSubject:'Green Gap Layer 2 Analysis Request',
+                mailBodyName:'Name', mailBodyIndustry:'Industry', mailBodyResults:'Layer 1 Results',
+                mailBodyChallenges:'ESG implementation challenges', mailBodyClosing:'Looking forward to the detailed analysis.'
+            }
+        };
+
+        const BARRIERS = {
+            value:  { icon:'fa-tag',
+                vi:{label:'Nhận thức giá trị so với giá', desc:'Khách hàng thấy sản phẩm xanh đắt hơn mức lợi ích họ cảm nhận được.'},
+                en:{label:'Price-Value Perception', desc:'Customers perceive the green product as costing more than the benefit they feel they get.'} },
+            trust:  { icon:'fa-shield-halved',
+                vi:{label:'Niềm tin vào tuyên bố xanh', desc:'Khách hàng nghi ngờ tính xác thực của các tuyên bố "xanh" trên bao bì/marketing.'},
+                en:{label:'Trust in Green Claims', desc:'Customers doubt the authenticity of the "green" claims on packaging or marketing.'} },
+            habit:  { icon:'fa-repeat',
+                vi:{label:'Thói quen / quán tính', desc:'Khách hàng đã quen dùng sản phẩm thông thường, ngại đổi thói quen mua sắm.'},
+                en:{label:'Habit / Inertia', desc:'Customers are used to the conventional product and hesitate to change buying habits.'} },
+            access: { icon:'fa-map-location-dot',
+                vi:{label:'Khả năng tiếp cận', desc:'Sản phẩm khó tìm mua, ít điểm bán, hoặc quy trình mua phức tạp hơn.'},
+                en:{label:'Availability', desc:'The product is hard to find, has few sales points, or a more complicated purchase process.'} }
+        };
+
+        const QUESTIONS = [
+            { id:'value1', barrier:'value',
+                vi:{text:'Giá sản phẩm xanh của bạn so với sản phẩm thông thường cùng phân khúc?', options:['Cao hơn nhiều (>30%)','Cao hơn đáng kể (15–30%)','Cao hơn nhẹ (<15%)','Ngang bằng hoặc thấp hơn']},
+                en:{text:'How does your green product price compare to a conventional product in the same segment?', options:['Much higher (>30%)','Significantly higher (15–30%)','Slightly higher (<15%)','On par or lower']} },
+            { id:'value2', barrier:'value',
+                vi:{text:'Khách hàng có dễ dàng thấy được lợi ích cụ thể (tiết kiệm, sức khỏe, tuổi thọ sản phẩm...) để bù lại mức giá không?', options:['Rất khó thấy, không có bằng chứng cụ thể','Có đề cập nhưng chưa rõ ràng','Có nêu khá rõ','Rất rõ ràng, có số liệu cụ thể']},
+                en:{text:'Can customers easily see concrete benefits (savings, health, product lifespan...) that offset the price?', options:['Very hard to see, no concrete evidence','Mentioned but unclear','Fairly clear','Very clear, with concrete data']} },
+            { id:'trust1', barrier:'trust',
+                vi:{text:'Sản phẩm của bạn có chứng nhận/nhãn xanh được bên thứ ba xác thực không?', options:['Không có','Đang trong quá trình xin chứng nhận','Có 1 chứng nhận','Có nhiều chứng nhận uy tín']},
+                en:{text:'Does your product carry a third-party verified green certification or label?', options:['None','Currently applying for certification','One certification','Multiple reputable certifications']} },
+            { id:'trust2', barrier:'trust',
+                vi:{text:'Khách hàng phản hồi/đánh giá thế nào về độ tin cậy của tuyên bố "xanh" trên sản phẩm?', options:['Thường xuyên bị nghi ngờ/greenwashing','Một số hoài nghi','Phần lớn tin tưởng','Được xem là đáng tin cậy rõ rệt']},
+                en:{text:'How do customers generally respond to the credibility of your product "green" claims?', options:['Frequently doubted, seen as greenwashing','Some skepticism','Mostly trusted','Seen as clearly credible']} },
+            { id:'habit1', barrier:'habit',
+                vi:{text:'Khách hàng mục tiêu đã gắn bó với thương hiệu/sản phẩm thông thường trong bao lâu?', options:['Rất lâu, thói quen ăn sâu (>5 năm)','Khá lâu (2–5 năm)','Trung bình (dưới 2 năm)','Chưa hình thành thói quen rõ rệt']},
+                en:{text:'How long has your target customer stayed loyal to their conventional brand or product?', options:['Very long, deeply ingrained habit (>5 years)','Fairly long (2–5 years)','Moderate (under 2 years)','No strong habit formed yet']} },
+            { id:'habit2', barrier:'habit',
+                vi:{text:'Việc chuyển sang dùng sản phẩm xanh của bạn có đòi hỏi khách hàng thay đổi hành vi sử dụng không?', options:['Phải thay đổi nhiều thói quen','Thay đổi một vài điểm','Gần như không cần thay đổi','Sử dụng y hệt như sản phẩm cũ']},
+                en:{text:'Does switching to your green product require customers to change how they use it?', options:['Requires many behavior changes','A few changes needed','Almost no change needed','Used exactly like the old product']} },
+            { id:'access1', barrier:'access',
+                vi:{text:'Sản phẩm của bạn hiện có mặt ở bao nhiêu kênh phân phối?', options:['1 kênh (VD: chỉ online)','2 kênh','3 kênh','4 kênh trở lên, phủ rộng']},
+                en:{text:'How many distribution channels does your product currently have?', options:['1 channel (e.g. online only)','2 channels','3 channels','4+ channels, wide coverage']} },
+            { id:'access2', barrier:'access',
+                vi:{text:'Khách hàng mất bao nhiêu công sức để tìm mua và hoàn tất đơn hàng?', options:['Rất mất công, quy trình phức tạp','Hơi mất công','Khá thuận tiện','Rất thuận tiện, mua nhanh dễ dàng']},
+                en:{text:'How much effort does it take customers to find and complete a purchase?', options:['Very effortful, complicated process','Somewhat effortful','Fairly convenient','Very convenient, quick and easy']} }
+        ];
+
+        let currentLang = 'vi';
+        let current = 0;
+        let answers = {};
+        let lastScores = null;
+
+        function t(key) { return UI[currentLang][key]; }
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            document.documentElement.setAttribute('lang', lang);
+            document.getElementById('btn-lang-vi').classList.toggle('active', lang === 'vi');
+            document.getElementById('btn-lang-en').classList.toggle('active', lang === 'en');
+
+            document.getElementById('nav-about').textContent = t('navAbout');
+            document.getElementById('nav-experience').textContent = t('navExperience');
+            document.getElementById('nav-materials').textContent = t('navMaterials');
+            document.getElementById('nav-tool').textContent = t('navTool');
+            document.getElementById('nav-blog').textContent = t('navBlog');
+            document.getElementById('nav-contact').textContent = t('navContact');
+
+            document.getElementById('hero-badge').querySelector('span').textContent = t('heroBadge');
+            document.getElementById('hero-sub').textContent = t('heroSub');
+
+            document.getElementById('intro-title').textContent = t('introTitle');
+            document.getElementById('intro-desc').textContent = t('introDesc');
+            document.getElementById('intro-btn-text').textContent = t('introBtn');
+
+            document.getElementById('results-eyebrow').textContent = t('resultsEyebrow');
+            document.getElementById('results-title').textContent = t('resultsTitle');
+            document.getElementById('disclaimer-text').textContent = t('disclaimer');
+            document.getElementById('lead-title-text').textContent = t('leadTitle');
+            document.getElementById('lead-desc').textContent = t('leadDesc');
+            document.getElementById('lead-name').placeholder = t('leadNamePh');
+            document.getElementById('lead-email').placeholder = t('leadEmailPh');
+            document.getElementById('lead-industry').placeholder = t('leadIndustryPh');
+            document.getElementById('lead-challenges').placeholder = t('leadChallengesPh');
+            document.getElementById('lead-btn-text').textContent = t('leadBtn');
+            document.getElementById('cta3-title').textContent = t('cta3Title');
+            document.getElementById('cta3-desc').textContent = t('cta3Desc');
+            document.getElementById('cta3-btn').textContent = t('cta3Btn');
+            document.getElementById('reset-btn').textContent = t('resetBtn');
+            document.getElementById('footer-back').textContent = t('footerBack');
+
+            if (document.getElementById('screen-form').style.display === 'block') {
+                renderQuestion();
+            }
+            if (document.getElementById('screen-results').style.display === 'block' && lastScores) {
+                renderResults(lastScores);
+            }
+        }
+
+        function startQuiz() {
+            document.getElementById('screen-intro').style.display = 'none';
+            document.getElementById('screen-form').style.display = 'block';
+            renderDots();
+            renderQuestion();
+        }
+
+        function renderDots() {
+            const dots = document.getElementById('progress-dots');
+            dots.innerHTML = QUESTIONS.map((_, i) =>
+                `<span class="step-dot w-2 h-2 rounded-full ${i <= current ? 'bg-primary' : 'bg-gray-200'}"></span>`
+            ).join('');
+        }
+
+        function renderQuestion() {
+            const q = QUESTIONS[current];
+            const qt = q[currentLang];
+            document.getElementById('progress-label').textContent = t('progressLabel')(current + 1, QUESTIONS.length);
+            renderDots();
+            const box = document.getElementById('question-box');
+            box.innerHTML = `
+                <h3 class="text-lg font-bold text-dark mb-5">${qt.text}</h3>
+                <div class="space-y-3" id="opts">
+                    ${qt.options.map((opt, i) => {
+                        const sel = answers[q.id] === i + 1;
+                        return `<div class="opt-card border border-gray-200 rounded-lg px-4 py-3 cursor-pointer hover:border-primary ${sel ? 'selected' : ''}" onclick="selectOption(${i})">
+                            <span class="text-sm text-gray-700">${opt}</span>
+                        </div>`;
+                    }).join('')}
+                </div>
+            `;
+        }
+
+        function selectOption(i) {
+            const q = QUESTIONS[current];
+            answers[q.id] = i + 1;
+            const opts = document.querySelectorAll('#opts .opt-card');
+            opts.forEach((el, idx) => el.classList.toggle('selected', idx === i));
+            setTimeout(() => {
+                if (current < QUESTIONS.length - 1) {
+                    current++;
+                    renderQuestion();
+                } else {
+                    computeResults();
+                }
+            }, 250);
+        }
+
+        function computeResults() {
+            const scores = {};
+            Object.keys(BARRIERS).forEach(key => {
+                const qs = QUESTIONS.filter(q => q.barrier === key);
+                const sum = qs.reduce((acc, q) => acc + (answers[q.id] || 0), 0);
+                scores[key] = Math.round((sum / (qs.length * 4)) * 100);
+            });
+            lastScores = scores;
+            renderResults(scores);
+            document.getElementById('screen-form').style.display = 'none';
+            document.getElementById('screen-results').style.display = 'block';
+        }
+
+        function labelFor(score) {
+            if (score < 40) return { text: t('labelHigh'), color: 'text-red-600' };
+            if (score < 70) return { text: t('labelMed'), color: 'text-amber-600' };
+            return { text: t('labelLow'), color: 'text-green-600' };
+        }
+
+        function renderResults(scores) {
+            const ranked = Object.entries(scores).sort((a, b) => a[1] - b[1]);
+            const container = document.getElementById('results-bars');
+            container.innerHTML = ranked.map(([key, score]) => {
+                const b = BARRIERS[key][currentLang];
+                const icon = BARRIERS[key].icon;
+                const l = labelFor(score);
+                const barColor = score < 40 ? 'bg-red-500' : score < 70 ? 'bg-amber-500' : 'bg-green-500';
+                return `
+                    <div>
+                        <div class="flex justify-between items-center mb-1.5">
+                            <span class="text-sm font-medium text-dark"><i class="fa-solid ${icon} text-primary mr-2"></i>${b.label}</span>
+                            <span class="text-xs font-bold ${l.color}">${l.text}</span>
+                        </div>
+                        <div class="w-full bg-gray-100 rounded-full h-2.5 overflow-hidden">
+                            <div class="bar-fill h-2.5 rounded-full ${barColor}" style="width:${score}%"></div>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-1.5">${b.desc}</p>
+                    </div>`;
+            }).join('');
+        }
+
+        function submitLead(e) {
+            e.preventDefault();
+            const name = document.getElementById('lead-name').value;
+            const email = document.getElementById('lead-email').value;
+            const industry = document.getElementById('lead-industry').value;
+            const challenges = document.getElementById('lead-challenges').value.trim();
+            const ranked = Object.entries(lastScores).sort((a, b) => a[1] - b[1]);
+            const summary = ranked.map(([key, s]) => `${BARRIERS[key][currentLang].label}: ${s}/100`).join(' | ');
+            const subject = encodeURIComponent(t('mailSubject'));
+            let lines = [
+                `${t('mailBodyName')}: ${name}`,
+                `Email: ${email}`,
+                `${t('mailBodyIndustry')}: ${industry}`,
+                '',
+                `${t('mailBodyResults')}:`,
+                summary
+            ];
+            if (challenges) {
+                lines.push('', `${t('mailBodyChallenges')}:`, challenges);
+            }
+            lines.push('', t('mailBodyClosing'));
+            const body = encodeURIComponent(lines.join('\n'));
+            window.location.href = `mailto:nhphu@hcmiu.edu.vn?subject=${subject}&body=${body}`;
+            document.getElementById('lead-confirm').innerHTML = `<i class="fa-solid fa-circle-check mr-1"></i> ${t('leadConfirm')}`;
+            document.getElementById('lead-confirm').classList.remove('hidden');
+        }
+
+        function resetQuiz() {
+            current = 0;
+            answers = {};
+            document.getElementById('screen-results').style.display = 'none';
+            document.getElementById('screen-intro').style.display = 'block';
+            document.getElementById('lead-confirm').classList.add('hidden');
+            document.getElementById('lead-form').reset();
+        }
+    </script>
+</body>
+</html>
