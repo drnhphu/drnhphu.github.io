@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events &amp; Recognition | Dr. Hoang-Phu Nguyen</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    },
+                    colors: {
+                        primary: '#1e3a8a',
+                        secondary: '#3b82f6',
+                        dark: '#111827',
+                        lightbg: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+        .hero-bg {
+            background-color: #f8fafc;
+            background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .lang-btn.active { background: #1e3a8a; color: #fff; }
+        .lang-btn:not(.active) { color: #6b7280; }
+        .lang-btn { transition: all .15s ease; }
+        .event-card img { transition: transform .4s ease; }
+        .event-card:hover img { transform: scale(1.05); }
+    </style>
+</head>
+<body class="bg-white text-gray-800 antialiased selection:bg-primary selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100 transition-all duration-300 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="font-serif font-bold text-xl text-primary tracking-tight">Dr. Hoang-Phu Nguyen</a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="hidden md:flex items-center space-x-6">
+                        <a href="index.html#about" data-vi="Giới thiệu" class="text-gray-600 hover:text-primary text-sm font-medium transition">About</a>
+                        <a href="index.html#experience" data-vi="Kinh nghiệm" class="text-gray-600 hover:text-primary text-sm font-medium transition">Experience</a>
+                        <a href="index.html#publications" data-vi="Công bố khoa học" class="text-gray-600 hover:text-primary text-sm font-medium transition">Publications</a>
+                        <a href="events.html" data-vi="Sự kiện" class="text-primary text-sm font-semibold transition">Events</a>
+                        <a href="materials.html" data-vi="Tài liệu" class="text-gray-600 hover:text-primary text-sm font-medium transition">Materials</a>
+                        <a href="blog.html" class="text-gray-600 hover:text-primary text-sm font-medium transition">Blog</a>
+                        <a href="index.html#contact" data-vi="Liên hệ" class="px-5 py-2 rounded-md bg-primary text-white text-sm font-medium hover:bg-blue-800 transition shadow-sm">Contact</a>
+                    </div>
+                    <div class="flex items-center gap-0.5 border border-gray-200 rounded-full p-1 bg-gray-50 shrink-0">
+                        <button id="btn-lang-vi" onclick="setSiteLanguage('vi')" class="lang-btn px-3 py-1 rounded-full text-xs font-bold">VI</button>
+                        <button id="btn-lang-en" onclick="setSiteLanguage('en')" class="lang-btn active px-3 py-1 rounded-full text-xs font-bold">EN</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="hero-bg pt-36 pb-14 px-4">
+        <div class="max-w-6xl mx-auto">
+            <p data-vi="Ghi nhận &amp; Hoạt động chuyên môn" class="text-xs font-bold uppercase tracking-widest text-secondary mb-4">Recognition &amp; Professional Activity</p>
+            <h1 data-vi="Sự kiện &amp; Giải thưởng" class="text-4xl md:text-5xl font-serif font-bold text-dark mb-5">Events &amp; Awards</h1>
+            <p data-vi="Giải thưởng học thuật, các chương trình đào tạo doanh nghiệp và đại học, hoạt động truyền thông và các chứng nhận chuyên môn."
+               class="text-lg text-gray-600 max-w-3xl leading-relaxed">Academic awards, corporate and university training programs, media appearances, and professional certifications.</p>
+
+            <nav class="flex flex-wrap gap-3 mt-8">
+                <a href="#awards" class="px-5 py-2 rounded-full border border-gray-200 bg-white text-sm font-medium text-gray-600 hover:border-primary hover:text-primary transition"><i class="fa-solid fa-trophy mr-2 text-xs"></i><span data-vi="Giải thưởng">Awards</span></a>
+                <a href="#training" class="px-5 py-2 rounded-full border border-gray-200 bg-white text-sm font-medium text-gray-600 hover:border-primary hover:text-primary transition"><i class="fa-solid fa-chalkboard-user mr-2 text-xs"></i><span data-vi="Đào tạo">Training</span></a>
+                <a href="#media" class="px-5 py-2 rounded-full border border-gray-200 bg-white text-sm font-medium text-gray-600 hover:border-primary hover:text-primary transition"><i class="fa-solid fa-microphone-lines mr-2 text-xs"></i><span data-vi="Sự kiện">Events</span></a>
+                <a href="#certificates" class="px-5 py-2 rounded-full border border-gray-200 bg-white text-sm font-medium text-gray-600 hover:border-primary hover:text-primary transition"><i class="fa-solid fa-certificate mr-2 text-xs"></i><span data-vi="Chứng nhận">Certificates</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="sections" class="px-4 pb-8"></main>
+
+    <!-- Invitation CTA -->
+    <section class="py-16 bg-primary text-white px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 data-vi="Mời diễn thuyết hoặc đào tạo" class="text-2xl font-serif font-bold mb-4">Invite me to speak</h2>
+            <p data-vi="Tôi nhận lời mời trình bày về kinh tế học hành vi, ESG và ứng dụng AI trong tổ chức, dưới dạng bài giảng chính, hội thảo nội bộ hoặc chương trình đào tạo nhiều buổi cho doanh nghiệp và trường đại học."
+               class="text-blue-200 mb-8 max-w-2xl mx-auto leading-relaxed">I take invitations on behavioral economics, ESG, and AI in organisations, as keynotes, in-house workshops, or multi-session corporate and university training programs.</p>
+            <a href="index.html#contact" data-vi="Liên hệ" class="inline-block px-8 py-3 rounded-md bg-white text-primary font-medium hover:bg-blue-50 transition shadow-sm">Get in touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-16 pb-10">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6 border-t border-gray-800 pt-8">
+            <p class="text-gray-500 text-sm">&copy; 2026 Dr. Hoang-Phu Nguyen. All rights reserved.</p>
+            <div class="flex space-x-4">
+                <a href="https://scholar.google.com/citations?user=ki3vczkAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition" title="Google Scholar"><i class="fa-brands fa-google-scholar"></i></a>
+                <a href="https://www.linkedin.com/in/drnhphu/" target="_blank" rel="noopener" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="hidden fixed inset-0 z-[60] bg-black/90 items-center justify-center p-4" onclick="closeLightbox()">
+        <button class="absolute top-6 right-6 text-white text-3xl leading-none" aria-label="Close">&times;</button>
+        <figure class="max-w-5xl max-h-full text-center">
+            <img id="lightbox-img" src="" alt="" class="max-h-[80vh] max-w-full mx-auto rounded-lg shadow-2xl">
+            <figcaption id="lightbox-cap" class="text-white/80 text-sm mt-4"></figcaption>
+        </figure>
+    </div>
+
+    <script>
+    /* ==================================================================
+       HOW TO ADD A NEW PHOTO
+       ------------------------------------------------------------------
+       Drop the image file into the right folder in the GitHub repo.
+       The page reads the folder through the GitHub API on every visit,
+       so no code change is needed.
+
+         images/events/awards/        -> Awards section
+         images/events/training/      -> Training section
+         images/events/media/         -> Events / media section
+         images/events/certificates/  -> Certificates section
+
+       FILE NAMING = the caption shown under the photo.
+
+         2025-12-26_Le trao Bang khen cua Thu tuong Chinh phu.jpg
+         |- date --| |------------- caption ---------------|
+
+       The date prefix is optional and may be YYYY, YYYY-MM or YYYY-MM-DD,
+       followed by an underscore. Without it the whole file name becomes
+       the caption. Photos are sorted newest first; undated ones go last.
+       A trailing "(1)", "(2)" is stripped from the caption, so several
+       photos of one event can share a caption.
+       ================================================================== */
+    const REPO = { owner: "drnhphu", name: "drnhphu.github.io", branch: "main" };
+
+    const SECTIONS = [
+        { id: "awards",       folder: "images/events/awards",
+          en: "Awards",       vi: "Giải thưởng",
+          enSub: "Academic and institutional recognitions.",
+          viSub: "Các giải thưởng và ghi nhận từ cơ sở đào tạo, cơ quan quản lý." },
+        { id: "training",     folder: "images/events/training",
+          en: "Training",     vi: "Đào tạo",
+          enSub: "Corporate and university training programs.",
+          viSub: "Các chương trình đào tạo cho doanh nghiệp và trường đại học." },
+        { id: "media",        folder: "images/events/media",
+          en: "Events",       vi: "Sự kiện",
+          enSub: "Talks, panels, and media appearances.",
+          viSub: "Toạ đàm, hội thảo và các lần xuất hiện trên truyền thông." },
+        { id: "certificates", folder: "images/events/certificates",
+          en: "Certificates", vi: "Chứng nhận",
+          enSub: "Professional qualifications and certifications.",
+          viSub: "Các chứng chỉ và chứng nhận chuyên môn." }
+    ];
+
+    const IMAGE_RE = /\.(jpe?g|png|webp|gif|avif)$/i;
+    const CACHE_MINUTES = 30;
+
+    function escapeHtml(s) {
+        return String(s).replace(/[&<>"']/g, function (c) {
+            return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+        });
+    }
+
+    // "2025-12-26_Le trao Bang khen.jpg" -> { sort: "2025-12-26", label: "26/12/2025", caption: "Le trao Bang khen" }
+    function parseName(fileName) {
+        const stem = fileName.replace(IMAGE_RE, "");
+        const m = stem.match(/^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?_(.+)$/);
+        if (!m) return { sort: "0000-00-00", label: "", caption: stem.replace(/\s*\(\d+\)\s*$/, "").trim() };
+
+        const y = m[1], mo = m[2], d = m[3];
+        const label = d ? d + "/" + mo + "/" + y : (mo ? mo + "/" + y : y);
+        return {
+            sort: y + "-" + (mo || "00") + "-" + (d || "00"),
+            label: label,
+            caption: m[4].replace(/\s*\(\d+\)\s*$/, "").trim()
+        };
+    }
+
+    async function listFolder(folder) {
+        const key = "evcache:" + folder;
+        try {
+            const hit = JSON.parse(localStorage.getItem(key) || "null");
+            if (hit && Date.now() - hit.t < CACHE_MINUTES * 60000) return hit.items;
+        } catch (e) { /* cache unreadable, fetch fresh */ }
+
+        const url = "https://api.github.com/repos/" + REPO.owner + "/" + REPO.name +
+                    "/contents/" + folder + "?ref=" + REPO.branch;
+        const res = await fetch(url, { headers: { Accept: "application/vnd.github+json" } });
+        if (res.status === 404) return [];              // folder not created yet
+        if (!res.ok) throw new Error("GitHub API " + res.status);
+
+        const items = (await res.json())
+            .filter(function (f) { return f.type === "file" && IMAGE_RE.test(f.name); })
+            .map(function (f) { return { name: f.name, url: f.download_url }; });
+
+        try { localStorage.setItem(key, JSON.stringify({ t: Date.now(), items: items })); } catch (e) { /* quota */ }
+        return items;
+    }
+
+    function cardHtml(item) {
+        const meta = parseName(item.name);
+        const dateLine = meta.label
+            ? '<p class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">' + escapeHtml(meta.label) + '</p>'
+            : '';
+        return '' +
+        '<figure class="event-card group bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-lg transition overflow-hidden cursor-zoom-in"' +
+        ' onclick="openLightbox(this)" data-src="' + escapeHtml(item.url) + '" data-cap="' + escapeHtml(meta.caption) + '">' +
+            '<div class="overflow-hidden bg-gray-50">' +
+                '<img src="' + escapeHtml(item.url) + '" alt="' + escapeHtml(meta.caption) + '" loading="lazy" class="w-full h-56 object-cover">' +
+            '</div>' +
+            '<figcaption class="p-5">' + dateLine +
+                '<p class="text-sm text-dark font-medium leading-snug">' + escapeHtml(meta.caption) + '</p>' +
+            '</figcaption>' +
+        '</figure>';
+    }
+
+    function sectionShell(s, bodyHtml) {
+        return '' +
+        '<section id="' + s.id + '" class="max-w-6xl mx-auto py-14 border-b border-gray-100 last:border-0">' +
+            '<h2 class="text-2xl font-serif font-bold text-dark mb-2" data-vi="' + escapeHtml(s.vi) + '">' + escapeHtml(s.en) + '</h2>' +
+            '<p class="text-gray-500 mb-8" data-vi="' + escapeHtml(s.viSub) + '">' + escapeHtml(s.enSub) + '</p>' +
+            '<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">' + bodyHtml + '</div>' +
+        '</section>';
+    }
+
+    function notice(en, vi) {
+        return '<p class="col-span-full text-gray-400 py-8" data-vi="' + escapeHtml(vi) + '">' + escapeHtml(en) + '</p>';
+    }
+
+    async function buildPage() {
+        const results = await Promise.all(SECTIONS.map(function (s) {
+            return listFolder(s.folder).then(
+                function (items) { return { s: s, items: items }; },
+                function (err)   { return { s: s, error: err }; }
+            );
+        }));
+
+        document.getElementById("sections").innerHTML = results.map(function (r) {
+            if (r.error) {
+                return sectionShell(r.s, notice(
+                    "Photos could not be loaded right now. Please refresh in a moment.",
+                    "Chưa tải được ảnh. Vui lòng tải lại trang sau ít phút."));
+            }
+            if (!r.items.length) {
+                return sectionShell(r.s, notice("No photos yet.", "Chưa có ảnh trong mục này."));
+            }
+            const sorted = r.items.slice().sort(function (a, b) {
+                const pa = parseName(a.name), pb = parseName(b.name);
+                if (pa.sort !== pb.sort) return pb.sort.localeCompare(pa.sort);
+                return a.name.localeCompare(b.name, "vi");
+            });
+            return sectionShell(r.s, sorted.map(cardHtml).join(""));
+        }).join("");
+
+        // Cache English text only after the grid exists, then re-apply the
+        // language the visitor is currently on.
+        document.querySelectorAll("[data-vi]").forEach(function (el) {
+            if (!el.hasAttribute("data-en")) el.setAttribute("data-en", el.textContent);
+        });
+        setSiteLanguage(document.documentElement.getAttribute("lang") || "en");
+    }
+
+    function setSiteLanguage(lang) {
+        document.documentElement.setAttribute("lang", lang);
+        document.getElementById("btn-lang-vi").classList.toggle("active", lang === "vi");
+        document.getElementById("btn-lang-en").classList.toggle("active", lang === "en");
+        document.querySelectorAll("[data-vi]").forEach(function (el) {
+            el.textContent = lang === "vi" ? el.getAttribute("data-vi") : el.getAttribute("data-en");
+        });
+    }
+
+    function openLightbox(fig) {
+        document.getElementById("lightbox-img").src = fig.getAttribute("data-src");
+        document.getElementById("lightbox-cap").textContent = fig.getAttribute("data-cap");
+        const box = document.getElementById("lightbox");
+        box.classList.remove("hidden");
+        box.classList.add("flex");
+    }
+    function closeLightbox() {
+        const box = document.getElementById("lightbox");
+        box.classList.add("hidden");
+        box.classList.remove("flex");
+    }
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeLightbox(); });
+
+    // Cache the static English text that exists before the grid is built.
+    document.querySelectorAll("[data-vi]").forEach(function (el) { el.setAttribute("data-en", el.textContent); });
+    buildPage();
+    </script>
+
+</body>
+</html>
