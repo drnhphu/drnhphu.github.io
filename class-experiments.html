@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classroom Behavioral Experiments | Dr. Hoang-Phu Nguyen</title>
+    <meta name="description" content="A free web app for running behavioral economics experiments in class: students decide on their phones, then the class compares its results with the original studies.">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    },
+                    colors: {
+                        primary: '#1e3a8a',
+                        secondary: '#3b82f6',
+                        dark: '#111827',
+                        lightbg: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .hero-bg {
+            background-color: #f8fafc;
+            background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .lang-btn.active { background: #1e3a8a; color: #fff; }
+        .lang-btn:not(.active) { color: #6b7280; }
+        .lang-btn { transition: all .15s ease; }
+    </style>
+</head>
+<body class="bg-white text-gray-800 antialiased selection:bg-primary selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100 transition-all duration-300 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="font-serif font-bold text-xl text-primary tracking-tight">Dr. Hoang-Phu Nguyen</a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="hidden md:flex items-center space-x-4">
+                        <a href="index.html#about" data-vi="Giới thiệu" class="text-gray-600 hover:text-primary text-sm font-medium transition">About</a>
+                        <a href="index.html#experience" data-vi="Kinh nghiệm" class="text-gray-600 hover:text-primary text-sm font-medium transition">Experience</a>
+                        <a href="index.html#publications" data-vi="Công bố khoa học" class="text-gray-600 hover:text-primary text-sm font-medium transition">Publications</a>
+                        <a href="materials.html" data-vi="Tài liệu" class="text-gray-600 hover:text-primary text-sm font-medium transition">Materials</a>
+                        <a href="index.html#free-tools" data-vi="Công cụ miễn phí" class="text-primary text-sm font-medium transition border-b-2 border-primary pb-1">Free Tools</a>
+                        <a href="events.html" data-vi="Sự kiện" class="text-gray-600 hover:text-primary text-sm font-medium transition">Events</a>
+                        <a href="blog.html" class="text-gray-600 hover:text-primary text-sm font-medium transition">Blog</a>
+                        <a href="index.html#contact" data-vi="Liên hệ" class="px-5 py-2 rounded-md bg-primary text-white text-sm font-medium hover:bg-blue-800 transition shadow-sm">Contact</a>
+                    </div>
+                    <div class="flex items-center gap-0.5 border border-gray-200 rounded-full p-1 bg-gray-50 shrink-0">
+                        <button id="btn-lang-vi" onclick="setSiteLanguage('vi')" class="lang-btn px-3 py-1 rounded-full text-xs font-bold">VI</button>
+                        <button id="btn-lang-en" onclick="setSiteLanguage('en')" class="lang-btn active px-3 py-1 rounded-full text-xs font-bold">EN</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero-bg pt-32 pb-16 md:pt-40 md:pb-20 px-4 border-b border-gray-100">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 text-primary rounded-full text-xs font-bold uppercase tracking-widest mb-4">
+                <i class="fa-solid fa-flask"></i> <span data-vi="Công cụ miễn phí cho lớp học">Free classroom tool</span>
+            </div>
+            <h1 data-vi="Thí nghiệm hành vi trên lớp" class="text-4xl md:text-5xl font-serif font-bold text-dark mb-5 leading-tight">Classroom Behavioral Experiments</h1>
+            <p data-vi="Học viên ra quyết định thật trên điện thoại trước khi nghe giảng. Khi giảng đến từng khái niệm, cả lớp xem kết quả của chính mình bên cạnh nghiên cứu gốc." class="text-lg text-gray-600 max-w-2xl mx-auto font-light leading-relaxed mb-8">
+                Students make real decisions on their phones before the lecture. As each concept is taught, the class sees its own results next to the original study.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#use-it" class="px-8 py-3 bg-primary text-white rounded-md font-medium hover:bg-blue-800 transition shadow-md flex items-center justify-center gap-2">
+                    <span data-vi="Dùng cho lớp của bạn">Bring it to your class</span> <i class="fa-solid fa-arrow-right text-sm"></i>
+                </a>
+                <a href="#experiments" class="px-8 py-3 bg-white text-gray-700 border border-gray-300 rounded-md font-medium hover:bg-gray-50 transition shadow-sm flex items-center justify-center gap-2">
+                    <span data-vi="Xem 16 thí nghiệm">See the 16 experiments</span> <i class="fa-solid fa-list text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- How a session runs -->
+    <section class="py-20 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-14">
+                <h2 data-vi="Một buổi học diễn ra thế nào" class="text-3xl font-serif font-bold text-dark mb-4">How a session runs</h2>
+                <div class="w-16 h-1 bg-primary mx-auto mb-4"></div>
+                <p data-vi="Thu trước, mở sau: học viên trả lời bằng trực giác khi chưa biết khái niệm, nên kết quả của lớp mới đáng để bàn." class="text-gray-500 max-w-2xl mx-auto">Collect first, reveal later: students answer on intuition before they learn the concept, so the class's own numbers are worth discussing.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-6 rounded-xl border border-gray-200 bg-lightbg">
+                    <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold mb-4">1</div>
+                    <h3 data-vi="Quét mã, vào phòng" class="font-bold text-lg mb-2">Scan and join</h3>
+                    <p data-vi="Học viên quét mã QR trên màn chiếu. Không hỏi tên, email hay mã sinh viên; không cần cài ứng dụng." class="text-sm text-gray-600 leading-relaxed">Students scan the QR code on the projector. No names, emails or student IDs, and nothing to install.</p>
+                </div>
+                <div class="p-6 rounded-xl border border-gray-200 bg-lightbg">
+                    <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold mb-4">2</div>
+                    <h3 data-vi="Phiên thu đầu buổi" class="font-bold text-lg mb-2">Opening batch</h3>
+                    <p data-vi="Mỗi người làm theo nhịp riêng các thí nghiệm của buổi học, trước khi nghe giảng. Thí nghiệm có hai phiên bản được chia nhóm tự động." class="text-sm text-gray-600 leading-relaxed">Everyone works at their own pace through the day's experiments before any teaching. Two-version experiments split the class into groups automatically.</p>
+                </div>
+                <div class="p-6 rounded-xl border border-gray-200 bg-lightbg">
+                    <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold mb-4">3</div>
+                    <h3 data-vi="Mở kết quả theo khái niệm" class="font-bold text-lg mb-2">Reveal by concept</h3>
+                    <p data-vi="Giảng đến khái niệm nào, màn chiếu hiện ba cột: lớp này, các lớp trước, nghiên cứu gốc. Điện thoại hiện kết quả của riêng từng người." class="text-sm text-gray-600 leading-relaxed">When the lecture reaches a concept, the projector shows three columns: this class, earlier classes, the original study. Each phone shows a personal result.</p>
+                </div>
+                <div class="p-6 rounded-xl border border-gray-200 bg-lightbg">
+                    <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold mb-4">4</div>
+                    <h3 data-vi="Trò chơi trực tiếp" class="font-bold text-lg mb-2">Live games</h3>
+                    <p data-vi="Trò chơi chiến lược chạy theo vòng. App tự ghép cặp; người lẻ chơi với máy và lựa chọn của máy không tính vào kết quả lớp." class="text-sm text-gray-600 leading-relaxed">Strategic games run in rounds. Pairs are formed automatically; an odd student plays the computer, whose moves never count in the class results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screens -->
+    <section class="py-20 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-14">
+                <h2 data-vi="Học viên thấy gì trên điện thoại" class="text-3xl font-serif font-bold text-dark mb-4">What students see</h2>
+                <div class="w-16 h-1 bg-primary mx-auto mb-4"></div>
+                <p data-vi="Ảnh chụp từ một phiên tiếng Việt. Phiên học cũng chạy được bằng tiếng Anh." class="text-gray-500 max-w-2xl mx-auto">Screens from a Vietnamese session. Sessions also run in English.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+                <figure class="text-center">
+                    <img src="ce-phone-decoy.png" alt="Decision screen of the decoy-effect experiment, three-plan version" loading="lazy" class="mx-auto w-full max-w-[290px] rounded-3xl border-8 border-dark shadow-xl bg-white">
+                    <figcaption data-vi="Một màn hình ra quyết định: hiệu ứng chim mồi, phiên bản ba gói." class="mt-4 text-sm text-gray-600">A decision screen: the decoy effect, three-plan version.</figcaption>
+                </figure>
+                <figure class="text-center">
+                    <img src="ce-phone-stroop.png" alt="Stroop task: tap the ink colour of the word" loading="lazy" class="mx-auto w-full max-w-[290px] rounded-3xl border-8 border-dark shadow-xl bg-white">
+                    <figcaption data-vi="Bài Stroop: bấm màu mực của chữ, 24 lượt có đo thời gian." class="mt-4 text-sm text-gray-600">The Stroop task: tap the ink colour of the word, 24 timed turns.</figcaption>
+                </figure>
+                <figure class="text-center">
+                    <img src="ce-phone-result.png" alt="Personal result after the reveal, present-bias experiment" loading="lazy" class="mx-auto w-full max-w-[290px] rounded-3xl border-8 border-dark shadow-xl bg-white">
+                    <figcaption data-vi="Kết quả cá nhân sau khi mở kết quả: thiên lệch hiện tại." class="mt-4 text-sm text-gray-600">A personal result after the reveal: present bias.</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiments -->
+    <section id="experiments" class="scroll-mt-20 py-20 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-14">
+                <h2 data-vi="16 thí nghiệm" class="text-3xl font-serif font-bold text-dark mb-4">16 experiments</h2>
+                <div class="w-16 h-1 bg-primary mx-auto mb-4"></div>
+                <p data-vi="Mỗi buổi học chọn vài thí nghiệm theo nội dung giảng. Mỗi thí nghiệm đi kèm số liệu của nghiên cứu gốc để so sánh." class="text-gray-500 max-w-2xl mx-auto">Each session picks the experiments that fit the lecture. Every experiment comes with the original study for comparison.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="rounded-xl border border-gray-200 p-6">
+                    <h3 class="font-bold text-lg text-primary mb-4"><i class="fa-solid fa-scale-balanced mr-2"></i><span data-vi="Rủi ro và thời gian">Risk and time</span></h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><span class="font-semibold text-dark" data-vi="Thái độ với rủi ro: giá trị kỳ vọng, tiện ích kỳ vọng, giá trị tương đương chắc chắn">Risk attitude: expected value, expected utility, certainty equivalent</span> <span class="text-gray-500">· Holt &amp; Laury (2002)</span></li>
+                        <li><span class="font-semibold text-dark" data-vi="Nghịch lý Allais: tiên đề độc lập, hiệu ứng chắc chắn">Allais paradox: independence axiom, certainty effect</span> <span class="text-gray-500">· Kahneman &amp; Tversky (1979)</span></li>
+                        <li><span class="font-semibold text-dark" data-vi="Nghịch lý Ellsberg: tiện ích kỳ vọng chủ quan, né tránh sự mơ hồ">Ellsberg paradox: subjective expected utility, ambiguity aversion</span> <span class="text-gray-500">· Ellsberg (1961)</span></li>
+                        <li><span class="font-semibold text-dark" data-vi="Thiên lệch hiện tại: chiết khấu hyperbol, bất nhất theo thời gian">Present bias: hyperbolic discounting, time inconsistency</span> <span class="text-gray-500">· Thaler (1981)</span></li>
+                    </ul>
+                </div>
+                <div class="rounded-xl border border-gray-200 p-6">
+                    <h3 class="font-bold text-lg text-primary mb-4"><i class="fa-solid fa-route mr-2"></i><span data-vi="Thuật giải và kiến trúc lựa chọn">Heuristics and choice architecture</span></h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><span class="font-semibold text-dark" data-vi="Thuật giải mỏ neo và điều chỉnh">Anchoring and adjustment heuristic</span> <span class="text-gray-500">· Jacowitz &amp; Kahneman (1995)</span></li>
+                        <li><span class="font-semibold text-dark" data-vi="Hiệu ứng khung: lý thuyết triển vọng, điểm tham chiếu">Framing effect: prospect theory, reference point</span> <span class="text-gray-500">· Tversky &amp; Kahneman (1981)</span></li>
+                        <li><span class="font-semibold text-dark" data-vi="Hiệu ứng chim mồi: lựa chọn phụ thuộc bối cảnh, phương án bị trội bất đối xứng">Decoy effect: context-dependent choice, asymmetrically dominated alternative</span> <span class="text-gray-500">· Huber, Payne &amp; Puto (1982)</span></li>
+                        <li><span class="font-semibold text-dark" data-vi="Hiệu ứng mặc định: kiến trúc lựa chọn, cú hích">Default effect: choice architecture, nudge</span> <span class="text-gray-500">· Johnson &amp; Goldstein (2003)</span></li>
+                    </ul>
+                </div>
+                <div class="rounded-xl border border-gray-200 p-6">
+                    <h3 class="font-bold text-lg text-primary mb-4"><i class="fa-solid fa-brain mr-2"></i><span data-vi="Phán đoán và nhận thức">Judgment and cognition</span></h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><span class="font-semibold text-dark" data-vi="Tự tin thái quá về độ chính xác">Overconfidence in precision</span> <span class="text-gray-500">· McKenzie, Liersch &amp; Yaniv (2008)</span></li>
+                        <li><span class="font-semibold text-dark" data-vi="Né tránh thua lỗ: hệ số né tránh thua lỗ, lý thuyết triển vọng">Loss aversion: loss aversion coefficient, prospect theory</span> <span class="text-gray-500">· Tversky &amp; Kahneman (1992)</span></li>
+                        <li><span class="font-semibold text-dark" data-vi="Bỏ qua tỷ lệ nền: quy tắc Bayes, thuật giải đại diện">Base-rate neglect: Bayes' rule, representativeness heuristic</span> <span class="text-gray-500">· Gigerenzer &amp; Hoffrage (1995)</span></li>
+                        <li><span class="font-semibold text-dark" data-vi="Câu đố phản tư nhận thức: hai hệ thống tư duy">Cognitive reflection: two systems of thinking</span> <span class="text-gray-500">· Frederick (2005)</span></li>
+                        <li><span class="font-semibold text-dark" data-vi="Hiệu ứng Stroop: xử lý tự động và kiểm soát chú ý">Stroop effect: automatic processing and attentional control</span> <span class="text-gray-500">· Stroop (1935)</span></li>
+                    </ul>
+                </div>
+                <div class="rounded-xl border border-gray-200 p-6">
+                    <h3 class="font-bold text-lg text-primary mb-4"><i class="fa-solid fa-chess-knight mr-2"></i><span data-vi="Trò chơi chiến lược (chạy trực tiếp)">Strategic games (live)</span></h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><span class="font-semibold text-dark" data-vi="Cuộc thi sắc đẹp Keynes: lý luận nhiều tầng, cân bằng Nash">Keynesian beauty contest: levels of reasoning, Nash equilibrium</span> <span class="text-gray-500">· Nagel (1995)</span></li>
+                        <li><span class="font-semibold text-dark" data-vi="Song tù: chiến lược trội, cân bằng Nash, hiệu quả Pareto">Prisoner's dilemma: dominant strategy, Nash equilibrium, Pareto efficiency</span> <span class="text-gray-500">· Axelrod (1984)</span></li>
+                        <li><span class="font-semibold text-dark" data-vi="Tối hậu thư và độc tài: sở thích công bằng">Ultimatum and dictator games: fairness preferences</span> <span class="text-gray-500">· Güth, Schmittberger &amp; Schwarze (1982); Forsythe et al. (1994)</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Principles -->
+    <section class="py-20 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-14">
+                <h2 data-vi="Nguyên tắc thiết kế" class="text-3xl font-serif font-bold text-dark mb-4">Design principles</h2>
+                <div class="w-16 h-1 bg-primary mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="flex gap-4">
+                    <div class="w-10 h-10 shrink-0 bg-blue-50 text-primary rounded-full flex items-center justify-center"><i class="fa-solid fa-user-secret"></i></div>
+                    <div>
+                        <h3 data-vi="Ẩn danh" class="font-bold mb-1">Anonymous</h3>
+                        <p data-vi="Không thu tên hay thông tin cá nhân. Nhóm dưới 3 người được gộp trên màn chiếu để không ai bị nhận ra qua số liệu." class="text-sm text-gray-600 leading-relaxed">No names or personal details. Groups under three people are merged on the projector, so no one can be identified from the numbers.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="w-10 h-10 shrink-0 bg-blue-50 text-primary rounded-full flex items-center justify-center"><i class="fa-solid fa-book-open"></i></div>
+                    <div>
+                        <h3 data-vi="Gắn với nghiên cứu gốc" class="font-bold mb-1">Grounded in the literature</h3>
+                        <p data-vi="Mỗi thí nghiệm dựa trên một nghiên cứu đã công bố, và kết quả của lớp luôn hiện cạnh số liệu gốc." class="text-sm text-gray-600 leading-relaxed">Every experiment follows a published study, and the class result always appears beside the original figures.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="w-10 h-10 shrink-0 bg-blue-50 text-primary rounded-full flex items-center justify-center"><i class="fa-solid fa-language"></i></div>
+                    <div>
+                        <h3 data-vi="Song ngữ" class="font-bold mb-1">Bilingual</h3>
+                        <p data-vi="Mỗi phiên chạy bằng tiếng Việt hoặc tiếng Anh, chọn khi tạo phòng." class="text-sm text-gray-600 leading-relaxed">Each session runs in Vietnamese or English, chosen when the room is created.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="w-10 h-10 shrink-0 bg-blue-50 text-primary rounded-full flex items-center justify-center"><i class="fa-solid fa-mobile-screen"></i></div>
+                    <div>
+                        <h3 data-vi="Chạy trên trình duyệt" class="font-bold mb-1">Runs in the browser</h3>
+                        <p data-vi="Học viên dùng trình duyệt trên điện thoại; mất mạng giữa chừng vẫn làm tiếp, câu trả lời tự gửi khi có mạng lại." class="text-sm text-gray-600 leading-relaxed">Students use their phone's browser. If the connection drops, they keep going and answers are sent once it returns.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="w-10 h-10 shrink-0 bg-blue-50 text-primary rounded-full flex items-center justify-center"><i class="fa-solid fa-chart-column"></i></div>
+                    <div>
+                        <h3 data-vi="So sánh giữa các lớp" class="font-bold mb-1">Compare across classes</h3>
+                        <p data-vi="Bản tổng hợp ẩn danh của mỗi lớp được giữ lại để lớp sau so sánh. Dữ liệu thô được xóa sau 30 ngày." class="text-sm text-gray-600 leading-relaxed">An anonymous summary of each class is kept so later classes can compare. Raw data is deleted after 30 days.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="w-10 h-10 shrink-0 bg-blue-50 text-primary rounded-full flex items-center justify-center"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                    <div>
+                        <h3 data-vi="Miễn phí" class="font-bold mb-1">Free</h3>
+                        <p data-vi="Không thu phí học viên hay nhà trường." class="text-sm text-gray-600 leading-relaxed">No cost to students or institutions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use it -->
+    <section id="use-it" class="scroll-mt-20 py-16 px-4 bg-gradient-to-r from-primary to-blue-900">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-white">
+            <div class="md:max-w-2xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/15 rounded-full text-xs font-bold uppercase tracking-widest mb-4">
+                    <i class="fa-solid fa-circle-info"></i> <span data-vi="Đang chạy thử, tháng 11/2026">Pilot stage, November 2026</span>
+                </div>
+                <h2 data-vi="Muốn dùng cho lớp của bạn?" class="text-2xl md:text-3xl font-serif font-bold mb-3">Want it for your class?</h2>
+                <p data-vi="Công cụ đang được chạy thử trong các lớp và workshop do tôi giảng dạy. Nếu bạn muốn tổ chức một buổi thí nghiệm hành vi cho lớp học, workshop hoặc chương trình đào tạo quản lý, hãy liên hệ với tôi." class="text-blue-100 leading-relaxed">The tool is being piloted in the classes and workshops I teach. If you would like a behavioral experiments session for your class, a workshop or an executive program, get in touch.</p>
+            </div>
+            <a href="index.html#contact" class="shrink-0 px-8 py-3 bg-white text-primary rounded-md font-medium hover:bg-blue-50 transition shadow-md flex items-center gap-2">
+                <span data-vi="Liên hệ">Contact me</span> <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-8 px-4">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm gap-2">
+            <p>&copy; 2026 Dr. Hoang-Phu Nguyen. All rights reserved.</p>
+            <a href="index.html" data-vi="← Quay lại trang chủ" class="hover:text-white transition">← Back to home</a>
+        </div>
+    </footer>
+
+    <script>
+        // Cache original English content before any toggle, so EN can be restored exactly.
+        document.querySelectorAll('[data-vi]').forEach(function(el) { el.setAttribute('data-en', el.textContent); });
+        document.querySelectorAll('[data-vi-html]').forEach(function(el) { el.setAttribute('data-en-html', el.innerHTML); });
+
+        function setSiteLanguage(lang) {
+            document.documentElement.setAttribute('lang', lang);
+            document.getElementById('btn-lang-vi').classList.toggle('active', lang === 'vi');
+            document.getElementById('btn-lang-en').classList.toggle('active', lang === 'en');
+
+            document.querySelectorAll('[data-vi]').forEach(function(el) {
+                el.textContent = lang === 'vi' ? el.getAttribute('data-vi') : el.getAttribute('data-en');
+            });
+            document.querySelectorAll('[data-vi-html]').forEach(function(el) {
+                el.innerHTML = lang === 'vi' ? el.getAttribute('data-vi-html') : el.getAttribute('data-en-html');
+            });
+        }
+    </script>
+
+</body>
+</html>
