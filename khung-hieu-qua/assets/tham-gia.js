@@ -189,7 +189,7 @@
 
         { id: 'units',
           ask: function () { return t('Doanh nghiệp có khoảng bao nhiêu ' + esc(unitWord()) + ' có số liệu trong cùng một kỳ? Khung Hiệu Quả so sánh các đơn vị với nhau nên cần đủ số đơn vị: với 3 đầu vào và 3 đầu ra cần tối thiểu 18.',
-                                     'Roughly how many ' + esc(unitWord()) + ' units have data for the same period? Khung Hiệu Quả compares units with each other, so it needs enough of them: 3 inputs and 3 outputs need at least 18.'); },
+                                     'Roughly how many ' + esc(unitWord()) + ' units have data for the same period? The Efficiency Framework compares units with each other, so it needs enough of them: 3 inputs and 3 outputs need at least 18.'); },
           widget: function () { return optionButtons(BRACKETS.map(function (b) { return { v: b.v, label: t(b.vi, b.en) }; }), A.units, function (v) { answer('units', v); }); },
           say: function () { var b = bracket(); return b ? t(b.vi, b.en) : ''; } },
 
@@ -448,7 +448,7 @@
               dl.href = 'mau/' + i.file; dl.setAttribute('download', '');
               var rec = record();
               var ml = el('a', 'px-5 py-2.5 bg-white text-primary border border-primary rounded-md font-medium hover:bg-blue-50 transition inline-flex items-center gap-2 justify-center', '<i class="fa-solid fa-envelope"></i> ' + esc(t('Mở email soạn sẵn', 'Open a pre-filled email')));
-              ml.href = 'mailto:' + MAIL + '?subject=' + encodeURIComponent('[Khung Hiệu Quả] ' + t('Đồng ý tham gia', 'Consent to take part') + ': ' + A.contact.company) + '&body=' + encodeURIComponent(rec);
+              ml.href = 'mailto:' + MAIL + '?subject=' + encodeURIComponent(t('[Khung Hiệu Quả] Đồng ý tham gia', '[Efficiency Framework] Consent to take part') + ': ' + A.contact.company) + '&body=' + encodeURIComponent(rec);
               row.appendChild(dl); row.appendChild(ml); box.appendChild(row);
               var pre = el('pre', 'record bg-gray-50 border border-gray-200 rounded-lg p-4 max-h-72 overflow-auto'); pre.textContent = rec;
               var cp = el('button', 'self-start text-sm text-primary hover:underline underline-offset-2'); cp.type = 'button'; cp.textContent = t('Sao chép bản ghi đồng ý', 'Copy the consent record');
