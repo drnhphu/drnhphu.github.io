@@ -1,0 +1,90 @@
+/* Khung Hiệu Quả sub-site. Theme follows the main site (Tailwind CDN config in each page). */
+html { scroll-behavior: smooth; }
+
+/* Bilingual: every translatable block exists twice, marked lang="vi" / lang="en". The root lang decides which shows. */
+html[lang="vi"] body [lang="en"],
+html[lang="en"] body [lang="vi"] { display: none !important; }
+
+header h1, header p { text-wrap: balance; }
+.hero-bg {
+    background-color: #f8fafc;
+    background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+.lang-btn { transition: all .15s ease; }
+.lang-btn.active { background: #1e3a8a; color: #fff; }
+.lang-btn:not(.active) { color: #6b7280; }
+
+.subnav a.current { color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 2px; }
+
+/* Long-form article */
+.article p { margin-bottom: 1.1rem; line-height: 1.8; color: #374151; }
+.article h3 { font-family: Merriweather, Georgia, serif; font-weight: 700; color: #111827; font-size: 1.25rem; margin: 2rem 0 .75rem; text-wrap: balance; }
+.article .refs p { font-size: .875rem; line-height: 1.6; color: #6b7280; padding-left: 1.5rem; text-indent: -1.5rem; margin-bottom: .5rem; }
+
+/* Guide */
+.guide p { line-height: 1.75; color: #374151; }
+.guide h2 { text-wrap: balance; }
+.guide ol.steps-list > li, .guide ul.dots > li { margin-bottom: .5rem; line-height: 1.7; }
+.guide ul.dots { list-style: disc; padding-left: 1.25rem; color: #374151; }
+.guide ol.num { list-style: decimal; padding-left: 1.25rem; color: #374151; }
+.guide ol.num > li { margin-bottom: .5rem; line-height: 1.7; }
+.shot { border: 1px solid #e5e7eb; border-radius: .75rem; box-shadow: 0 1px 2px rgba(0,0,0,.04), 0 8px 24px -12px rgba(15,23,42,.18); background: #fff; display: block; width: 100%; height: auto; }
+.toc a.active { color: #1e3a8a; font-weight: 600; border-left-color: #1e3a8a; }
+.step-no { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+/* Intro video keeps 16:9 at every width. Poster carries one play button; native controls appear once it plays. */
+.video-frame { position: relative; width: 100%; max-width: 100%; aspect-ratio: 16 / 9; scroll-margin-top: 7rem; }
+.video-frame > video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; border-radius: .75rem; background: #111827; }
+[data-khq-video].js video:not([controls]) { cursor: pointer; }
+.video-play { position: absolute; left: 1rem; bottom: 1rem; display: none; align-items: center; gap: .6rem; padding: .4rem 1rem .4rem .4rem; border-radius: 999px;
+    background: #1e3a8a; color: #fff; font-weight: 600; font-size: .95rem; line-height: 1; box-shadow: 0 8px 24px -8px rgba(15, 23, 42, .5); transition: background .15s ease, transform .15s ease; }
+[data-khq-video].js .video-play { display: inline-flex; }
+[data-khq-video].is-playing .video-play { display: none; }
+.video-play:hover { background: #1e40af; transform: translateY(-1px); }
+.video-play:focus-visible { outline: 3px solid #93c5fd; outline-offset: 2px; }
+.video-play-icon { width: 2.25rem; height: 2.25rem; border-radius: 999px; background: #fff; color: #1e3a8a; display: inline-flex; align-items: center; justify-content: center; font-size: .8rem; padding-left: 2px; }
+.video-play-time { font-variant-numeric: tabular-nums; font-weight: 500; color: #bfdbfe; padding-left: .6rem; border-left: 1px solid rgba(255, 255, 255, .3); }
+@media (max-width: 480px) {
+    .video-play { left: .5rem; bottom: .5rem; gap: .45rem; font-size: .8rem; padding: .25rem .75rem .25rem .25rem; }
+    .video-play-icon { width: 1.6rem; height: 1.6rem; font-size: .65rem; }
+    .video-play-time { display: none; }
+}
+
+/* Chapter list beside the video */
+.chapters button { display: flex; align-items: baseline; gap: .9rem; width: 100%; text-align: left; padding: .6rem .75rem; border-radius: .5rem; color: #374151; transition: background .15s ease, color .15s ease; }
+.chapters button:hover { background: #fff; color: #111827; }
+.chapters button:focus-visible { outline: 2px solid #3b82f6; outline-offset: 1px; }
+.chapters button > span:last-child { text-wrap: balance; }
+.chapters .t { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .8rem; font-weight: 600; color: #3b82f6; min-width: 2.4rem; flex-shrink: 0; }
+.chapters button.is-active { background: #fff; color: #111827; font-weight: 600; box-shadow: inset 3px 0 0 #1e3a8a, 0 1px 2px rgba(0, 0, 0, .04); }
+.chapters button.is-active .t { color: #1e3a8a; }
+
+/* Transcript under the video: collapsed by default, current paragraph follows playback */
+.transcript summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: .5rem; font-size: .875rem; font-weight: 600; color: #1e3a8a; padding: .25rem 0; }
+.transcript summary::-webkit-details-marker { display: none; }
+.transcript summary:hover > span { text-decoration: underline; text-underline-offset: 4px; }
+.transcript summary:focus-visible { outline: 2px solid #3b82f6; outline-offset: 2px; border-radius: .25rem; }
+.transcript summary .chev { transition: transform .15s ease; }
+.transcript[open] summary .chev { transform: rotate(180deg); }
+.transcript ol { margin-top: .75rem; border-left: 2px solid #e5e7eb; }
+.transcript li { display: flex; gap: .75rem; padding: .55rem .75rem; margin-left: -2px; border-left: 2px solid transparent; border-radius: 0 .5rem .5rem 0; transition: background .15s ease; }
+.transcript li.is-active { background: #f8fafc; border-left-color: #1e3a8a; }
+.transcript .ts { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .8rem; font-weight: 600; color: #3b82f6; min-width: 2.4rem; flex-shrink: 0; text-align: left; align-self: flex-start; padding-top: .2rem; }
+.transcript .ts:hover { text-decoration: underline; text-underline-offset: 3px; }
+.transcript .ts:focus-visible { outline: 2px solid #3b82f6; outline-offset: 2px; border-radius: .25rem; }
+.transcript li.is-active .ts { color: #1e3a8a; }
+.transcript p { font-size: .925rem; line-height: 1.65; color: #374151; min-width: 0; }
+
+/* Consent form */
+.field label { display: block; font-size: .875rem; font-weight: 600; color: #111827; margin-bottom: .35rem; }
+.field input, .field select { width: 100%; border: 1px solid #d1d5db; border-radius: .5rem; padding: .65rem .8rem; font-size: .95rem; background: #fff; color: #111827; }
+.field input:focus, .field select:focus, .check input:focus-visible { outline: 2px solid #3b82f6; outline-offset: 1px; border-color: #3b82f6; }
+.field .err { display: none; font-size: .8rem; color: #b91c1c; margin-top: .3rem; }
+.field.invalid input, .field.invalid select { border-color: #b91c1c; }
+.field.invalid .err { display: block; }
+.check { display: flex; gap: .75rem; align-items: flex-start; padding: .9rem 1rem; border: 1px solid #e5e7eb; border-radius: .6rem; background: #fff; cursor: pointer; }
+.check input { width: 1.1rem; height: 1.1rem; margin-top: .2rem; flex-shrink: 0; accent-color: #1e3a8a; }
+.check.req-missing { border-color: #b91c1c; background: #fef2f2; }
+.record { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .8rem; line-height: 1.6; white-space: pre-wrap; word-break: break-word; }
+button[disabled] { opacity: .5; cursor: not-allowed; }

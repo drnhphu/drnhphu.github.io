@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="vi" data-title-vi="Khung Hiệu Quả: đơn vị nào hiệu quả nhất, và vì sao | TS. Nguyễn Hoàng Phú" data-title-en="Khung Hiệu Quả: which units perform best, and why | Dr. Hoang-Phu Nguyen">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khung Hiệu Quả: đơn vị nào hiệu quả nhất, và vì sao | TS. Nguyễn Hoàng Phú</title>
+    <meta name="description" content="Khung Hiệu Quả so sánh hiệu quả các cửa hàng, chi nhánh, nhân viên, đại lý trong cùng doanh nghiệp bằng DEA và fsQCA, chỉ ra tổ hợp điều kiện làm nên đơn vị hiệu quả và kế hoạch cải thiện cho từng đơn vị.">
+    <meta property="og:title" content="Khung Hiệu Quả: đơn vị nào hiệu quả nhất, và vì sao | TS. Nguyễn Hoàng Phú">
+    <meta property="og:description" content="Khung Hiệu Quả so sánh hiệu quả các cửa hàng, chi nhánh, nhân viên, đại lý trong cùng doanh nghiệp bằng DEA và fsQCA, chỉ ra tổ hợp điều kiện làm nên đơn vị hiệu quả và kế hoạch cải thiện cho từng đơn vị.">
+    <meta property="og:type" content="website">
+    <script>(function(){try{var q=new URLSearchParams(location.search).get('lang');var s=q||localStorage.getItem('khq-lang');if(s==='en'||s==='vi')document.documentElement.lang=s;}catch(e){}})();</script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = { theme: { extend: {
+            fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Merriweather', 'serif'] },
+            colors: { primary: '#1e3a8a', secondary: '#3b82f6', dark: '#111827', lightbg: '#f8fafc' } } } };
+    </script>
+    <link rel="stylesheet" href="assets/khq.css">
+</head>
+<body class="bg-white text-gray-800 antialiased selection:bg-primary selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20 gap-3">
+                <div class="flex items-center gap-3 min-w-0">
+                    <a href="../index.html" class="font-serif font-bold text-lg sm:text-xl text-primary tracking-tight truncate">Dr. Hoang-Phu Nguyen</a>
+                    <span class="hidden lg:inline text-gray-300">/</span>
+                    <a href="index.html" class="hidden lg:inline font-semibold text-dark whitespace-nowrap">Khung Hiệu Quả</a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="subnav hidden md:flex items-center space-x-5">
+                        <a href="index.html" aria-current="page" class="current text-sm font-medium transition"><span lang="vi">Giới thiệu</span><span lang="en">Overview</span></a>
+                        <a href="huong-dan.html" class="text-gray-600 hover:text-primary text-sm font-medium transition"><span lang="vi">Cách tham gia</span><span lang="en">How it works</span></a>
+                        <a href="#doi-ngu" class="text-gray-600 hover:text-primary text-sm font-medium transition"><span lang="vi">Đội ngũ</span><span lang="en">Team</span></a>
+                        <a href="gui-du-lieu.html" class="text-gray-600 hover:text-primary text-sm font-medium transition"><span lang="vi">Gửi dữ liệu</span><span lang="en">Send data</span></a>
+                        <a href="tham-gia.html" class="px-5 py-2 rounded-md bg-primary text-white text-sm font-medium hover:bg-blue-800 transition shadow-sm"><span lang="vi">Tham gia</span><span lang="en">Take part</span></a>
+                    </div>
+                    <div class="flex items-center gap-0.5 border border-gray-200 rounded-full p-1 bg-gray-50 shrink-0" role="group" aria-label="Language">
+                        <button id="btn-lang-vi" type="button" onclick="setSiteLanguage('vi')" class="lang-btn active px-3 py-1 rounded-full text-xs font-bold">VI</button>
+                        <button id="btn-lang-en" type="button" onclick="setSiteLanguage('en')" class="lang-btn px-3 py-1 rounded-full text-xs font-bold">EN</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="md:hidden border-t border-gray-100">
+            <div class="subnav flex items-center gap-5 px-4 h-11 overflow-x-auto text-sm font-medium whitespace-nowrap">
+                <a href="index.html" class="current"><span lang="vi">Giới thiệu</span><span lang="en">Overview</span></a>
+                <a href="huong-dan.html" class="text-gray-600"><span lang="vi">Cách tham gia</span><span lang="en">How it works</span></a>
+                <a href="#doi-ngu" class="text-gray-600"><span lang="vi">Đội ngũ</span><span lang="en">Team</span></a>
+                <a href="gui-du-lieu.html" class="text-gray-600"><span lang="vi">Gửi dữ liệu</span><span lang="en">Send data</span></a>
+                <a href="tham-gia.html" class="text-primary font-semibold"><span lang="vi">Tham gia</span><span lang="en">Take part</span></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero-bg pt-40 pb-16 md:pt-40 md:pb-20 px-4 border-b border-gray-100">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 text-primary rounded-full text-xs font-bold uppercase tracking-widest mb-4">
+                <i class="fa-solid fa-chart-simple"></i>
+                <span lang="vi">Công cụ miễn phí · Đang chạy thử</span><span lang="en">Free tool · Pilot stage</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-serif font-bold text-dark mb-4 leading-tight">Khung Hiệu Quả</h1>
+            <p class="text-xl md:text-2xl font-serif text-primary mb-5">
+                <span lang="vi">Đơn vị nào hiệu quả nhất, và vì sao?</span><span lang="en">Which of your units perform best, and why?</span>
+            </p>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto font-light leading-relaxed mb-8">
+                <span lang="vi">So sánh các cửa hàng, chi nhánh, nhân viên hay đại lý trong cùng doanh nghiệp theo mọi nguồn lực và kết quả cùng lúc, tìm ra tổ hợp điều kiện làm nên đơn vị hiệu quả, rồi lập kế hoạch cải thiện cho từng đơn vị.</span>
+                <span lang="en">Compare the stores, branches, salespeople or agents of one company on all their resources and results at once, find the combinations of conditions behind the best performers, and get an improvement plan for each unit.</span>
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tham-gia.html" class="px-8 py-3 bg-primary text-white rounded-md font-medium hover:bg-blue-800 transition shadow-md flex items-center justify-center gap-2">
+                    <span lang="vi">Tham gia chạy thử</span><span lang="en">Join the pilot</span> <i class="fa-solid fa-arrow-right text-sm"></i>
+                </a>
+                <a href="huong-dan.html" class="px-8 py-3 bg-white text-gray-700 border border-gray-300 rounded-md font-medium hover:bg-gray-50 transition shadow-sm flex items-center justify-center gap-2">
+                    <span lang="vi">Xem cách tham gia</span><span lang="en">See how it works</span> <i class="fa-solid fa-route text-sm"></i>
+                </a>
+            </div>
+            <a href="#video" class="inline-flex items-center gap-2 mt-6 text-sm font-medium text-primary hover:underline underline-offset-4">
+                <i class="fa-solid fa-circle-play text-base" aria-hidden="true"></i><span lang="vi">Xem video giới thiệu · 1:10</span><span lang="en">Watch the intro video · 1:14</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Video -->
+    <section id="video" class="scroll-mt-28 py-16 px-4 bg-white border-b border-gray-100" aria-labelledby="video-title">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-10">
+                <div class="text-xs font-bold uppercase tracking-widest text-secondary mb-3"><span lang="vi">Video giới thiệu · 1:10</span><span lang="en">Intro video · 1:14</span></div>
+                <h2 id="video-title" class="text-3xl font-serif font-bold text-dark mb-3" style="text-wrap:balance"><span lang="vi">Khung Hiệu Quả trong 70 giây</span><span lang="en">Khung Hiệu Quả in 74 seconds</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto"><span lang="vi">Từ câu hỏi đơn vị nào tốt nhất tới kế hoạch cải thiện cho từng đơn vị.</span><span lang="en">From the question of which unit is best to an improvement plan for each unit.</span></p>
+            </div>
+            <!-- Mỗi ngôn ngữ một video. Thay video: ghi đè file trong video/ và ảnh bìa trong img/ (giữ tên file). Video đổi nội dung thì sửa các mốc data-seek (giây), nhãn thời gian và lời thoại bên dưới. -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start" lang="vi" data-khq-video>
+                <figure class="lg:col-span-7 min-w-0">
+                    <div class="video-frame rounded-xl overflow-hidden bg-dark shadow-lg">
+                        <video src="video/gioi-thieu-khung-hieu-qua.mp4" poster="img/video-poster.webp" controls preload="none" playsinline width="1920" height="1080" aria-label="Video giới thiệu Khung Hiệu Quả" aria-describedby="video-note-vi">
+                            <a href="video/gioi-thieu-khung-hieu-qua.mp4">video/gioi-thieu-khung-hieu-qua.mp4</a>
+                        </video>
+                        <button type="button" class="video-play" data-video-play>
+                            <span class="video-play-icon" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+                            <span>Xem video</span>
+                            <span class="video-play-time">1:10</span>
+                        </button>
+                    </div>
+                    <figcaption id="video-note-vi" class="text-sm text-gray-600 mt-3"><i class="fa-solid fa-circle-info text-secondary mr-1" aria-hidden="true"></i>Video được tạo bằng AI.</figcaption>
+                    <details class="transcript mt-4">
+                        <summary><i class="fa-solid fa-file-lines" aria-hidden="true"></i><span>Đọc lời thoại</span><i class="fa-solid fa-chevron-down text-xs chev" aria-hidden="true"></i></summary>
+                        <ol data-marks>
+                            <li data-mark-host><button type="button" class="ts" data-seek="0">0:00</button><p>Anh chị có mười, năm mươi hay hai trăm chi nhánh, đại lý, nhân viên bán hàng. Anh chị có biết chắc đơn vị nào đang làm tốt nhất, và vì sao không?</p></li>
+                            <li data-mark-host><button type="button" class="ts" data-seek="8">0:08</button><p>Phần lớn doanh nghiệp đo hiệu quả bằng doanh thu, hoặc các tỷ số như ROI, ROA, ROE. Nhưng mỗi tỷ số chỉ so một kết quả với một nguồn lực. Một chi nhánh có thể đứng đầu về doanh thu, lại đứng cuối khi tính trên tài sản hay số nhân viên. Và không tỷ số nào cho biết nên sửa ở đâu.</p></li>
+                            <li data-mark-host><button type="button" class="ts" data-seek="28">0:28</button><p>Chúng tôi so mỗi đơn vị với những đơn vị tốt nhất trong chính doanh nghiệp anh chị, xét cùng lúc mọi nguồn lực bỏ ra và mọi kết quả mang về. Anh chị chỉ cần tải bảng số liệu có sẵn lên.</p></li>
+                            <li data-mark-host><button type="button" class="ts" data-seek="37">0:37</button><p>Bản chẩn đoán miễn phí cho biết điểm hiệu quả và thứ hạng của từng đơn vị, gửi thẳng vào email của anh chị.</p></li>
+                            <li data-mark-host><button type="button" class="ts" data-seek="43">0:43</button><p>Nhưng điểm số chỉ là bước đầu. Trong buổi tư vấn, chúng tôi chỉ ra tổ hợp cách làm nào tạo nên đơn vị hiệu quả, mỗi đơn vị yếu nên học theo đơn vị nào, và cần cải thiện cụ thể bao nhiêu ở từng chỉ số.</p></li>
+                            <li data-mark-host><button type="button" class="ts" data-seek="55">0:55</button><p>Kết quả cuối cùng là một kế hoạch cải thiện theo từng người phụ trách. Sau ba tháng, chúng tôi chấm lại, để đo xem thay đổi có tạo ra kết quả không.</p></li>
+                            <li data-mark-host><button type="button" class="ts" data-seek="62.5">1:02</button><p>Bắt đầu bằng bản chẩn đoán miễn phí. Nếu thấy hữu ích, hãy đặt lịch tư vấn với chúng tôi.</p></li>
+                        </ol>
+                    </details>
+                </figure>
+                <div class="lg:col-span-5 min-w-0 bg-lightbg border border-gray-100 rounded-xl p-5 md:p-6 lg:sticky lg:top-28">
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-3 px-3">Các đoạn trong video</h3>
+                    <ol class="chapters space-y-1" data-marks>
+                        <li><button type="button" data-seek="0"><span class="t">0:00</span><span>Đơn vị nào tốt nhất?</span></button></li>
+                        <li><button type="button" data-seek="8"><span class="t">0:08</span><span>Mỗi tỷ số chỉ nhìn một góc</span></button></li>
+                        <li><button type="button" data-seek="28"><span class="t">0:28</span><span>So với người giỏi nhất của chính bạn</span></button></li>
+                        <li><button type="button" data-seek="37"><span class="t">0:37</span><span>Bản chẩn đoán miễn phí</span></button></li>
+                        <li><button type="button" data-seek="43"><span class="t">0:43</span><span>Điểm số chỉ là bước đầu</span></button></li>
+                        <li><button type="button" data-seek="55"><span class="t">0:55</span><span>Kế hoạch cải thiện theo người phụ trách</span></button></li>
+                    </ol>
+                    <p class="text-xs text-gray-500 mt-3 px-3">Bấm vào một mốc để xem đúng đoạn đó.</p>
+                    <a href="tham-gia.html" class="mt-5 px-6 py-3 bg-primary text-white rounded-md font-medium hover:bg-blue-800 transition shadow-md flex items-center justify-center gap-2">
+                        Nhận chẩn đoán miễn phí <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start" lang="en" data-khq-video>
+                <figure class="lg:col-span-7 min-w-0">
+                    <div class="video-frame rounded-xl overflow-hidden bg-dark shadow-lg">
+                        <video src="video/khung-hieu-qua-intro-en.mp4" poster="img/video-poster-en.webp" controls preload="none" playsinline width="1920" height="1080" aria-label="Khung Hiệu Quả intro video" aria-describedby="video-note-en">
+                            <a href="video/khung-hieu-qua-intro-en.mp4">video/khung-hieu-qua-intro-en.mp4</a>
+                        </video>
+                        <button type="button" class="video-play" data-video-play>
+                            <span class="video-play-icon" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+                            <span>Watch</span>
+                            <span class="video-play-time">1:14</span>
+                        </button>
+                    </div>
+                    <figcaption id="video-note-en" class="text-sm text-gray-600 mt-3"><i class="fa-solid fa-circle-info text-secondary mr-1" aria-hidden="true"></i>This video is AI-generated.</figcaption>
+                    <details class="transcript mt-4">
+                        <summary><i class="fa-solid fa-file-lines" aria-hidden="true"></i><span>Read the transcript</span><i class="fa-solid fa-chevron-down text-xs chev" aria-hidden="true"></i></summary>
+                        <ol data-marks>
+                            <li data-mark-host><button type="button" class="ts" data-seek="0">0:00</button><p>You have ten, fifty, or two hundred branches, dealers, and sales reps. Do you know for sure which unit is performing best, and why?</p></li>
+                            <li data-mark-host><button type="button" class="ts" data-seek="9">0:09</button><p>Most businesses measure performance by revenue, or by ratios like ROI, ROA, and ROE. But each ratio compares just one result with one resource. A branch can rank first on revenue, yet last when measured against its assets or headcount. And no ratio tells you where to fix things.</p></li>
+                            <li data-mark-host><button type="button" class="ts" data-seek="28">0:28</button><p>We compare each unit with the best performers inside your own business, looking at every resource you put in and every result you get back, all at once. All you need to do is upload the data you already have.</p></li>
+                            <li data-mark-host><button type="button" class="ts" data-seek="39.5">0:39</button><p>The free diagnosis gives every unit an efficiency score and a ranking, sent straight to your inbox.</p></li>
+                            <li data-mark-host><button type="button" class="ts" data-seek="45.3">0:45</button><p>But the score is only the first step. In the consultation, we show you which combination of practices makes a unit efficient, which unit each weaker one should learn from, and exactly how much each metric needs to improve.</p></li>
+                            <li data-mark-host><button type="button" class="ts" data-seek="57.7">0:57</button><p>The end result is an improvement plan with a clear owner for every action. After three months, we score again, to measure whether the changes are paying off.</p></li>
+                            <li data-mark-host><button type="button" class="ts" data-seek="66">1:06</button><p>Start with the free diagnosis. If you find it useful, book a consultation with us.</p></li>
+                        </ol>
+                    </details>
+                </figure>
+                <div class="lg:col-span-5 min-w-0 bg-lightbg border border-gray-100 rounded-xl p-5 md:p-6 lg:sticky lg:top-28">
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-3 px-3">In this video</h3>
+                    <ol class="chapters space-y-1" data-marks>
+                        <li><button type="button" data-seek="0"><span class="t">0:00</span><span>Which unit is best, and why?</span></button></li>
+                        <li><button type="button" data-seek="9"><span class="t">0:09</span><span>Each ratio sees one angle</span></button></li>
+                        <li><button type="button" data-seek="28"><span class="t">0:28</span><span>Compare to your best inside your business</span></button></li>
+                        <li><button type="button" data-seek="39.5"><span class="t">0:39</span><span>Your free diagnosis</span></button></li>
+                        <li><button type="button" data-seek="45.3"><span class="t">0:45</span><span>The score is just the first step</span></button></li>
+                        <li><button type="button" data-seek="57.7"><span class="t">0:57</span><span>An improvement plan with clear owners</span></button></li>
+                    </ol>
+                    <p class="text-xs text-gray-500 mt-3 px-3">Click a timestamp to jump to that part.</p>
+                    <a href="tham-gia.html" class="mt-5 px-6 py-3 bg-primary text-white rounded-md font-medium hover:bg-blue-800 transition shadow-md flex items-center justify-center gap-2">
+                        Get the free diagnosis <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article -->
+    <section id="bai-viet" class="scroll-mt-28 py-16 px-4 bg-white">
+        <article class="max-w-3xl mx-auto article">
+            <div class="text-xs font-bold uppercase tracking-widest text-secondary mb-3"><span lang="vi">Bài viết</span><span lang="en">Article</span></div>
+
+            <div lang="vi">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-dark leading-tight mb-6" style="text-wrap:balance">Vì sao hai cửa hàng giống nhau lại cho kết quả khác nhau?</h2>
+                <p class="text-lg">Doanh nghiệp có nhiều đơn vị cùng loại đều theo dõi chỉ số của từng đơn vị: doanh thu mỗi cửa hàng, doanh số mỗi nhân viên, sản lượng mỗi hộ trồng. Câu hỏi khó nằm ở bước sau. Đơn vị doanh thu cao đang làm tốt, hay chỉ được giao nhiều nguồn lực hơn? Đơn vị doanh thu thấp đang kém, hay đã làm hết sức với mặt bằng nhỏ và ít người? Nếu đơn vị A làm tốt hơn đơn vị B, điều gì ở A tạo ra khác biệt?</p>
+                <p>Các tỷ số quen thuộc như doanh thu trên mét vuông hay doanh thu trên nhân viên chỉ ghép một nguồn lực với một kết quả mỗi lần. Cửa hàng đứng đầu theo doanh thu trên mét vuông vẫn có thể đứng cuối theo doanh thu trên chi phí. Khi đặt năm, sáu tỷ số cạnh nhau, người quản lý phải tự quyết tỷ số nào nặng hơn, và mỗi người quyết một kiểu.</p>
+
+                <h3>Khung Hiệu Quả trả lời hai câu hỏi bằng hai phương pháp</h3>
+                <p>Câu hỏi thứ nhất là đơn vị nào hiệu quả. Khung Hiệu Quả dùng phân tích bao dữ liệu (Data Envelopment Analysis, DEA), phương pháp do Charnes, Cooper và Rhodes (1978) đề xuất. DEA đưa mọi nguồn lực và mọi kết quả của từng đơn vị vào cùng một phép so sánh, tìm nhóm đơn vị làm tốt nhất ngay trong doanh nghiệp, rồi đo mỗi đơn vị còn cách nhóm đó bao xa. Không ai phải tự gán trọng số cho từng chỉ số: mỗi đơn vị được chấm theo cách có lợi nhất cho chính nó, nên đơn vị vẫn bị điểm thấp thì khó lấy lý do "cách chấm không công bằng".</p>
+                <p>Câu hỏi thứ hai là vì sao. Khung Hiệu Quả dùng phân tích so sánh định tính theo tập mờ (fuzzy-set Qualitative Comparative Analysis, fsQCA) của Ragin (2008). Phương pháp này không tìm một yếu tố quan trọng nhất. Nó tìm những tổ hợp điều kiện thường đi cùng đơn vị hiệu quả cao, và kết quả đọc như một công thức. Một công thức có dạng như sau: cửa hàng trưởng có từ ba năm kinh nghiệm và có nhận đơn giao hàng thì hiệu quả cao, dù cửa hàng có nằm ở mặt tiền hay không. Dữ liệu thường cho thấy nhiều hơn một con đường dẫn tới kết quả tốt, và mỗi con đường đi kèm độ nhất quán và độ bao phủ để biết công thức đó chắc tới đâu.</p>
+
+                <h3>Từ con số tới việc cần làm</h3>
+                <p>Hai phần kết quả được gộp thành kế hoạch cải thiện cho từng đơn vị chưa đạt điểm tối đa: đơn vị đó nên học theo đơn vị nào, cần tăng chỉ số nào và tăng bao nhiêu để theo kịp, còn thiếu điều kiện nào so với công thức thành công. Mỗi điều kiện được gắn với người tác động được tới nó, là quản lý đơn vị, doanh nghiệp, đối tác hay chính quyền, hoặc là bối cảnh không đổi được. Nhờ vậy kế hoạch phân biệt được việc cửa hàng tự làm với việc cần văn phòng chuỗi quyết định.</p>
+
+                <h3>Điều Khung Hiệu Quả không làm</h3>
+                <p>Điểm hiệu quả là so sánh tương đối trong nội bộ doanh nghiệp. Đơn vị đạt điểm 1 là đơn vị tốt nhất trong nhóm được so sánh, chưa chắc đã tốt so với thị trường. Công thức thành công cho biết tổ hợp điều kiện nào đi cùng kết quả tốt trong dữ liệu, chưa chứng minh quan hệ nhân quả. Kết quả chỉ tốt bằng dữ liệu đưa vào, nên công cụ có một bước duyệt dữ liệu bắt buộc: chưa duyệt thì chưa chấm điểm.</p>
+
+                <h3>Giai đoạn chạy thử</h3>
+                <p>Khung Hiệu Quả đang trong giai đoạn chạy thử. Doanh nghiệp tham gia trả lời vài câu hỏi trong khung trò chuyện ở trang <a href="tham-gia.html" class="text-primary underline underline-offset-2">Tham gia</a> để chọn đầu vào, đầu ra hợp với ngành mình, đọc và xác nhận các cam kết bảo mật, ẩn danh, rồi nhận phiếu dữ liệu qua email. Khi doanh nghiệp gửi lại phiếu đã điền, TS. Nguyễn Hoàng Phú và nhóm phân tích duyệt dữ liệu, chạy Khung Hiệu Quả và gửi lại kết quả kèm một bản phân tích ngắn. Doanh nghiệp muốn đi sâu hơn vào một vấn đề cụ thể có thể đặt dịch vụ tư vấn riêng.</p>
+            </div>
+
+            <div lang="en">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-dark leading-tight mb-6" style="text-wrap:balance">Why do two similar stores get different results?</h2>
+                <p class="text-lg">Any company with many units of the same kind tracks figures for each one: revenue per store, sales per salesperson, yield per farm. The hard question comes next. Is the high-revenue unit doing well, or was it simply given more resources? Is the low-revenue unit underperforming, or doing its best with a small floor and few staff? And if unit A beats unit B, what about A makes the difference?</p>
+                <p>Familiar ratios such as revenue per square metre or revenue per employee pair one resource with one result at a time. The store that ranks first on revenue per square metre can rank last on revenue per unit of cost. Put five or six ratios side by side and each manager has to decide which one matters most, and each decides differently.</p>
+
+                <h3>Two questions, two methods</h3>
+                <p>The first question is which units are efficient. Khung Hiệu Quả uses Data Envelopment Analysis (DEA), introduced by Charnes, Cooper and Rhodes (1978). DEA puts all the resources and all the results of each unit into one comparison, finds the best-performing units within the company, and measures how far every other unit is from them. Nobody has to assign weights to the indicators: each unit is scored in the way most favourable to itself, so a unit that still scores low cannot blame the scoring.</p>
+                <p>The second question is why. Khung Hiệu Quả uses fuzzy-set Qualitative Comparative Analysis (fsQCA), developed by Ragin (2008). Instead of looking for the single most important factor, it looks for the combinations of conditions that tend to come with high efficiency, and the result reads like a recipe. A recipe looks like this: a store manager with three or more years of experience plus online delivery orders leads to high efficiency, whether or not the store has a main-road frontage. Data often show more than one path to good results, and each path comes with consistency and coverage figures that say how solid it is.</p>
+
+                <h3>From scores to actions</h3>
+                <p>Both parts are combined into an improvement plan for every unit that is not yet on the frontier: which unit it should learn from, which indicators it needs to raise and by how much, and which conditions of the success recipe it still lacks. Each condition is tagged with who can act on it: the unit manager, the company, a partner or the local government, or a context that cannot be changed. The plan therefore separates what a store can do on its own from what head office has to decide.</p>
+
+                <h3>What Khung Hiệu Quả does not do</h3>
+                <p>Efficiency scores are a relative comparison inside one company. A unit scoring 1 is the best in the group being compared, not necessarily good by market standards. A success recipe shows which combinations of conditions go with good results in the data; it does not prove cause and effect. Results are only as good as the data, so the tool has a mandatory data review step: no review, no scores.</p>
+
+                <h3>Pilot stage</h3>
+                <p>Khung Hiệu Quả is in its pilot stage. A participating company answers a few questions in the chat on the <a href="tham-gia.html" class="text-primary underline underline-offset-2">Take part</a> page to choose the inputs and outputs that fit its sector, reads and accepts the privacy and anonymity commitments, and receives a data template by email. Once the completed template comes back, Dr. Hoang-Phu Nguyen and the analysis team review the data, run Khung Hiệu Quả and return the results with a short analysis. Companies that want to go deeper into a specific issue can book a separate consulting engagement.</p>
+            </div>
+
+            <div class="refs mt-10 pt-6 border-t border-gray-100">
+                <div class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3"><span lang="vi">Tài liệu tham khảo</span><span lang="en">References</span></div>
+                <p>Charnes, A., Cooper, W. W., &amp; Rhodes, E. (1978). Measuring the efficiency of decision making units. <i>European Journal of Operational Research, 2</i>(6), 429–444. <a href="https://doi.org/10.1016/0377-2217(78)90138-8" target="_blank" rel="noopener" class="text-blue-600 hover:underline">https://doi.org/10.1016/0377-2217(78)90138-8</a></p>
+                <p>Ragin, C. C. (2008). <i>Redesigning social inquiry: Fuzzy sets and beyond</i>. University of Chicago Press.</p>
+            </div>
+        </article>
+    </section>
+
+    <!-- What you get -->
+    <section id="ket-qua" class="scroll-mt-28 py-16 px-4 bg-lightbg border-y border-gray-100">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-serif font-bold text-dark mb-3"><span lang="vi">Doanh nghiệp nhận được gì</span><span lang="en">What you receive</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto"><span lang="vi">Bốn phần kết quả, mỗi phần trả lời một câu hỏi quản lý.</span><span lang="en">Four sets of results, each answering one management question.</span></p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                    <div class="w-11 h-11 bg-blue-50 text-primary rounded-full flex items-center justify-center mb-4"><i class="fa-solid fa-ranking-star"></i></div>
+                    <h3 class="font-bold text-dark mb-2"><span lang="vi">Điểm hiệu quả và thứ hạng</span><span lang="en">Efficiency scores and ranks</span></h3>
+                    <p class="text-sm text-gray-600 leading-relaxed"><span lang="vi">Mỗi đơn vị có điểm từ 0 đến 1, so với các đơn vị làm tốt nhất trong cùng nhóm. Điểm 0,80 nghĩa là đơn vị mới đạt khoảng 80% mức có thể.</span><span lang="en">Each unit gets a score from 0 to 1 against the best units in its group. A score of 0.80 means the unit reaches about 80% of what is achievable.</span></p>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                    <div class="w-11 h-11 bg-blue-50 text-primary rounded-full flex items-center justify-center mb-4"><i class="fa-solid fa-bullseye"></i></div>
+                    <h3 class="font-bold text-dark mb-2"><span lang="vi">Đơn vị tham chiếu và mục tiêu</span><span lang="en">Peers and targets</span></h3>
+                    <p class="text-sm text-gray-600 leading-relaxed"><span lang="vi">Đơn vị nào nên học theo đơn vị nào, và từng chỉ số cần đạt mức nào để theo kịp.</span><span lang="en">Which unit each one should learn from, and the level each indicator needs to reach to catch up.</span></p>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                    <div class="w-11 h-11 bg-blue-50 text-primary rounded-full flex items-center justify-center mb-4"><i class="fa-solid fa-diagram-project"></i></div>
+                    <h3 class="font-bold text-dark mb-2"><span lang="vi">Công thức thành công</span><span lang="en">Success recipes</span></h3>
+                    <p class="text-sm text-gray-600 leading-relaxed"><span lang="vi">Các tổ hợp điều kiện thường gặp ở đơn vị hiệu quả cao, kèm độ nhất quán và độ bao phủ của từng tổ hợp.</span><span lang="en">The combinations of conditions found among highly efficient units, with the consistency and coverage of each.</span></p>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                    <div class="w-11 h-11 bg-blue-50 text-primary rounded-full flex items-center justify-center mb-4"><i class="fa-solid fa-list-check"></i></div>
+                    <h3 class="font-bold text-dark mb-2"><span lang="vi">Kế hoạch cải thiện</span><span lang="en">Improvement plan</span></h3>
+                    <p class="text-sm text-gray-600 leading-relaxed"><span lang="vi">Việc cần làm cho từng đơn vị chưa đạt điểm tối đa, và ai phụ trách từng điều kiện còn thiếu.</span><span lang="en">Actions for every unit below the frontier, and who is responsible for each missing condition.</span></p>
+                </div>
+            </div>
+            <p class="mt-8 text-center text-gray-600 max-w-3xl mx-auto"><span lang="vi">Kèm theo là một bản phân tích ngắn chỉ ra vấn đề nổi bật nhất trong dữ liệu. Doanh nghiệp muốn đi sâu hơn có thể đặt dịch vụ tư vấn riêng.</span><span lang="en">The results come with a short analysis that points to the most prominent issue in your data. If you want to go deeper, consulting is available as a separate service.</span></p>
+            <figure class="mt-10 max-w-4xl mx-auto">
+                <img src="img/plan.webp" alt="Trang Kế hoạch cải thiện của Khung Hiệu Quả với dữ liệu giả lập" class="shot" loading="lazy" width="1200" height="1131">
+                <figcaption class="text-sm text-gray-500 mt-3 text-center"><span lang="vi">Trang Kế hoạch cải thiện, chạy trên dữ liệu giả lập 55 cửa hàng. Không phải số liệu của doanh nghiệp nào.</span><span lang="en">The Improvement plan page, run on simulated data for 55 stores. Not the figures of any real company.</span></figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section id="quy-trinh" class="scroll-mt-28 py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-serif font-bold text-dark mb-3"><span lang="vi">Tham gia chạy thử như thế nào</span><span lang="en">How the pilot works</span></h2>
+            </div>
+            <ol class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <li class="relative p-6 rounded-xl border border-gray-100 bg-white shadow-sm">
+                    <div class="step-no text-sm font-bold text-secondary mb-2">01</div>
+                    <h3 class="font-bold text-dark mb-2"><span lang="vi">Trò chuyện và đồng ý</span><span lang="en">Chat and consent</span></h3>
+                    <p class="text-sm text-gray-600 leading-relaxed"><span lang="vi">Khoảng 5 phút trả lời câu hỏi để chọn đầu vào, đầu ra, điều kiện phù hợp; đọc cam kết và xác nhận đồng ý.</span><span lang="en">About 5 minutes of questions to choose suitable inputs, outputs and conditions; read the commitments and confirm consent.</span></p>
+                </li>
+                <li class="relative p-6 rounded-xl border border-gray-100 bg-white shadow-sm">
+                    <div class="step-no text-sm font-bold text-secondary mb-2">02</div>
+                    <h3 class="font-bold text-dark mb-2"><span lang="vi">Nhận phiếu qua email</span><span lang="en">Template by email</span></h3>
+                    <p class="text-sm text-gray-600 leading-relaxed"><span lang="vi">Email gửi phiếu Excel đúng ngành, tóm tắt bộ chỉ số đã chọn và mã hồ sơ của doanh nghiệp.</span><span lang="en">An email brings the Excel template for your sector, a summary of the chosen indicators and your case code.</span></p>
+                </li>
+                <li class="relative p-6 rounded-xl border border-gray-100 bg-white shadow-sm">
+                    <div class="step-no text-sm font-bold text-secondary mb-2">03</div>
+                    <h3 class="font-bold text-dark mb-2"><span lang="vi">Điền và gửi dữ liệu</span><span lang="en">Fill in and send</span></h3>
+                    <p class="text-sm text-gray-600 leading-relaxed"><span lang="vi">Mỗi dòng một đơn vị, dùng mã thay tên; trang Kiểm tra báo ô cần sửa. Tải file lên website hoặc trả lời email.</span><span lang="en">One row per unit, codes instead of names; the Check sheet flags cells to fix. Upload the file on the website or reply to the email.</span></p>
+                </li>
+                <li class="relative p-6 rounded-xl border border-gray-100 bg-white shadow-sm">
+                    <div class="step-no text-sm font-bold text-secondary mb-2">04</div>
+                    <h3 class="font-bold text-dark mb-2"><span lang="vi">Nhận kết quả</span><span lang="en">Receive the results</span></h3>
+                    <p class="text-sm text-gray-600 leading-relaxed"><span lang="vi">Điểm hiệu quả, công thức thành công, kế hoạch cải thiện và bản phân tích ngắn, gửi riêng cho người liên hệ.</span><span lang="en">Scores, success recipes, the improvement plan and a short analysis, sent privately to your contact person.</span></p>
+                </li>
+            </ol>
+            <div class="text-center mt-8"><a href="huong-dan.html" class="text-sm font-medium text-primary hover:underline underline-offset-4"><span lang="vi">Xem chi tiết từng bước</span><span lang="en">See each step in detail</span> <i class="fa-solid fa-arrow-right text-xs"></i></a></div>
+        </div>
+    </section>
+
+    <!-- Industries -->
+    <section id="nganh" class="scroll-mt-28 py-16 px-4 bg-lightbg border-y border-gray-100">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-serif font-bold text-dark mb-3"><span lang="vi">Dùng cho ngành nào</span><span lang="en">Which sectors</span></h2>
+                <p class="text-gray-600 max-w-3xl mx-auto"><span lang="vi">Mỗi ngành có bộ chỉ số khuyến nghị gồm 3 đầu vào, 3 đầu ra và 5 điều kiện. Đây là điểm xuất phát: doanh nghiệp điều chỉnh đầu vào, đầu ra cho đúng cách ngành mình vận hành trước khi chạy.</span><span lang="en">Each sector has a recommended set of 3 inputs, 3 outputs and 5 conditions. It is a starting point: adjust the inputs and outputs to how your business actually runs before the analysis.</span></p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                <a href="tham-gia.html?nganh=store" class="group bg-white p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-blue-200 transition">
+                    <div class="flex items-center gap-3 mb-2"><i class="fa-solid fa-store text-primary"></i><h3 class="font-bold text-dark"><span lang="vi">Cửa hàng, chi nhánh</span><span lang="en">Stores and branches</span></h3></div>
+                    <p class="text-sm text-gray-600 leading-relaxed"><span lang="vi">Đầu vào: diện tích, số nhân viên, chi phí vận hành. Đầu ra: doanh thu, số hoá đơn, khách thành viên mới.</span><span lang="en">Inputs: floor area, staff, operating cost. Outputs: revenue, receipts, new members.</span></p>
+                </a>
+                <a href="tham-gia.html?nganh=sales" class="group bg-white p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-blue-200 transition">
+                    <div class="flex items-center gap-3 mb-2"><i class="fa-solid fa-user-tie text-primary"></i><h3 class="font-bold text-dark"><span lang="vi">Nhân viên kinh doanh</span><span lang="en">Sales staff</span></h3></div>
+                    <p class="text-sm text-gray-600 leading-relaxed"><span lang="vi">Đầu vào: số khách được giao, chi phí tiếp khách và đi lại, số giờ làm. Đầu ra: doanh số, hợp đồng mới, khách giữ được.</span><span lang="en">Inputs: assigned leads, travel and entertainment cost, hours worked. Outputs: sales, new contracts, retained customers.</span></p>
+                </a>
+                <a href="tham-gia.html?nganh=retail" class="group bg-white p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-blue-200 transition">
+                    <div class="flex items-center gap-3 mb-2"><i class="fa-solid fa-shop text-primary"></i><h3 class="font-bold text-dark"><span lang="vi">Đại lý và điểm bán</span><span lang="en">Agents and points of sale</span></h3></div>
+                    <p class="text-sm text-gray-600 leading-relaxed"><span lang="vi">Đầu vào: lượng hàng nhận, chiết khấu và hỗ trợ trưng bày, số mã sản phẩm. Đầu ra: doanh thu, sản lượng bán, số lần đặt lại hàng.</span><span lang="en">Inputs: stock received, discounts and display support, number of SKUs. Outputs: revenue, volume sold, reorders.</span></p>
+                </a>
+                <a href="tham-gia.html?nganh=whole" class="group bg-white p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-blue-200 transition">
+                    <div class="flex items-center gap-3 mb-2"><i class="fa-solid fa-truck text-primary"></i><h3 class="font-bold text-dark"><span lang="vi">Nhà bán buôn</span><span lang="en">Wholesale buyers</span></h3></div>
+                    <p class="text-sm text-gray-600 leading-relaxed"><span lang="vi">Đầu vào: lượng hàng giao, chiết khấu và hỗ trợ vận chuyển, số chuyến giao. Đầu ra: tiền đã thu, số đơn đặt hàng, khách được giới thiệu thêm.</span><span lang="en">Inputs: volume delivered, discounts and freight support, deliveries. Outputs: cash collected, orders, referred customers.</span></p>
+                </a>
+                <a href="tham-gia.html?nganh=farm" class="group bg-white p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-blue-200 transition">
+                    <div class="flex items-center gap-3 mb-2"><i class="fa-solid fa-seedling text-primary"></i><h3 class="font-bold text-dark"><span lang="vi">Hộ trồng, vùng nguyên liệu</span><span lang="en">Farms and sourcing areas</span></h3></div>
+                    <p class="text-sm text-gray-600 leading-relaxed"><span lang="vi">Đầu vào: diện tích trồng, chi phí vật tư, ngày công. Đầu ra: sản lượng thu hoạch, sản lượng đạt chuẩn, doanh thu.</span><span lang="en">Inputs: planted area, input costs, labour days. Outputs: harvest, volume meeting the standard, revenue.</span></p>
+                </a>
+                <a href="tham-gia.html?nganh=live" class="group bg-white p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-blue-200 transition">
+                    <div class="flex items-center gap-3 mb-2"><i class="fa-solid fa-video text-primary"></i><h3 class="font-bold text-dark"><span lang="vi">Phiên livestream bán hàng</span><span lang="en">Livestream sales sessions</span></h3></div>
+                    <p class="text-sm text-gray-600 leading-relaxed"><span lang="vi">Đầu vào: người xem, lượt xem, thời lượng phiên. Đầu ra: GMV, số món bán ra, số bình luận.</span><span lang="en">Inputs: viewers, views, session length. Outputs: GMV, items sold, comments.</span></p>
+                </a>
+                <a href="tham-gia.html?nganh=clinic" class="group bg-white p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-blue-200 transition">
+                    <div class="flex items-center gap-3 mb-2"><i class="fa-solid fa-house-medical text-primary"></i><h3 class="font-bold text-dark"><span lang="vi">Trạm y tế, phòng khám</span><span lang="en">Health stations and clinics</span></h3></div>
+                    <p class="text-sm text-gray-600 leading-relaxed"><span lang="vi">Đầu vào: số bác sĩ, số điều dưỡng và hộ sinh, kinh phí hoạt động. Đầu ra: lượt khám, lượt điều trị, mũi tiêm chủng.</span><span lang="en">Inputs: doctors, nurses and midwives, operating budget. Outputs: consultations, treatments, vaccinations.</span></p>
+                </a>
+                <a href="tham-gia.html?nganh=school" class="group bg-white p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-blue-200 transition">
+                    <div class="flex items-center gap-3 mb-2"><i class="fa-solid fa-building-columns text-primary"></i><h3 class="font-bold text-dark"><span lang="vi">Trường, khoa đào tạo</span><span lang="en">Schools and faculties</span></h3></div>
+                    <p class="text-sm text-gray-600 leading-relaxed"><span lang="vi">Đầu vào: số giảng viên, kinh phí, số sinh viên đang học. Đầu ra: sinh viên tốt nghiệp, bài báo khoa học, sinh viên có việc làm.</span><span lang="en">Inputs: lecturers, budget, enrolled students. Outputs: graduates, indexed papers, employed graduates.</span></p>
+                </a>
+                <a href="tham-gia.html?nganh=custom" class="group bg-white p-5 rounded-xl border border-dashed border-gray-300 hover:border-blue-300 transition">
+                    <div class="flex items-center gap-3 mb-2"><i class="fa-solid fa-sliders text-primary"></i><h3 class="font-bold text-dark"><span lang="vi">Ngành khác</span><span lang="en">Other sectors</span></h3></div>
+                    <p class="text-sm text-gray-600 leading-relaxed"><span lang="vi">Nhà máy, dự án, đội nhóm hay bất kỳ đơn vị cùng loại nào. Doanh nghiệp tự định nghĩa chỉ số; chuyên gia chấm để lọc bộ chỉ số trước khi chạy.</span><span lang="en">Plants, projects, teams or any set of similar units. You define the indicators; experts screen them before the analysis.</span></p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team -->
+    <section id="doi-ngu" class="scroll-mt-28 py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-serif font-bold text-dark mb-3"><span lang="vi">Đội ngũ</span><span lang="en">Team</span></h2>
+                <p class="text-gray-600 max-w-3xl mx-auto"><span lang="vi">Khung Hiệu Quả do một nhóm nhà khoa học về phương pháp định lượng và chuyên gia có kinh nghiệm thực chiến tại doanh nghiệp ở nhiều lĩnh vực thực hiện, do TS. Nguyễn Hoàng Phú dẫn dắt.</span><span lang="en">Khung Hiệu Quả is run by a team of quantitative-methods researchers and practitioners with hands-on experience in companies across several sectors, led by Dr. Hoang-Phu Nguyen.</span></p>
+            </div>
+
+            <div class="bg-lightbg rounded-2xl border border-gray-100 p-6 md:p-8 flex flex-col md:flex-row gap-6 md:gap-8 items-start mb-10">
+                <img src="../profile.jpg" alt="TS. Nguyễn Hoàng Phú" class="w-28 h-28 md:w-36 md:h-36 rounded-2xl object-cover border border-gray-200 shrink-0" width="144" height="144">
+                <div class="min-w-0">
+                    <div class="text-xs font-bold uppercase tracking-widest text-secondary mb-1"><span lang="vi">Trưởng nhóm</span><span lang="en">Team lead</span></div>
+                    <h3 class="text-2xl font-serif font-bold text-dark mb-3"><span lang="vi">TS. Nguyễn Hoàng Phú</span><span lang="en">Dr. Hoang-Phu Nguyen</span></h3>
+                    <ul class="space-y-2 text-sm text-gray-700 leading-relaxed">
+                        <li class="flex gap-3"><i class="fa-solid fa-building-columns text-primary mt-1 w-4 shrink-0"></i><span><span lang="vi">Giảng viên và Giám đốc Chương trình MBA, Trường Đại học Quốc tế, ĐHQG-HCM. Giảng viên thỉnh giảng tại Swinburne University of Technology, Soochow University (Đài Loan) và UWE Bristol.</span><span lang="en">Lecturer and MBA Program Chair, International University, VNU-HCM. Visiting lecturer at Swinburne University of Technology, Soochow University (Taiwan) and UWE Bristol.</span></span></li>
+                        <li class="flex gap-3"><i class="fa-solid fa-graduation-cap text-primary mt-1 w-4 shrink-0"></i><span><span lang="vi">Tiến sĩ Kỹ thuật và Quản lý Công nghiệp, National Kaohsiung University of Science and Technology. Thạc sĩ Hành vi Kinh tế và Quản trị, University of Kassel (Đức).</span><span lang="en">Ph.D. in Industrial Engineering and Management, National Kaohsiung University of Science and Technology. M.Sc. in Economic Behavior and Governance, University of Kassel, Germany.</span></span></li>
+                        <li class="flex gap-3"><i class="fa-solid fa-flask text-primary mt-1 w-4 shrink-0"></i><span><span lang="vi">Tác giả hơn 20 bài báo phản biện kín, trong đó có các nghiên cứu dùng DEA và mô hình ra quyết định đa tiêu chí để đánh giá hiệu quả sinh thái khu công nghiệp (Sage Open, 2025) và chọn nhà máy điện gió (IEEE Transactions on Engineering Management).</span><span lang="en">Author of more than 20 peer-reviewed articles, including studies that use DEA and multi-criteria decision models to evaluate the eco-efficiency of industrial parks (Sage Open, 2025) and to select wind power plants (IEEE Transactions on Engineering Management).</span></span></li>
+                        <li class="flex gap-3"><i class="fa-solid fa-briefcase text-primary mt-1 w-4 shrink-0"></i><span><span lang="vi">Tư vấn và đào tạo cho doanh nghiệp: VietESG, Starttrain, MiTRADE.</span><span lang="en">Consulting and training for companies: VietESG, Starttrain, MiTRADE.</span></span></li>
+                    </ul>
+                    <a href="../index.html#experience" class="inline-flex items-center gap-2 mt-4 text-sm font-medium text-primary hover:underline underline-offset-4"><span lang="vi">Xem hồ sơ đầy đủ</span><span lang="en">Full profile</span> <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-dark mb-1 flex items-center gap-3"><i class="fa-solid fa-microscope text-primary"></i><span lang="vi">Nhà khoa học</span><span lang="en">Researchers</span></h3>
+                    <p class="text-sm text-gray-600 mb-4"><span lang="vi">Phụ trách phương pháp: xây bộ chỉ số, chạy và kiểm tra mô hình, bảo đảm kết quả được đọc đúng.</span><span lang="en">Responsible for method: building the indicator set, running and checking the models, and making sure results are read correctly.</span></p>
+                    <div class="space-y-4" data-team-group="science"></div>
+                    <p data-team-empty hidden class="text-sm text-gray-500 italic bg-gray-50 border border-dashed border-gray-200 rounded-xl p-5"><span lang="vi">Hồ sơ thành viên đang được cập nhật.</span><span lang="en">Member profiles are being added.</span></p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-dark mb-1 flex items-center gap-3"><i class="fa-solid fa-people-group text-primary"></i><span lang="vi">Chuyên gia thực chiến</span><span lang="en">Industry practitioners</span></h3>
+                    <p class="text-sm text-gray-600 mb-4"><span lang="vi">Đã làm việc tại doanh nghiệp ở nhiều lĩnh vực; giúp điều chỉnh chỉ số theo ngành và chuyển kết quả phân tích thành việc làm cụ thể.</span><span lang="en">Have worked inside companies in several sectors; help adapt the indicators to each sector and turn results into concrete actions.</span></p>
+                    <div class="space-y-4" data-team-group="practice"></div>
+                    <p data-team-empty hidden class="text-sm text-gray-500 italic bg-gray-50 border border-dashed border-gray-200 rounded-xl p-5"><span lang="vi">Hồ sơ thành viên đang được cập nhật.</span><span lang="en">Member profiles are being added.</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust -->
+    <section class="py-16 px-4 bg-lightbg border-t border-gray-100">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-serif font-bold text-dark mb-3"><span lang="vi">Dữ liệu của doanh nghiệp được xử lý thế nào</span><span lang="en">How your data is handled</span></h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="flex gap-4">
+                    <div class="w-10 h-10 shrink-0 bg-blue-50 text-primary rounded-full flex items-center justify-center"><i class="fa-solid fa-file-signature"></i></div>
+                    <div><h3 class="font-bold mb-1"><span lang="vi">Đồng ý trước</span><span lang="en">Consent first</span></h3>
+                    <p class="text-sm text-gray-600 leading-relaxed"><span lang="vi">Doanh nghiệp chỉ nhận phiếu và gửi dữ liệu sau khi đã đọc và xác nhận các cam kết.</span><span lang="en">You only receive the template and send data after reading and accepting the commitments.</span></p></div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="w-10 h-10 shrink-0 bg-blue-50 text-primary rounded-full flex items-center justify-center"><i class="fa-solid fa-user-secret"></i></div>
+                    <div><h3 class="font-bold mb-1"><span lang="vi">Ẩn danh</span><span lang="en">Anonymous</span></h3>
+                    <p class="text-sm text-gray-600 leading-relaxed"><span lang="vi">Phiếu dùng mã thay tên đơn vị, không thu dữ liệu cá nhân. Tên doanh nghiệp không xuất hiện ở bất kỳ ấn phẩm nào.</span><span lang="en">Templates use codes instead of unit names and collect no personal data. Your company name never appears in any publication.</span></p></div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="w-10 h-10 shrink-0 bg-blue-50 text-primary rounded-full flex items-center justify-center"><i class="fa-solid fa-lock"></i></div>
+                    <div><h3 class="font-bold mb-1"><span lang="vi">Không chia sẻ</span><span lang="en">Not shared</span></h3>
+                    <p class="text-sm text-gray-600 leading-relaxed"><span lang="vi">Dữ liệu không được bán hay chuyển cho bên thứ ba. Lưu trữ lâu dài theo mã hồ sơ và xoá ngay khi doanh nghiệp yêu cầu.</span><span lang="en">Data is never sold or passed to third parties. It is kept long term under a case code and deleted as soon as you ask.</span></p></div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="w-10 h-10 shrink-0 bg-blue-50 text-primary rounded-full flex items-center justify-center"><i class="fa-solid fa-rotate-left"></i></div>
+                    <div><h3 class="font-bold mb-1"><span lang="vi">Rút lại bất kỳ lúc nào</span><span lang="en">Withdraw any time</span></h3>
+                    <p class="text-sm text-gray-600 leading-relaxed"><span lang="vi">Một email là đủ để rút lại đồng ý, xem, chỉnh sửa hoặc xoá dữ liệu. Phản hồi trong 2 ngày làm việc.</span><span lang="en">One email is enough to withdraw consent, or to view, correct or delete the data. We respond within 2 working days.</span></p></div>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="tham-gia.html#cam-ket" class="text-sm font-medium text-primary hover:underline underline-offset-4"><span lang="vi">Đọc đầy đủ thông báo xử lý dữ liệu</span><span lang="en">Read the full data processing notice</span> <i class="fa-solid fa-arrow-right text-xs"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 px-4 bg-gradient-to-r from-primary to-blue-900">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-white">
+            <div class="md:max-w-2xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/15 rounded-full text-xs font-bold uppercase tracking-widest mb-4">
+                    <i class="fa-solid fa-circle-info"></i> <span lang="vi">Đang chạy thử, tháng 11/2026</span><span lang="en">Pilot stage, November 2026</span>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-serif font-bold mb-3"><span lang="vi">Muốn biết đơn vị nào của bạn hiệu quả nhất?</span><span lang="en">Want to know which of your units perform best?</span></h2>
+                <p class="text-blue-100 leading-relaxed"><span lang="vi">Kết quả và bản phân tích ngắn không mất phí trong giai đoạn chạy thử (đến tháng 3/2027). Cần khoảng 18 đơn vị cùng loại trở lên có số liệu trong cùng một kỳ.</span><span lang="en">Results and the short analysis are free during the pilot (until March 2027). You need about 18 or more similar units with data for the same period.</span></p>
+            </div>
+            <a href="tham-gia.html" class="shrink-0 px-8 py-3 bg-white text-primary rounded-md font-medium hover:bg-blue-50 transition shadow-md flex items-center gap-2">
+                <span lang="vi">Tham gia chạy thử</span><span lang="en">Join the pilot</span> <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-8 px-4">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm gap-2">
+            <p>&copy; 2026 Dr. Hoang-Phu Nguyen. All rights reserved.</p>
+            <div class="flex gap-5">
+                <a href="tham-gia.html#cam-ket" class="hover:text-white transition"><span lang="vi">Cam kết dữ liệu</span><span lang="en">Data commitments</span></a>
+                <a href="../index.html" class="hover:text-white transition"><span lang="vi">← Quay lại trang chủ</span><span lang="en">← Back to home</span></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/cau-hinh.js"></script>
+    <script src="assets/doi-ngu.js"></script>
+    <script src="assets/khq.js"></script>
+</body>
+</html>

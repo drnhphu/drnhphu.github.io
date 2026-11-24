@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="vi" data-title-vi="Tham gia Khung Hiệu Quả | TS. Nguyễn Hoàng Phú" data-title-en="Take part in Khung Hiệu Quả | Dr. Hoang-Phu Nguyen">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tham gia Khung Hiệu Quả | TS. Nguyễn Hoàng Phú</title>
+    <meta name="description" content="Trả lời vài câu hỏi để chọn đầu vào, đầu ra phù hợp, đọc và xác nhận cam kết bảo mật, ẩn danh, rồi nhận phiếu dữ liệu đúng ngành qua email.">
+    <meta property="og:title" content="Tham gia Khung Hiệu Quả | TS. Nguyễn Hoàng Phú">
+    <meta property="og:description" content="Trả lời vài câu hỏi để chọn đầu vào, đầu ra phù hợp, đọc và xác nhận cam kết bảo mật, ẩn danh, rồi nhận phiếu dữ liệu đúng ngành qua email.">
+    <meta property="og:type" content="website">
+    <script>(function(){try{var q=new URLSearchParams(location.search).get('lang');var s=q||localStorage.getItem('khq-lang');if(s==='en'||s==='vi')document.documentElement.lang=s;}catch(e){}})();</script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = { theme: { extend: {
+            fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Merriweather', 'serif'] },
+            colors: { primary: '#1e3a8a', secondary: '#3b82f6', dark: '#111827', lightbg: '#f8fafc' } } } };
+    </script>
+    <link rel="stylesheet" href="assets/khq.css">
+</head>
+<body class="bg-white text-gray-800 antialiased selection:bg-primary selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20 gap-3">
+                <div class="flex items-center gap-3 min-w-0">
+                    <a href="../index.html" class="font-serif font-bold text-lg sm:text-xl text-primary tracking-tight truncate">Dr. Hoang-Phu Nguyen</a>
+                    <span class="hidden lg:inline text-gray-300">/</span>
+                    <a href="index.html" class="hidden lg:inline font-semibold text-dark whitespace-nowrap">Khung Hiệu Quả</a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="subnav hidden md:flex items-center space-x-5">
+                        <a href="index.html" class="text-gray-600 hover:text-primary text-sm font-medium transition"><span lang="vi">Giới thiệu</span><span lang="en">Overview</span></a>
+                        <a href="huong-dan.html" class="text-gray-600 hover:text-primary text-sm font-medium transition"><span lang="vi">Cách tham gia</span><span lang="en">How it works</span></a>
+                        <a href="index.html#doi-ngu" class="text-gray-600 hover:text-primary text-sm font-medium transition"><span lang="vi">Đội ngũ</span><span lang="en">Team</span></a>
+                        <a href="gui-du-lieu.html" class="text-gray-600 hover:text-primary text-sm font-medium transition"><span lang="vi">Gửi dữ liệu</span><span lang="en">Send data</span></a>
+                        <a href="tham-gia.html" aria-current="page" class="px-5 py-2 rounded-md bg-primary text-white text-sm font-medium hover:bg-blue-800 transition shadow-sm"><span lang="vi">Tham gia</span><span lang="en">Take part</span></a>
+                    </div>
+                    <div class="flex items-center gap-0.5 border border-gray-200 rounded-full p-1 bg-gray-50 shrink-0" role="group" aria-label="Language">
+                        <button id="btn-lang-vi" type="button" onclick="setSiteLanguage('vi')" class="lang-btn active px-3 py-1 rounded-full text-xs font-bold">VI</button>
+                        <button id="btn-lang-en" type="button" onclick="setSiteLanguage('en')" class="lang-btn px-3 py-1 rounded-full text-xs font-bold">EN</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="md:hidden border-t border-gray-100">
+            <div class="subnav flex items-center gap-5 px-4 h-11 overflow-x-auto text-sm font-medium whitespace-nowrap">
+                <a href="index.html" class="text-gray-600"><span lang="vi">Giới thiệu</span><span lang="en">Overview</span></a>
+                <a href="huong-dan.html" class="text-gray-600"><span lang="vi">Cách tham gia</span><span lang="en">How it works</span></a>
+                <a href="index.html#doi-ngu" class="text-gray-600"><span lang="vi">Đội ngũ</span><span lang="en">Team</span></a>
+                <a href="gui-du-lieu.html" class="text-gray-600"><span lang="vi">Gửi dữ liệu</span><span lang="en">Send data</span></a>
+                <a href="tham-gia.html" class="current"><span lang="vi">Tham gia</span><span lang="en">Take part</span></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero-bg pt-40 pb-10 md:pt-36 md:pb-12 px-4 border-b border-gray-100">
+        <div class="max-w-3xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 text-primary rounded-full text-xs font-bold uppercase tracking-widest mb-4">
+                <i class="fa-solid fa-comments"></i> <span lang="vi">Khoảng 5 phút</span><span lang="en">About 5 minutes</span>
+            </div>
+            <h1 class="text-3xl md:text-4xl font-serif font-bold text-dark mb-4 leading-tight"><span lang="vi">Tham gia chạy thử Khung Hiệu Quả</span><span lang="en">Join the Khung Hiệu Quả pilot</span></h1>
+            <p class="text-lg text-gray-600 font-light leading-relaxed">
+                <span lang="vi">Trả lời vài câu hỏi để chọn chỉ số phù hợp với doanh nghiệp, xác nhận các cam kết bảo mật và ẩn danh, rồi nhận phiếu dữ liệu đúng ngành qua email.</span>
+                <span lang="en">Answer a few questions to choose the right indicators for your company, accept the privacy and anonymity commitments, and receive the data template for your sector by email.</span>
+            </p>
+        </div>
+    </header>
+
+    <!-- Chat -->
+    <main class="py-10 md:py-14 px-4 bg-lightbg">
+        <section class="max-w-3xl mx-auto" aria-labelledby="chat-title">
+            <div class="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+                <div class="flex items-center justify-between gap-3 px-5 py-4 border-b border-gray-100">
+                    <div class="flex items-center gap-3 min-w-0">
+                        <div class="w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold shrink-0">KHQ</div>
+                        <div class="min-w-0">
+                            <h2 id="chat-title" class="font-bold text-dark leading-tight"><span lang="vi">Trợ lý chọn chỉ số</span><span lang="en">Indicator assistant</span></h2>
+                            <p class="text-xs text-gray-500"><span lang="vi">Hỏi đáp theo kịch bản soạn sẵn, không lưu gì cho tới khi bạn bấm Gửi</span><span lang="en">Scripted questions; nothing is stored until you press Send</span></p>
+                        </div>
+                    </div>
+                    <button id="chat-restart" type="button" hidden class="text-sm text-gray-500 hover:text-primary shrink-0"><i class="fa-solid fa-rotate-left text-xs"></i> <span lang="vi">Làm lại</span><span lang="en">Restart</span></button>
+                </div>
+                <div class="h-1 bg-gray-100" aria-hidden="true"><div id="chat-progress" class="h-1 bg-secondary transition-all duration-300" style="width:0%"></div></div>
+                <div id="chat-log" class="px-4 sm:px-6 py-6 space-y-4 min-h-[18rem]" aria-live="polite">
+                    <noscript><p class="text-sm text-gray-700">Trang này cần bật JavaScript. This page needs JavaScript.</p></noscript>
+                </div>
+            </div>
+            <p class="text-sm text-gray-600 mt-5 text-center">
+                <span lang="vi">Đã có phiếu và mã hồ sơ?</span><span lang="en">Already have a template and case code?</span>
+                <a href="gui-du-lieu.html" class="text-primary font-medium hover:underline underline-offset-4"><span lang="vi">Gửi dữ liệu</span><span lang="en">Send your data</span> <i class="fa-solid fa-arrow-right text-xs"></i></a>
+            </p>
+        </section>
+    </main>
+
+    <!-- Commitments: data processing notice under Law 91/2025/QH15 and Decree 356/2025/ND-CP -->
+    <section id="cam-ket" class="scroll-mt-32 py-16 px-4 bg-white border-t border-gray-100">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-xs font-bold uppercase tracking-widest text-secondary mb-2"><span lang="vi">Phiên bản 1.1 · 24/11/2026</span><span lang="en">Version 1.1 · 24 November 2026</span></div>
+            <h2 class="text-3xl font-serif font-bold text-dark mb-3"><span lang="vi">Thông báo xử lý dữ liệu và cam kết bảo mật</span><span lang="en">Data processing notice and privacy commitments</span></h2>
+            <p class="text-gray-600 mb-8"><span lang="vi">Lập theo Luật Bảo vệ dữ liệu cá nhân số 91/2025/QH15 và Nghị định 356/2025/NĐ-CP. Đọc trước khi đồng ý; mỗi mục đích cần một lần đồng ý riêng, và im lặng không được coi là đồng ý.</span><span lang="en">Prepared under Vietnam’s Personal Data Protection Law No. 91/2025/QH15 and Decree 356/2025/ND-CP. Read it before consenting; each purpose needs its own consent, and silence is never treated as consent.</span></p>
+
+            <ol lang="vi" class="space-y-5 text-gray-700 leading-relaxed list-decimal pl-5 marker:text-primary marker:font-bold">
+                <li><b class="text-dark">Bên chịu trách nhiệm.</b> TS. Nguyễn Hoàng Phú (cá nhân), email <a data-khq-email class="text-primary underline underline-offset-2" href="mailto:drnhphu@gmail.com">drnhphu@gmail.com</a>, là bên kiểm soát thông tin liên hệ và câu trả lời doanh nghiệp gửi qua trang này. Với dữ liệu gắn với từng người do doanh nghiệp cung cấp, như nhân viên hay hộ trồng, doanh nghiệp là bên kiểm soát và TS. Nguyễn Hoàng Phú là bên xử lý theo thoả thuận xử lý dữ liệu hai bên ký trước khi gửi file.</li>
+                <li><b class="text-dark">Dữ liệu được thu thập.</b> Thông tin liên hệ: họ tên, chức vụ, email công việc, số điện thoại nếu có, tên doanh nghiệp. Câu trả lời trong khung trò chuyện. Số liệu hoạt động của các đơn vị, ghi theo mã. Trang không thu dữ liệu cá nhân nhạy cảm.</li>
+                <li><b class="text-dark">Mục đích, mỗi mục đích một lần đồng ý.</b> Bắt buộc để tham gia: phân tích hiệu quả các đơn vị của doanh nghiệp, liên lạc và gửi kết quả. Không bắt buộc: gửi thông tin giới thiệu dịch vụ tư vấn liên quan tới kết quả; doanh nghiệp từ chối bất kỳ lúc nào và việc gửi dừng ngay. Không bắt buộc: dùng dữ liệu đã ẩn danh hoàn toàn, ở dạng tổng hợp, cho nghiên cứu và giảng dạy. Không chọn hai mục không bắt buộc vẫn tham gia bình thường.</li>
+                <li><b class="text-dark">Ẩn danh.</b> Phiếu dùng mã thay cho tên đơn vị và không thu họ tên, ngày sinh, số điện thoại hay số căn cước của nhân viên, khách hàng. File dữ liệu được lưu theo mã hồ sơ, không theo tên doanh nghiệp. Tên doanh nghiệp, tên đơn vị và tên người liên hệ không xuất hiện trong bất kỳ báo cáo công khai, bài giảng hay bài báo nào.</li>
+                <li><b class="text-dark">Người được tiếp cận và nơi lưu trữ.</b> Chỉ TS. Nguyễn Hoàng Phú và thành viên nhóm phân tích được giao hồ sơ được truy cập dữ liệu. Dữ liệu được lưu và email được gửi qua dịch vụ của Google (Gmail, Google Drive, Google Sheets), máy chủ có thể đặt ngoài Việt Nam; đây là chuyển dữ liệu cá nhân xuyên biên giới theo Điều 20 Luật 91/2025/QH15. Dữ liệu không được bán, cho thuê hay chuyển cho bên thứ ba nào khác, trừ khi pháp luật buộc cung cấp cho cơ quan có thẩm quyền.</li>
+                <li><b class="text-dark">Thời gian lưu trữ.</b> Số liệu hoạt động theo mã được lưu trữ lâu dài để đối chiếu với các kỳ sau và không tự xoá. Thông tin liên hệ được lưu cho tới khi doanh nghiệp yêu cầu xoá hoặc rút lại đồng ý. Doanh nghiệp có thể yêu cầu xoá toàn bộ hồ sơ bất kỳ lúc nào.</li>
+                <li><b class="text-dark">Quyền của doanh nghiệp và người liên hệ.</b> Được biết về việc xử lý dữ liệu; đồng ý, không đồng ý hoặc rút lại đồng ý; xem, chỉnh sửa và nhận bản sao dữ liệu; yêu cầu xoá, hạn chế hoặc phản đối việc xử lý; khiếu nại, khởi kiện, yêu cầu bồi thường; yêu cầu áp dụng biện pháp bảo vệ. Gửi yêu cầu tới <a data-khq-email class="text-primary underline underline-offset-2" href="mailto:drnhphu@gmail.com">drnhphu@gmail.com</a> kèm mã hồ sơ. Chúng tôi phản hồi trong 02 ngày làm việc, rồi thực hiện trong 15 ngày với yêu cầu rút lại đồng ý, hạn chế hoặc phản đối, 10 ngày với yêu cầu xem, chỉnh sửa hoặc nhận bản sao, và 20 ngày với yêu cầu xoá.</li>
+                <li><b class="text-dark">Sự cố.</b> Nếu xảy ra lộ lọt dữ liệu, doanh nghiệp được thông báo và cơ quan chuyên trách được báo cáo theo quy định.</li>
+                <li><b class="text-dark">Tính chất kết quả.</b> Kết quả là so sánh tương đối giữa các đơn vị trong nội bộ doanh nghiệp, dựa trên số liệu doanh nghiệp cung cấp. Đây không phải đánh giá tuyệt đối, kiểm toán hay ý kiến pháp lý.</li>
+                <li><b class="text-dark">Chi phí.</b> Kết quả và bản phân tích ngắn không mất phí trong giai đoạn chạy thử (đến tháng 3/2027). Tư vấn chuyên sâu là dịch vụ riêng, chỉ thực hiện khi doanh nghiệp đồng ý.</li>
+            </ol>
+
+            <ol lang="en" class="space-y-5 text-gray-700 leading-relaxed list-decimal pl-5 marker:text-primary marker:font-bold">
+                <li><b class="text-dark">Who is responsible.</b> Dr. Hoang-Phu Nguyen (an individual), email <a data-khq-email class="text-primary underline underline-offset-2" href="mailto:drnhphu@gmail.com">drnhphu@gmail.com</a>, is the controller of the contact details and answers you send through this page. For person-level data your company provides, such as staff or farm households, your company is the controller and Dr. Hoang-Phu Nguyen is the processor under a data processing agreement both sides sign before the file is sent.</li>
+                <li><b class="text-dark">What is collected.</b> Contact details: name, job title, work email, phone if given, company name. Your answers in the chat. Operating figures for your units, recorded under codes. No sensitive personal data is collected.</li>
+                <li><b class="text-dark">Purposes, one consent each.</b> Required to take part: analysing the efficiency of your units, contacting you and delivering the results. Optional: sending information about consulting services related to the results; you can opt out at any time and it stops immediately. Optional: using fully anonymised, aggregated data for research and teaching. You can take part without either optional item.</li>
+                <li><b class="text-dark">Anonymity.</b> Templates use codes instead of unit names and collect no names, dates of birth, phone numbers or ID numbers of staff or customers. Data files are stored under a case code, not your company name. Your company name, unit names and contact names never appear in any public report, lecture or paper.</li>
+                <li><b class="text-dark">Access and storage location.</b> Only Dr. Hoang-Phu Nguyen and team members assigned to your case can access the data. Data is stored and email is sent through Google services (Gmail, Google Drive, Google Sheets) whose servers may be outside Vietnam; this is a cross-border transfer of personal data under Article 20 of Law 91/2025/QH15. Data is never sold, rented or passed to any other third party, unless the law requires disclosure to a competent authority.</li>
+                <li><b class="text-dark">Retention.</b> Operating figures under codes are kept long term for comparison with later periods and are not deleted automatically. Contact details are kept until you ask for deletion or withdraw consent. You can ask for the whole case to be deleted at any time.</li>
+                <li><b class="text-dark">Your rights.</b> To be informed about the processing; to consent, refuse or withdraw consent; to view, correct and receive a copy of the data; to request deletion, restriction or objection; to complain, sue or claim compensation; to request protective measures. Send requests to <a data-khq-email class="text-primary underline underline-offset-2" href="mailto:drnhphu@gmail.com">drnhphu@gmail.com</a> with your case code. We respond within 2 working days, then act within 15 days for withdrawal, restriction or objection, 10 days for viewing, correction or a copy, and 20 days for deletion.</li>
+                <li><b class="text-dark">Incidents.</b> If a data breach occurs, you will be notified and the competent authority informed as the law requires.</li>
+                <li><b class="text-dark">Nature of the results.</b> Results are a relative comparison between units inside your company, based on the figures you provide. They are not an absolute rating, an audit or a legal opinion.</li>
+                <li><b class="text-dark">Cost.</b> Results and the short analysis are free during the pilot (until March 2027). In-depth consulting is a separate service, provided only with your agreement.</li>
+            </ol>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-8 px-4">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm gap-2">
+            <p>&copy; 2026 Dr. Hoang-Phu Nguyen. All rights reserved.</p>
+            <div class="flex gap-5">
+                <a href="tham-gia.html#cam-ket" class="hover:text-white transition"><span lang="vi">Cam kết dữ liệu</span><span lang="en">Data commitments</span></a>
+                <a href="../index.html" class="hover:text-white transition"><span lang="vi">← Quay lại trang chủ</span><span lang="en">← Back to home</span></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/cau-hinh.js"></script>
+    <script src="assets/nganh.js"></script>
+    <script src="assets/tham-gia.js"></script>
+    <script src="assets/khq.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="vi" data-title-vi="Gửi dữ liệu · Khung Hiệu Quả | TS. Nguyễn Hoàng Phú" data-title-en="Send data · Khung Hiệu Quả | Dr. Hoang-Phu Nguyen">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gửi dữ liệu · Khung Hiệu Quả | TS. Nguyễn Hoàng Phú</title>
+    <meta name="description" content="Gửi phiếu dữ liệu đã điền cho nhóm phân tích Khung Hiệu Quả bằng mã hồ sơ.">
+    <meta property="og:title" content="Gửi dữ liệu · Khung Hiệu Quả | TS. Nguyễn Hoàng Phú">
+    <meta property="og:description" content="Gửi phiếu dữ liệu đã điền cho nhóm phân tích Khung Hiệu Quả bằng mã hồ sơ.">
+    <meta property="og:type" content="website">
+    <script>(function(){try{var q=new URLSearchParams(location.search).get('lang');var s=q||localStorage.getItem('khq-lang');if(s==='en'||s==='vi')document.documentElement.lang=s;}catch(e){}})();</script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = { theme: { extend: {
+            fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Merriweather', 'serif'] },
+            colors: { primary: '#1e3a8a', secondary: '#3b82f6', dark: '#111827', lightbg: '#f8fafc' } } } };
+    </script>
+    <link rel="stylesheet" href="assets/khq.css">
+</head>
+<body class="bg-white text-gray-800 antialiased selection:bg-primary selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20 gap-3">
+                <div class="flex items-center gap-3 min-w-0">
+                    <a href="../index.html" class="font-serif font-bold text-lg sm:text-xl text-primary tracking-tight truncate">Dr. Hoang-Phu Nguyen</a>
+                    <span class="hidden lg:inline text-gray-300">/</span>
+                    <a href="index.html" class="hidden lg:inline font-semibold text-dark whitespace-nowrap">Khung Hiệu Quả</a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="subnav hidden md:flex items-center space-x-5">
+                        <a href="index.html" class="text-gray-600 hover:text-primary text-sm font-medium transition"><span lang="vi">Giới thiệu</span><span lang="en">Overview</span></a>
+                        <a href="huong-dan.html" class="text-gray-600 hover:text-primary text-sm font-medium transition"><span lang="vi">Cách tham gia</span><span lang="en">How it works</span></a>
+                        <a href="index.html#doi-ngu" class="text-gray-600 hover:text-primary text-sm font-medium transition"><span lang="vi">Đội ngũ</span><span lang="en">Team</span></a>
+                        <a href="gui-du-lieu.html" aria-current="page" class="current text-sm font-medium transition"><span lang="vi">Gửi dữ liệu</span><span lang="en">Send data</span></a>
+                        <a href="tham-gia.html" class="px-5 py-2 rounded-md bg-primary text-white text-sm font-medium hover:bg-blue-800 transition shadow-sm"><span lang="vi">Tham gia</span><span lang="en">Take part</span></a>
+                    </div>
+                    <div class="flex items-center gap-0.5 border border-gray-200 rounded-full p-1 bg-gray-50 shrink-0" role="group" aria-label="Language">
+                        <button id="btn-lang-vi" type="button" onclick="setSiteLanguage('vi')" class="lang-btn active px-3 py-1 rounded-full text-xs font-bold">VI</button>
+                        <button id="btn-lang-en" type="button" onclick="setSiteLanguage('en')" class="lang-btn px-3 py-1 rounded-full text-xs font-bold">EN</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="md:hidden border-t border-gray-100">
+            <div class="subnav flex items-center gap-5 px-4 h-11 overflow-x-auto text-sm font-medium whitespace-nowrap">
+                <a href="index.html" class="text-gray-600"><span lang="vi">Giới thiệu</span><span lang="en">Overview</span></a>
+                <a href="huong-dan.html" class="text-gray-600"><span lang="vi">Cách tham gia</span><span lang="en">How it works</span></a>
+                <a href="index.html#doi-ngu" class="text-gray-600"><span lang="vi">Đội ngũ</span><span lang="en">Team</span></a>
+                <a href="gui-du-lieu.html" class="current"><span lang="vi">Gửi dữ liệu</span><span lang="en">Send data</span></a>
+                <a href="tham-gia.html" class="text-primary font-semibold"><span lang="vi">Tham gia</span><span lang="en">Take part</span></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero-bg pt-40 pb-10 md:pt-36 md:pb-12 px-4 border-b border-gray-100">
+        <div class="max-w-3xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 text-primary rounded-full text-xs font-bold uppercase tracking-widest mb-4">
+                <i class="fa-solid fa-file-arrow-up"></i> <span lang="vi">Bước 4</span><span lang="en">Step 4</span>
+            </div>
+            <h1 class="text-3xl md:text-4xl font-serif font-bold text-dark mb-4 leading-tight"><span lang="vi">Gửi dữ liệu</span><span lang="en">Send your data</span></h1>
+            <p class="text-lg text-gray-600 font-light leading-relaxed">
+                <span lang="vi">Tải lên phiếu đã điền, kèm mã hồ sơ trong email gửi phiếu. File được lưu theo mã hồ sơ, không theo tên doanh nghiệp.</span>
+                <span lang="en">Upload the completed template with the case code from the template email. The file is stored under the case code, not your company name.</span>
+            </p>
+        </div>
+    </header>
+
+    <main class="py-10 md:py-14 px-4 bg-lightbg">
+        <div class="max-w-3xl mx-auto grid gap-6">
+            <section class="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 md:p-8" aria-labelledby="up-title">
+                <h2 id="up-title" class="text-xl font-bold text-dark mb-1"><span lang="vi">Tải file lên</span><span lang="en">Upload the file</span></h2>
+                <p class="text-sm text-gray-600 mb-6"><span lang="vi">Trước khi gửi, mở trang Kiểm tra trong phiếu: mọi dòng phải ghi "Đạt".</span><span lang="en">Before sending, open the Check sheet in the template: every row should say "Đạt".</span></p>
+
+                <form id="up-form" class="grid gap-5 sm:grid-cols-2" novalidate>
+                    <div class="field">
+                        <label for="up-code"><span lang="vi">Mã hồ sơ</span><span lang="en">Case code</span> <span class="text-red-700" aria-hidden="true">*</span></label>
+                        <input id="up-code" type="text" maxlength="20" autocomplete="off" spellcheck="false" class="uppercase step-no" placeholder="KHQ-261122-AB12" required>
+                        <div class="err"><span lang="vi">Mã hồ sơ có dạng KHQ-261122-AB12, nằm trong email gửi phiếu.</span><span lang="en">The case code looks like KHQ-261122-AB12 and is in the template email.</span></div>
+                    </div>
+                    <div class="field">
+                        <label for="up-email"><span lang="vi">Email đã dùng khi đăng ký</span><span lang="en">Email used to register</span> <span class="text-red-700" aria-hidden="true">*</span></label>
+                        <input id="up-email" type="email" maxlength="120" autocomplete="email" required>
+                        <div class="err"><span lang="vi">Nhập đúng email đã nhận phiếu.</span><span lang="en">Enter the email the template was sent to.</span></div>
+                    </div>
+                    <div class="field sm:col-span-2">
+                        <label for="up-file"><span lang="vi">File dữ liệu (.xlsx, .xls hoặc .csv, tối đa 10 MB)</span><span lang="en">Data file (.xlsx, .xls or .csv, up to 10 MB)</span> <span class="text-red-700" aria-hidden="true">*</span></label>
+                        <input id="up-file" type="file" accept=".xlsx,.xls,.csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel,text/csv" required class="!p-2 text-sm">
+                        <div class="err" id="up-file-err"><span lang="vi">Chọn một file .xlsx, .xls hoặc .csv không quá 10 MB.</span><span lang="en">Choose an .xlsx, .xls or .csv file of 10 MB or less.</span></div>
+                    </div>
+                    <div class="field sm:col-span-2">
+                        <label for="up-note"><span lang="vi">Ghi chú cho nhóm phân tích (không bắt buộc)</span><span lang="en">Note for the analysis team (optional)</span></label>
+                        <textarea id="up-note" rows="3" maxlength="1000" class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm"></textarea>
+                    </div>
+                    <label class="check sm:col-span-2">
+                        <input id="up-ack" type="checkbox" required>
+                        <span class="text-sm text-dark leading-relaxed"><span class="text-red-700 font-bold" aria-hidden="true">* </span><span lang="vi">File chỉ chứa mã đơn vị và số liệu hoạt động, không có tên người, số điện thoại hay thông tin khách hàng.</span><span lang="en">The file contains only unit codes and operating figures, with no personal names, phone numbers or customer details.</span></span>
+                    </label>
+                    <div style="position:absolute;left:-5000px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><label>Website <input id="up-hp" type="text" tabindex="-1" autocomplete="off"></label></div>
+                    <div class="sm:col-span-2">
+                        <p id="up-err" class="text-sm text-red-700 mb-3" role="alert" hidden></p>
+                        <button id="up-btn" type="submit" class="px-6 py-2.5 bg-primary text-white rounded-md font-medium hover:bg-blue-800 transition shadow-sm inline-flex items-center gap-2">
+                            <i class="fa-solid fa-cloud-arrow-up"></i> <span lang="vi">Gửi dữ liệu</span><span lang="en">Send data</span>
+                        </button>
+                        <p id="up-status" class="text-sm text-gray-600 mt-3" aria-live="polite" hidden></p>
+                    </div>
+                </form>
+
+                <div id="up-done" class="hidden" role="status">
+                    <div class="flex gap-3 items-start bg-emerald-50 border border-emerald-200 text-emerald-900 rounded-xl p-5">
+                        <i class="fa-solid fa-circle-check text-xl mt-0.5"></i>
+                        <div>
+                            <p class="font-bold mb-1"><span lang="vi">Đã nhận dữ liệu</span><span lang="en">Data received</span></p>
+                            <p class="text-sm leading-relaxed"><span lang="vi">File đã được lưu theo mã hồ sơ <b id="up-done-code" class="step-no"></b>. Email xác nhận đã gửi tới hộp thư đăng ký. Nhóm phân tích sẽ duyệt dữ liệu và liên hệ nếu cần làm rõ trước khi chạy phân tích.</span><span lang="en">The file has been stored under case code <b id="up-done-code-en" class="step-no"></b>. A confirmation has been sent to the registered email. The team will review the data and get in touch if anything needs clarifying before the analysis.</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="up-manual" class="hidden">
+                    <div class="flex gap-3 items-start bg-blue-50 border border-blue-100 text-blue-900 rounded-xl p-5">
+                        <i class="fa-solid fa-envelope text-xl mt-0.5"></i>
+                        <p class="text-sm leading-relaxed"><span lang="vi">Chức năng tải lên đang tạm dừng. Hãy trả lời email gửi phiếu, hoặc gửi file tới <a data-khq-email class="font-semibold underline underline-offset-2" href="mailto:drnhphu@gmail.com">drnhphu@gmail.com</a> với tiêu đề có mã hồ sơ.</span><span lang="en">Uploading is paused. Please reply to the template email, or send the file to <a data-khq-email class="font-semibold underline underline-offset-2" href="mailto:drnhphu@gmail.com">drnhphu@gmail.com</a> with your case code in the subject line.</span></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-2xl border border-gray-200 p-6 md:p-8">
+                <h2 class="text-lg font-bold text-dark mb-2"><span lang="vi">Gửi qua email</span><span lang="en">Send by email</span></h2>
+                <p class="text-sm text-gray-700 leading-relaxed"><span lang="vi">Cũng có thể trả lời email gửi phiếu và đính kèm file, hoặc gửi tới</span><span lang="en">You can also reply to the template email with the file attached, or send it to</span>
+                    <a data-khq-email class="text-primary font-medium underline underline-offset-2" href="mailto:drnhphu@gmail.com">drnhphu@gmail.com</a><span lang="vi">, ghi mã hồ sơ ở tiêu đề.</span><span lang="en">, with the case code in the subject line.</span></p>
+                <p class="text-sm text-gray-600 mt-3"><span lang="vi">Chưa có mã hồ sơ?</span><span lang="en">No case code yet?</span> <a href="tham-gia.html" class="text-primary font-medium hover:underline underline-offset-4"><span lang="vi">Bắt đầu ở trang Tham gia</span><span lang="en">Start on the Take part page</span> <i class="fa-solid fa-arrow-right text-xs"></i></a></p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-8 px-4">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm gap-2">
+            <p>&copy; 2026 Dr. Hoang-Phu Nguyen. All rights reserved.</p>
+            <div class="flex gap-5">
+                <a href="tham-gia.html#cam-ket" class="hover:text-white transition"><span lang="vi">Cam kết dữ liệu</span><span lang="en">Data commitments</span></a>
+                <a href="../index.html" class="hover:text-white transition"><span lang="vi">← Quay lại trang chủ</span><span lang="en">← Back to home</span></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/cau-hinh.js"></script>
+    <script src="assets/gui-du-lieu.js"></script>
+    <script src="assets/khq.js"></script>
+</body>
+</html>
