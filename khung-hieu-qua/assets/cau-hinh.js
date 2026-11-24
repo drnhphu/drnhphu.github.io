@@ -3,7 +3,7 @@
 //   Để trống: trang Tham gia vẫn chạy, nhưng thay vì gửi email tự động sẽ cho tải phiếu trực tiếp và mở email soạn sẵn.
 // email: địa chỉ nhận dữ liệu và câu hỏi, hiện trên các trang.
 window.KHQ_CONFIG = {
-    endpoint: '',
+    endpoint: 'https://script.google.com/macros/s/AKfycbw7GTtP4bLg_qDUgJa4feXoPAfCxtqKTx8fR2eL_aufUhU2O6NwgVDNH5NclOwZ1Jsy/exec',
     email: 'drnhphu@gmail.com',
     consentVersion: '1.1',
     consentDate: '24/11/2026',
